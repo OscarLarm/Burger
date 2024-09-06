@@ -1,0 +1,13 @@
+Den här text filen är för uppgifts del 3.3 Samman fatta och Reflektera
+
+3.3 Sammanfatta och Reflektera 
+Skriv gemensamt en sammanfattande text i katalogen Reflektioner. Följande skall ingå: 
+ Namn på alla i teamet. 
+Länk till projektets sida på git-servern. 
+Kort sammanfattning om vad konfigurationshantering är och varför det används. 
+Kort sammanfattning om det vanligaste arbetsflödet med git, inklusive de git-kommandon som används. 
+Era erfarenheter om att arbeta med konfigurationshantering. 
+
+ • Vad gick bra? 
+• Vad gick mindre bra? 
+• Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda? • Vad lyckades ni inte lösa? Varför inte? 
