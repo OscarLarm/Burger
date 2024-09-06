@@ -1,11 +1,12 @@
 # Oscar Larm Ingenjörsdagbok
 
 ### Datum:
-[05-09-24](#05-09-24)
+- [2024-09-05](#2024-09-05)
+- [2024-09-06](#2024-09-06)
 
 ---
 
-### 05-09-24
+### 2024-09-05
 Vi bestämde oss för att använda Github som git-server. Vi har satt upp ett Github-repo och såg till så att alla testade att använda pull, add, commit och push. Vi gjorde en mapp för planering och en för reflektioner, och där gjorde alla varsin fil för sin "ingenjörsdagbok".
 
 Vi stötte på ett par problem:
@@ -20,3 +21,12 @@ Jag vet inte heller hur det funkar med att skicka data ifrån MenuStore till Bur
 
 ---
 
+### 2024-09-06
+
+Ett problem igår var att vi ändrade direkt i main. Som lösning skapade vi en development branch som vi sen mergar in till main. 
+
+Jag ville lägga till ett Github ruleset som krävdes en pull request för att merga in till main, samt att man inte kan lägga till eller ta bort direkt i main. Men det visade sig att man behövde "Github Pro" för att göra rulesets i privata repos.
+
+Men jag har sökt till [Github Education](https://github.com/education), och idag gick det igenom så nu har jag Github Pro och kunde sätta upp rulesets för vårt projekt. Detta borde göra det lättare att hålla projektet strukturerat.
+
+---
