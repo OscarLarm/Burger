@@ -1,3 +1,7 @@
 5/9 Tittar på hur man lägger upp commits på git via terminalen. Skapade ochså en ssh nyckel.
 7/9 Skapad en vara som jag har fått ansvar för vilket var sallader. Skapde 3 olika sallader 
+<<<<<<< HEAD
 vilket var Caesar sallad, kyckling sallad och frukt sallad.
+=======
+vilket var Caesar sallad, kyckling sallad och frukt sallad.
+>>>>>>> 7bf8a193dab4ce15795f0b5f3111336107562167
