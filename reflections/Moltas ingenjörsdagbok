@@ -11,3 +11,5 @@ Jag använde https://www.w3schools.com/ för att komma ihåg hur man gjorde sake
 valsidan så att man kan lättare hämta infomationen. Jag har gjort all chechboxar men jag ska flytta dem så de är bredvid dem istället för under.
 Jag har delat upp menyn i två columner man kan inte få dem att vara brevid varandra. Jag har också läst om fetch() och hur man ska 
 hämta infomationen från checkboxarna och sedan skicka vidare them till servern. Jag har också gjort css till val sidan.
+Fick css att funka så att cloumnerna är bredvid varandra löste detta genom att göra en div till .grid istället för 
+body som gjorde att det inte fungerade.
