@@ -4,6 +4,12 @@ Fick som uppdrag att göra en hemsida med alla burgare och saker man kan köpa o
 Måste också ta reda på hur man tar infomation från hemsida och skicka vidare den.
 8/9 Jag gör 2 html filer och en css fil. Ena html filen är startsidan där man kan komma till menyn medans den andra html filen är för att kunna beställa.
 Jag har bundit html filerna till css filen. Startsidan är klar men måste dock binda den till betsällsidan. 
-Beställ sidan är inte klar då jag måste gör checkboxen så att man kan beställa och även fråga mina kollegor om vi ska något mer i menyn. 
+Beställ sidan är inte klar då jag måste gör checkboxen så att man kan beställa och även fråga mina kollegor om vi ska något mer i menyn.
+jag har har också gjort css till startsidan.
 Jag använde https://www.w3schools.com/ för att komma ihåg hur man gjorde sakerna. 
-
+9/9 Fixade linken mellan startsidan och menyval sidan så att man kan gå från startsidan till menyn. Jag satt alla val i en form på 
+valsidan så att man kan lättare hämta infomationen. Jag har gjort all chechboxar men jag ska flytta dem så de är bredvid dem istället för under.
+Jag har delat upp menyn i två columner man kan inte få dem att vara brevid varandra. Jag har också läst om fetch() och hur man ska 
+hämta infomationen från checkboxarna och sedan skicka vidare them till servern. Jag har också gjort css till val sidan.
+Fick css att funka så att cloumnerna är bredvid varandra löste detta genom att göra en div till .grid istället för 
+body som gjorde att det inte fungerade.
