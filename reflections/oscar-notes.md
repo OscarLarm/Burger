@@ -6,6 +6,7 @@
 - [2024-09-06](#2024-09-06)
 - [2024-09-07](#2024-09-07)
 - [2024-09-09](#2024-09-09)
+- [2024-09-10](#2024-09-10)
 ---
 ### 2024-09-05
 
@@ -54,4 +55,13 @@ Det var problem med att pinga och ansluta till containern. Jag fick felmeddeland
 Så nu kunde jag komma in och se det i DBVisualizer, så jag gjorde en ny databas som heter "MenuStore".
 
 ---
+### 2024-09-10
 
+Idag ska jag kolla upp hör jag kan göra en docker compose fil. Jag har också ändrat mig och bestämmt mig för att använda en unstructured (noSQL) server istället. Tror det blir lättare när olika föremål på menyn kommer att ha olika sorters data. 
+Jag ska testa MongoDB, eftersom det är vad som användes under övningsuppgifterna. Jag hittade också en officiell [MongoDB Image](https://hub.docker.com/_/mongo).
+
+Vi ska testa att använda oss av Node.js Express, för att skapa API. 
+
+Jag ska ta och ladda ner "Postman" också för att kunna testa så att det går att komma åt API:n, innan vi börjar försöka få det att gå till webbgränssnittet. Det kommer göra det enklare att testa direkt medans jag håller på att sätta upp det, utan att behöva merga in det hela tiden.
+
+"makefile" verkar intressant och som att det hade funkat för att automatisera programmet. Det används i [övningsuppgiften](https://codeberg.org/mickesv/PonyVoter.git) för att sätta upp miljön.
