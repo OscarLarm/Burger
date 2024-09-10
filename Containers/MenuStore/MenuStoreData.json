@@ -1,0 +1,39 @@
+{
+    "burgers": [
+        "Original Kidney Killer",
+        "Classic Cheese Burger",
+        "Original Chicken Burger"
+    ],
+    "sides": [
+        "French Fries",
+        "Onion Rings",
+        "Chilli Cheese",
+        "Chicken Nuggets"
+    ],
+    "drinks": [
+        "Coca-Cola",
+        "Coca-Cola Zero",
+        "Fanta",
+        "Fanta Exotic",
+        "Fanta Lemon Zero",
+        "Sprite Zero",
+        "Ramlösa Original",
+        "Ramlösa Pomegranate",
+        "Ramlösa Mango Grapefruit",
+        "Tropical Juice",
+        "Apple Juice",
+        "Milk",
+        "Water"
+    ],
+    "salad": [
+        "Caesar Salad",
+        "Chicken Salad",
+        "Fruit Salad"
+    ],
+    "desserts": [
+        "Vanilla Milkshake",
+        "Chocolate Milkshake",
+        "Chocolate Sundae",
+        "Caramel Sundae"
+    ]
+}

@@ -1,3 +1,5 @@
+#docker compose -f ./Containers/MenuStore/docker-compose.yml up
+
 version: '3.1'
 
 services:
@@ -10,5 +12,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: BurgerPassword
     ports:
-      -3306:3306
+      - 27017:27017
+    volumes:
+      - ./MenuStoreData.json:/MenuStoreData.json
     
