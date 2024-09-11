@@ -89,3 +89,9 @@ För att få in .json datan in i MongoDB som en databas så kommer jag behöva a
 Jag öppnade dockerns terminal och försökte importera .json filen till databasen med "mongoimport", men fick ett fel med formateringen. Får testa att skriva om formateringen för datan. [Här hittar jag information om strukturen](https://www.mongodb.com/resources/basics/json-and-bson).
 
 Docker compose fungerar, men har problem med att importera datan i databasen. Försöker läsa runt. Jag har testat att köra kommandot i makefile och i "command" direkt i docker compose filen.
+
+Jag har lyckats lösa det igenom att köra ett shell script som en volym. Allt som läggs i "/docker-entrypoint-initdb.d/" körs automatiskt när containern är startad, så jag gjorde ett shell script som bara kör mongoimport. Jag verifierade att det funkade genom att gå in i terminalen i docker (exec) från docker desktop. Där startade jag mongoshell genom att skriva "mongosh", sedan lista alla databasar genom "show dbs", sen gå in i databasen jag skapade som heter MenuStore med "use MenuStore", sedan tittar jag vilka collections den har. Jag skapade en som heter FoodItems, och jag kan se den där. Sen använde jag "db.FoodItems.find()" för att få tillbaka all data från databasens collection, vilket stämmer.
+
+Denna lösning känns som att den kommer att behöva förbättras, men den funkar för tillfället när vi behöver testa så att vi kan hämta data riktigt.
+
+Nästa steg är att sätta upp Express så att vi kan hämta datan igenom REST-API.
