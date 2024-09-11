@@ -6,6 +6,7 @@
 - [2024-09-07](#2024-09-07)
 - [2024-09-09](#2024-09-09)
 - [2024-09-10](#2024-09-10)
+- [2024-09-11](#2024-09-11)
 ---
 ### 2024-09-05
 
@@ -80,3 +81,11 @@ Jag har listat datan som t.ex "burgers":["burger 1", "etc", "etc"], men jag vet 
 ### 2024-09-11
 
 Vi måste få upp ett API, ska testa igenom express. Jag vill testa så att det går att komma åt databasen, innan jag lägger till mer saker. Ska leta runt lite efter verktyg som kan automatisera debugging.
+
+Jag lade till node och express till projektet. Jag råkade pusha upp det med "node_modules" mappen, så jag gjorde en till push med en .gitignore. Jag trodde jag skulle lägga till package-lock.json till .gitignore också men verkar som de rekommenderar att ha med den för att få med rätt information om versioner.
+
+För att få in .json datan in i MongoDB som en databas så kommer jag behöva använda mongo-tools som dem går igenom på MongoDB [officiella sida.](https://www.mongodb.com/resources/languages/json-to-mongodb)
+
+Jag öppnade dockerns terminal och försökte importera .json filen till databasen med "mongoimport", men fick ett fel med formateringen. Får testa att skriva om formateringen för datan. [Här hittar jag information om strukturen](https://www.mongodb.com/resources/basics/json-and-bson).
+
+Docker compose fungerar, men har problem med att importera datan i databasen. Försöker läsa runt. Jag har testat att köra kommandot i makefile och i "command" direkt i docker compose filen.

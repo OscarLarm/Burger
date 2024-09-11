@@ -1,39 +1,58 @@
-{
-    "burgers": [
-        "Original Kidney Killer",
-        "Classic Cheese Burger",
-        "Original Chicken Burger"
-    ],
-    "sides": [
-        "French Fries",
-        "Onion Rings",
-        "Chilli Cheese",
-        "Chicken Nuggets"
-    ],
-    "drinks": [
-        "Coca-Cola",
-        "Coca-Cola Zero",
-        "Fanta",
-        "Fanta Exotic",
-        "Fanta Lemon Zero",
-        "Sprite Zero",
-        "Ramlösa Original",
-        "Ramlösa Pomegranate",
-        "Ramlösa Mango Grapefruit",
-        "Tropical Juice",
-        "Apple Juice",
-        "Milk",
-        "Water"
-    ],
-    "salad": [
-        "Caesar Salad",
-        "Chicken Salad",
-        "Fruit Salad"
-    ],
-    "desserts": [
-        "Vanilla Milkshake",
-        "Chocolate Milkshake",
-        "Chocolate Sundae",
-        "Caramel Sundae"
-    ]
-}
+[
+    {
+        "id": "1",
+        "type": "burger",
+        "name": "Original Kidney Killer",
+        "ingredients": [
+            "Beef Patty",
+            "Cheddar Cheese",
+            "Letuce",
+            "Fried Onion",
+            "Dressing",
+            "Bacon",
+            "Sesame Bread"
+        ]
+    },
+    {
+        "id": "2",
+        "type": "burger",
+        "name": "Classic Cheese Burger",
+        "ingredients": [
+            "Beef patty",
+            "Cheddar Cheese",
+            "Mustard",
+            "Ketchup",
+            "Pickles"
+        ]
+    },
+    {
+        "id": "3",
+        "type": "burger",
+        "name": "Original Chicken Burger",
+        "ingredients": [
+            "Fried Chicken Patty",
+            "Bread",
+            "Dressing"
+        ]
+    },
+    {
+        "id": "4",
+        "type": "sides",
+        "name": "French Fries"
+    },
+    {
+        "id": "5",
+        "type": "sides",
+        "name": "Onion Rings"
+    },
+    {
+        "id": "6",
+        "type": "sides",
+        "name": "Chili Cheese"
+    },
+    {
+        "id": "7",
+        "type": "sides",
+        "name": "Chicken Nuggets"
+    }
+]
