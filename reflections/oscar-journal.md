@@ -77,4 +77,6 @@ Jag hittade info om .json på [MDN web docs.](https://developer.mozilla.org/en-U
 Jag har listat datan som t.ex "burgers":["burger 1", "etc", "etc"], men jag vet inte hur jag kan göra "menyer" med en samling av data, eller hur jag ger t.ex. "burger1" sin egna array med ingredienser. Jag såg på [MDN web docs.](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) att du kan strukturera datan mer som ett objekt. Jag ska kolla på detta imorgon.
 
 ---
+### 2024-09-11
 
+Vi måste få upp ett API, ska testa igenom express. Jag vill testa så att det går att komma åt databasen, innan jag lägger till mer saker. Ska leta runt lite efter verktyg som kan automatisera debugging.
