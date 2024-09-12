@@ -1,4 +1,16 @@
-version: 3.0
+version: "3"
 services: 
   python:
-    image: kitcheView.py
+    container_name: python_script
+    image: python 3.9
+      
+
+  website:
+    image: burgerorder
+    ports: 
+      -"8080:8081"
+    restart: always
+  
+  database:
+    image: mongodb
+
