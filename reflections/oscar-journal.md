@@ -101,14 +101,14 @@ Nästa steg är att sätta upp Express så att vi kan hämta datan igenom REST-A
 ### 2024-09-12
 Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
 - **26 september**
-    - Alla delar ska vara klara och sättas ihop.
+    - Combine all components
 - **1 oktober**
-    - Implementation.
+    - Implementation    
 - **5 oktober**
-    - Sista debuggningen.
+    - Final Debugging
 - **11 oktober**
-    - Sammanfattning och reflektering.
+    - Summary and Reflection
 - **18 oktober**
-    - Inlämning.
+    - Project Deadline - Turn in Assignment
 
 ---
