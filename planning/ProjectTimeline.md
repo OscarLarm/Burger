@@ -1,16 +1,12 @@
 ## Project Timeline:
 
-### 2024-09-26
-- [ ] **Combine Components**
-
-### 2024-10-01
-- [ ] **Implementation**
-
-### 2024-10-05
-- [ ] **Debugging**
-
-### 2024-10-11
-- [ ] **Summary and Reflection**
-
-### 2024-10-18
-- [ ] **Project Deadline**
+- [ ] ### 26 september
+    - Alla delar ska vara klara och sättas ihop.
+- ### 1 oktober
+    - Implementation.
+- ### 5 oktober
+    - Sista debuggningen.
+- ### 11 oktober
+    - Sammanfattning och reflektering.
+- ### 18 oktober
+    - Inlämning.
