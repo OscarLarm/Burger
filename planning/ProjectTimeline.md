@@ -1,16 +1,17 @@
 ## Project Timeline:
 
-### 26 september 
+### 2024-09-26
 - [ ] **Alla delar ska vara klara och sättas ihop.**
-
-### 1 oktober
+---
+### 2024-10-01
 - [ ] **Implementation.**
-
-### 5 oktober
+---
+### 2024-10-05
 - [ ] **Sista debuggningen.**
-
-### 11 oktober
+---
+### 2024-10-11
 - [ ] **Sammanfattning och reflektering.**
-
-### 18 oktober
+---
+### 2024-10-18
 - [ ] **Inlämning.**
+---
