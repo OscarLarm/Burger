@@ -1,6 +1,6 @@
 ## Project Timeline:
 
-- [ ] ### 26 september
+### - [ ] 26 september
     - Alla delar ska vara klara och sättas ihop.
 - ### 1 oktober
     - Implementation.
