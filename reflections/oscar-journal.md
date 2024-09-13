@@ -1,4 +1,4 @@
-# Oscar Larm Ingenjörsdagbok
+# Oscar Larm Engineer's Journal
 
 ### Datum:
 - [2024-09-05](#2024-09-05)
