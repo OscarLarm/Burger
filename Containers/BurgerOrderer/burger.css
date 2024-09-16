@@ -26,18 +26,20 @@
 
 .grid {  
     display: grid;
-    grid-template-columns: 1fr 1fr;/* Two columns: first takes 1 fraction, second takes 2 fractions of the available space */
-    height: 100vh;
-  }
-  
-  .ruta1 {
-    background-color: lightcoral;
-  }
-.ruta2 {
     background-color: aqua;
-}
+    height: 100vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    grid-template-rows: 1fr auto;
+  }
+
 
 .Submit {
-  margin-left: 8%;
   width: 10%;
-  height: 2%;}
+  height: 2vh;
+  text-align: center;
+  align-self: end;  
+  justify-self: center;
+  margin-bottom: 10%;
+}
