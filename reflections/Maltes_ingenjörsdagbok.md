@@ -57,6 +57,19 @@ Jag gjorde en Branche som jag kan commita min JS file till senare
 
 
 ### 2024-09-18 ### 
+Föreläsningen: 
+onödigt att skriva ändingar i koden i denna boken eftersom det redan står i commiten
+skriv 
+
+Det är bättre att döpa variabler som är utalbara samt som är tab bara genom att ha det mest unika i namnen först
+
+sämre 
+if (200 == x ) {}
+bättre 
+if (STATUS_OK == returnStatus) {}
+den andra är mer informativ. 
+
+
 
 
 
