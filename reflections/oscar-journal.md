@@ -4,8 +4,6 @@
 > The entries for 2024-09-05 until 2024-09-12 was originally written in Swedish by me, then translated with the ChatGPT AI. Everything after 2024-09-12 was written in English originally by me.
 
 ## Entries
-
-### Swedish
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
     - [AI-Translation (English)](#2024-09-05-ai-translated) 
 - [2024-09-06 (Swedish)](#2024-09-06-swedish)
