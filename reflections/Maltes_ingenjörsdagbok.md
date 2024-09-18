@@ -49,7 +49,7 @@ Nu har vi gjort klart och commitat hemsidan samt docker och databasen är kdet d
 saker jag måste lära mig hur man gör.
 - Hur jag skirver JS för att hämta informasion från andra filler i data basen.
 - Hur jag skirver JS för att göra så när jag trycker på en knapp på hemsidan så händer det faktiskt något.
-- 
+- villka program vi använder för att komunicera med JS filerna med dom adnra komponenterna dom andra har byggt up 
 
 ### 2024-09-17 ###
 Jag gjorde en Branche som jag kan commita min JS file till senare 
@@ -63,14 +63,21 @@ skriv
 
 Det är bättre att döpa variabler som är utalbara samt som är tab bara genom att ha det mest unika i namnen först
 
+Man behöver inte spara kod i filerna som inte använda eller inte funkar om det någon gång har varit en commit på just den koden så finns det kvar i kommit historiken.
 sämre 
 if (200 == x ) {}
 bättre 
 if (STATUS_OK == returnStatus) {}
 den andra är mer informativ. 
 
+Villka är dom senaste varsionerna av programvaran som man använder till projektet där allt fortfrande funkade är väldigt viktigt att ha med i någon fill i varje kommit 
+
+jag måste ladda ner något som gör det möjligt att öppna HTML filerna via vs code , jag valde att använda <Open in browser> Extensionen via vs code.
 
 
+### vad är det vi vill at JS ska göra på hemsidan.
+- Hämta informasion från databassfilerna
+- Sicka utput till kitchen view
 
 
 ### 2024-09-12 ###
