@@ -229,7 +229,7 @@ Today we set a deadline with dates for different parts of the project:
 ---
 ### 2024-09-18
 
-We got a email a few days ago saying that the journal should preferably be in English. I sent an email asking if it was okay to use an AI to translate the entries I've already written. He responded that it was okay, but to keep the original text, and clearly state that it's only a translation.
+We got an email a few days ago saying that the journal should preferably be in English. I sent an email asking if it was okay to use an AI to translate the entries I've already written. He responded that it was okay, but to keep the original text, and clearly state that it's only a translation.
 
 So today I used an AI to translate the text. I added a "note" at the start of the journal explaining, and I also added a note just above here stating that this and all text below was written in English from the start by me. I also added additional clarification to the affected dates' headers. 
 
