@@ -233,6 +233,13 @@ We got an email a few days ago saying that the journal should preferably be in E
 
 So today I used an AI to translate the text. I added a "note" at the start of the journal explaining, and I also added a note just above here stating that this and all text below was written in English from the start by me. I also added additional clarification to the affected dates' headers. 
 
+At our last meeting a little less than a week ago, we merged our branches into development and then merged into our branches again, to make sure that it's updated and to reduce the amount that has to be merged later, minimizing the risk for merge conflicts. 
+
+I had a merge conflict with myself in this journal last week. 
+The reason was because I had added a few empty lines to seperate headers, and that made text overwrite itself. 
+So I copied the updated journal, merged and made sure to paste the correct one into the file.
+This seems to have messed with the "blame" in this journal / the log over when each line was written.
+
 I've looked up how to set up a basic REST-API. I watched the video: 
 - [Build Restful CRUD API with Node.js, Express and MongoDB in 45 minutes for Beginners from Scratch](https://www.youtube.com/watch?v=9OfL9H6AmhQ) by the Youtube channel "Devtamin".
 
