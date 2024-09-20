@@ -5,20 +5,22 @@
 
 ## Entries
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
-    - [AI-Translation (English)](#2024-09-05-ai-translated) 
+    - [English (AI-Translation)](#2024-09-05-ai-translated) 
 - [2024-09-06 (Swedish)](#2024-09-06-swedish)
-    - [AI-Translation (English)](#2024-09-06-ai-translated)
+    - [English (AI-Translation)](#2024-09-06-ai-translated)
 - [2024-09-07 (Swedish)](#2024-09-07-swedish)
-    - [AI-Translation (English)](#2024-09-07-ai-translated)
+    - [English (AI-Translation)](#2024-09-07-ai-translated)
 - [2024-09-09 (Swedish)](#2024-09-09-swedish)
-    - [AI-Translation (English)](#2024-09-09-ai-translated)
+    - [English (AI-Translation)](#2024-09-09-ai-translated)
 - [2024-09-10 (Swedish)](#2024-09-10-swedish)
-    - [AI-Translation (English)](#2024-09-10-ai-translated)
+    - [English (AI-Translation)](#2024-09-10-ai-translated)
 - [2024-09-11 (Swedish)](#2024-09-11-swedish)
-    - [AI-Translation (English)](#2024-09-11-ai-translated)
+    - [English (AI-Translation)](#2024-09-11-ai-translated)
 - [2024-09-12 (Swedish)](#2024-09-12-swedish)
-    - [AI-Translation (English)](#2024-09-12-ai-translated)
-- [2024-09-18 (English)](#2024-09-18)
+    - [English (AI-Translation)](#2024-09-12-ai-translated)
+- [2024-09-18](#2024-09-18)
+- [2024-09-19](#2024-09-19)
+- [2024-09-20](#2024-09-20)
 ---
 
 ### 2024-09-05 (Swedish)
@@ -245,3 +247,26 @@ I've looked up how to set up a basic REST-API. I watched the video:
 
 I'm gonna start working on it and then test it with [Postman](https://www.postman.com/).
 
+### 2024-09-19
+
+I've sat with trying to get the REST API to work for hours. I've watched the video I mentioned earlier, I've also tried a few others. I've looked around forums where people have had the same issues as me. I've asked AI about error messages and how to resolve them.
+
+The issue is that I can start a express server on my host machine. I *think* it is able to connect to the database as well. The problem is that I can't access any endpoints. I've tried using postman and just the browser with html. I am able to access it, until I try to connect to the mongodb container. I've also looked through the presentation on databases that we have further ahead.
+
+I think the problem has to do with me using the server on the host, and trying to access the docker container. I've looked around and from what I understand, it should work, but I'm gonna try using another container for mongodb-express, like they do in the examples on [Mongodb's official docker image](https://hub.docker.com/_/mongo) document to have the server containerized aswell.
+
+---
+### 2024-09-20
+
+Yesterday I was trying to get the REST-API set up. I mentioned that I was going to try to use the server on the docker with mongo-express. This was a mistake because it seems like mongo-express is mainly for administration, which is not really what I'm looking for right now, and I think setting up the express on the host computer is going to be easier. 
+If I need to change it in the future then it should be relatively simple to move to a docker what I've done on host.
+
+I made some progress yesterday. I tried a bunch of different solutions, essentially adding and removing steps to see where it was breaking. I decided to look into how Mongoose works a little more. I thought it was necessary to have an API to be able to filter data from a db, but that doesn't seem to be true. I still wanna add a REST API but with Mongoose I was able to verify that the database is correctly setup and formatted, and that it's possible to get specific data, like the 'name' of every object who's got the property type: 'burger'.
+
+One thing that I kept getting a lot of syntax errors. It told me to use .cjs instead of js, which is CommonJS. CommonJS seems to be used a lot for backend stuff with Node.
+
+I set up a "schema" and a model. Then I use the find method to filter what I want to print. I got a lot of the information from [Mongoose's "Getting Started" docs.](https://mongoosejs.com/docs/index.html) The code I currently have is more or less the same as their examples.
+
+I'm gonna see with my group if we want all of the data sent from Mongoose, then filter it with the REST-API or if we wanna filter it directly with Mongoose. 
+
+---
