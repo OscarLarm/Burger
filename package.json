@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node Containers/MenuStore/server.cjs"
+    "serve": "node Containers/MenuStore/server.cjs",
+    "dev": "nodemon Containers/MenuStore/server.cjs"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
   "dependencies": {
     "express": "^5.0.0",
     "mongoose": "^8.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.6"
   }
 }
