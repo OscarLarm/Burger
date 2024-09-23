@@ -22,7 +22,8 @@
             "Cheddar Cheese",
             "Mustard",
             "Ketchup",
-            "Pickles"
+            "Pickles",
+            "Sesame Bread"
         ]
     },
     {
@@ -32,7 +33,8 @@
         "ingredients": [
             "Fried Chicken Patty",
             "Bread",
-            "Dressing"
+            "Dressing",
+            "Brioche bread"
         ]
     },
     {
@@ -54,5 +56,111 @@
         "id": "7",
         "type": "sides",
         "name": "Chicken Nuggets"
+    },
+    {
+        "id": "8",
+        "type": "drinks",
+        "name": "Coca-cola"
+    },
+    {
+        "id": "9",
+        "type": "drinks",
+        "name": "Coca-cola Zero"
+    },
+    {
+        "id": "10",
+        "type": "drinks",
+        "name": "Fanta Lemon Zero"
+    },
+    {
+        "id": "11",
+        "type": "drinks",
+        "name": "Fanta Orange"
+    },
+    {
+        "id": "12",
+        "type": "drinks",
+        "name": "Fanta Exotic"
+    },
+    {
+        "id": "13",
+        "type": "drinks",
+        "name": "Sprite Zero"
+    },
+    {
+        "id": "14",
+        "type": "drinks",
+        "name": " Ramlösa Orginal"
+    },
+    {
+        "id": "15",
+        "type": "drinks",
+        "name": "Ramlösa Pomegranate"
+    },
+    {
+        "id": "16",
+        "type": "drinks",
+        "name": "Ramlösa Mango Grapefruit"
+    },
+    {
+        "id": "17",
+        "type": "drinks",
+        "name": "Tropical Juice"
+    },
+    {
+        "id": "18",
+        "type": "drinks",
+        "name": "Apple Juice"
+    },
+    {
+        "id": "19",
+        "type": "drinks",
+        "name": "Milk"
+    },
+    {
+        "id": "20",
+        "type": "drinks",
+        "name": "Vanilla Milkshake"
+    },
+    {
+        "id": "21",
+        "type": "drinks",
+        "name": "Chocolate Milkshake"
+    },
+    {
+        "id": "22",
+        "type": "drinks",
+        "name": "Sundae Chocolate"
+    },
+    {
+        "id": "23",
+        "type": "drinks",
+        "name": "Sundae Caramel "
+    },
+    {
+        "id": "24",
+        "type": "salad",
+        "name": "caesar salad",
+        "ingredients": [
+            "Letuce",
+            "Parmesan Cheese",
+            "Mustard",
+            "Egg",
+            "Toasted Bread",
+            "Dressing"
+        ]
+    },
+    {
+        "id": "25",
+        "type": "salad",
+        "name": "chicken salad",
+        "ingredients": [
+            "Letuce",
+            "Chicken",
+            "Corn",
+            "Avocado",
+            "Tomato",
+            "Dressing"
+        ]
     }
 ]
