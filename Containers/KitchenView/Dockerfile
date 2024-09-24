@@ -1,13 +1,9 @@
 FROM python3:latest
-
-RUN apt update
-RUN apt install python3 -y
-RUN apt-get install python3-requests
+#Specify what Workdirectory in docker to use.    
 WORKDIR /usr/app/src
-
-COPY . /kitchenView.py
-
-CMD [ "python3", "./kitchenView.py" ]
-
+COPY . .
+#Installs our requirements.
+RUN pip install -r requirements.txt
+CMD [ "python", "./kitchenView.py" ]
 
 
