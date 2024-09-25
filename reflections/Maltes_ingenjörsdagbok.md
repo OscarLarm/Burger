@@ -7,6 +7,8 @@
 - [2024-09-10](#2024-09-10)
 - [2024-09-16](#2024-09-16)
 - [2024-09-17](#2024-09-17)
+- [2024-09-18](#2024-09-18)
+- [2024-09-19](#2024-09-19)
 
 ### Bra saker att komma ihåg medans man skriver ###
 Det här är er Ingenjörsdagbok 
@@ -45,11 +47,13 @@ Vi satte oss och gjorde en grud struktur av vad som ska finnas på menyn villka 
 [Länk till Gabriels Branche](https://github.com/oscar-larm/Burger/tree/G_branch)
 
 ### 2024-09-16 ###
-Nu har vi gjort klart och commitat hemsidan samt docker och databasen är kdet dags för mig att läsa på JS för att göra hemsidan interaktiv.
+Nu har vi gjort klart och commitat hemsidan samt docker och databasen är kdet dags för mig att läsa på HTML CSS samt JS för att göra hemsidan interaktiv för Kitchenview.
 saker jag måste lära mig hur man gör.
+- skapa llättare HTML sida
+-komplitmentera med CSS för att göra så det blir lite snyggare iallafall
+
 - Hur jag skirver JS för att hämta informasion från andra filler i data basen.
-- Hur jag skirver JS för att göra så när jag trycker på en knapp på hemsidan så händer det faktiskt något.
-- villka program vi använder för att komunicera med JS filerna med dom adnra komponenterna dom andra har byggt up 
+- Hur jag skirver JS för att göra så när jag trycker på en knapp på hemsidan så händer det faktiskt något tillexemple tar bort en order när maten är klar.
 
 ### 2024-09-17 ###
 Jag gjorde en Branche som jag kan commita min JS file till senare 
@@ -79,6 +83,29 @@ jag måste ladda ner något som gör det möjligt att öppna HTML filerna via vs
 - Hämta informasion från databassfilerna
 - Sicka utput till kitchen view
 
+
+### 2024-09-19 ###
+Jag började dagen med att köra git pull i teminalen med hoppet att det skulle fixa en map som jag hade problem med att få ner igår, efter att vi hade gått in och tagit bort en av dom så funkade det för mig.
+jag TROR  att problemet var 
+
+vi hade en map som hette MenuStore och en som hette menuStore jag har en hypotes att git inte kunde anskilja från dessa och blev förvirad jag skulle säga även om det inte va avsikligt att det skulle hetta något som va likt är att man tänker på at det ska vara mer olika namn på både filler och mappar.
+
+jag började med att skapa två filer <kitchenview.html> och <Kitchenview.css>
+sedan två andra filler <informaison.html> och <informasion.css> 
+
+Jag la sedan dessa i respektive ´mappar så att dom är lätta att hitta
+
+NOTE TO SELF: jag vill göra en hemsida som är väldigt enkel som bara vissar up ordern from burgerval hemsidan samt har en knapp som tar bort när ordern är klar.
+
+nu när jag börjar min del av projektet så är det dags att böja med HTML och CSS för att bygga dessa 2 sidor.
+
+börja med att lära mig strukturen på HTML använde mig bland annat av [HTML](https://www.hostinger.in/tutorials/making-website-with-html)
+
+extension <live server>
+
+
+### 2024-00-00 ###
+WRITE THE REST IN ENGLSH 
 
 ### 2024-09-12 ###
 Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
