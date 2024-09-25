@@ -21,6 +21,8 @@
 - [2024-09-18](#2024-09-18)
 - [2024-09-19](#2024-09-19)
 - [2024-09-20](#2024-09-20)
+- [2024-09-25](#2024-09-25)
+
 ---
 
 ### 2024-09-05 (Swedish)
@@ -270,3 +272,8 @@ I set up a "schema" and a model. Then I use the find method to filter what I wan
 I'm gonna see with my group if we want all of the data sent from Mongoose, then filter it with the REST-API or if we wanna filter it directly with Mongoose. 
 
 ---
+### 2024-09-25
+
+Today we merged all branches into development. It went well, I just had some problems with ssh, but I generated a new one and linked it through github and now it seems to work.
+
+We're gonna start combining all components together now, to try to reach our timeline goal.
