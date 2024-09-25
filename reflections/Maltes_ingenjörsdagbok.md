@@ -103,6 +103,10 @@ börja med att lära mig strukturen på HTML använde mig bland annat av [HTML](
 
 extension <live server>
 
+
+### 2024-00-00 ###
+WRITE THE REST IN ENGLSH 
+
 ### 2024-09-12 ###
 Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
 - **26 september**
