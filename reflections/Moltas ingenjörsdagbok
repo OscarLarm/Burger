@@ -1,18 +1,34 @@
-5/9 Tittar på hur man lägger upp commits på git via terminalen. Skapade ochså en ssh nyckel.
-7/9 Skapad en vara som jag har fått ansvar för vilket var sallader. Skapde 3 olika sallader. 
-Fick som uppdrag att göra en hemsida med alla burgare och saker man kan köpa och måste komma ihåg hur man gör en hemsida, 
-Måste också ta reda på hur man tar infomation från hemsida och skicka vidare den.
-8/9 Jag gör 2 html filer och en css fil. Ena html filen är startsidan där man kan komma till menyn medans den andra html filen är för att kunna beställa.
-Jag har bundit html filerna till css filen. Startsidan är klar men måste dock binda den till betsällsidan. 
-Beställ sidan är inte klar då jag måste gör checkboxen så att man kan beställa och även fråga mina kollegor om vi ska något mer i menyn.
-jag har har också gjort css till startsidan.
-Jag använde https://www.w3schools.com/ för att komma ihåg hur man gjorde sakerna. 
-9/9 Fixade linken mellan startsidan och menyval sidan så att man kan gå från startsidan till menyn. Jag satt alla val i en form på 
-valsidan så att man kan lättare hämta infomationen. Jag har gjort all chechboxar men jag ska flytta dem så de är bredvid dem istället för under.
-Jag har delat upp menyn i två columner man kan inte få dem att vara brevid varandra. Jag har också läst om fetch() och hur man ska 
-hämta infomationen från checkboxarna och sedan skicka vidare them till servern. Jag har också gjort css till val sidan.
-Fick css att funka så att cloumnerna är bredvid varandra löste detta genom att göra en div till .grid istället för 
-body som gjorde att det inte fungerade.
-10/10 Jag fixade en knapp, att alla checkboxar hamnade bredvid saken istället för under och jag fixade så att all checkboxar har ett namn som är saken de repensenterar.
-Nästa gång ska jag börja fixa en js file där jag tar hämta infomation från html filen. Ska sedan se hur man göra så att när man vill ha en hamburgare fylls alla checkboxar undern den 
-hamburgaren man vill ha och sedan kan man ta bort om man inte vill ha någon specielt på hamburgaren.
+9/9 Fixade linken mellan startsidan och menyval sidan så att man kan gå från startsidan till menyn. Jag satt alla val i en 
+form på valsidan så att man kan lättare hämta infomationen. Jag har gjort all chechboxar men jag ska flytta dem så de är 
+bredvid dem istället för under. Jag har delat upp menyn i två columner man kan inte få dem att vara brevid varandra. 
+Jag har också läst om fetch() och hur man ska hämta infomationen från checkboxarna och sedan skicka vidare 
+them till servern. Jag har också gjort css till val sidan. Fick css att funka så att cloumnerna är bredvid 
+varandra löste detta genom att göra en div till .grid istället för body som gjorde att det inte fungerade. Hittade hur jag kunde undvika merges vilket jag gjorde genom att skriva dagboken på vscode istället för på github vilket gjorde att jag behövde merga då det var olika versioner på datorn och github.
+
+10/9 Jag fixade en knapp, att alla checkboxar hamnade bredvid saken istället för under och jag fixade så att all checkboxar 
+har ett namn som är saken de repensenterar. Nästa gång ska jag börja fixa en js file där jag tar hämta infomation från html filen. 
+Ska sedan se hur man göra så att när man  vill ha en hamburgare fylls alla checkboxar undern den hamburgaren man vill ha 
+och sedan kan man ta bort om man inte vill ha någon specielt på hamburgaren.
+
+14/9 Jag inser att vi ska göra tvärtom vilket är att vi inte ska hämta infomation från hemsidan och sedan
+skicka till servern utan vi ska göra tvärtom om vilket innebär att vi hämta infomation från servern och visa på html 
+filen vilket innebär mycket av det jag har gjort och läst är helt i onödan. Jag har länkat BurgersBal.html filen till Burgers.js. 
+Jag behöver kolla hur man lägger upp infomation på html.filen via infomatoin man hämta från servern.
+
+15/9 Ändrade på utseendet av BurgersVal.html så att det ser bättre ut när vill lägger up infomationen. Jag har läst lite om 
+fetch och hur man hämtar infomation från servern. Använd freecodecamp och w3school för att få infomation om api.
+
+20/9 Idag har jag läst på om databasar om hur man skickar och hämta infomation till och från databasen. Ska senare lägga på mer saker i databasen.
+Jag har också börja översätta texten till engelska från svenska.
+
+-------------------------------------------------------------------------------------------------------
+
+5/9 We looked on how you put up commits on github through the terminal. We created a ssh key so we could link our computer to github. 
+We did this thorugh a youtube video and google where they show you how to create a ssh key. We also went through the git commands 
+we are going to use to update the project on github. An example is git push, git pull, git commit -m"text" and git add . We also began to plan the project. We also created journals where we can write what we have done.
+
+7/9 Today we each created a product we are going to put on the meny and i choose salad. I put 2 salad on the meny caesar salad and chicken sallad. I also listed all ingredients so the user could choose which ingredients the whould want the thier salad. I got a task to make a website where we could show the menu. I got some very small experienced with to do websites. I need to bring back some memories. We also created a branches one head branch and one branch each where we could upload to and then later upload to the main branch.
+
+8/9 Today i created two html files and one css file to style the htmls files. one start html file where you could press a button to go to the meny. The other html files is to the order. I also linked the html files to the css file. The starting site was done but i have to linked it to the order site in the future im so i have to search how you link a button to a another site. The ordersite is not finnish i most talk to my colleagues about if we have more products that are going on the website. I have not finnsih with the css to the order site and i most do the checkboxes to the menu. I used the https://www.w3schools.com/ to remember how to do some stuff like margin and borders on the button. I got som problem with git but i succeded to solv it im not 100% sure how i did it 
+
+23/9 Today i have transalting a bit more of the journal to english and i have put more stuff on the json.file on the database. i put the salad, drinks and the desserts on the file. I have also read a bit on json.
