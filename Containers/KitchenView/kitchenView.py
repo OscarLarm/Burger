@@ -4,7 +4,7 @@ Gets API from our interface with the customers order
 Deserilize the package
 Print out the contents to the terminal
 """
-import requests
+import requests # type: ignore
 import json
 
 #Get Api data

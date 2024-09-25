@@ -7,6 +7,7 @@
 - [2024-09-09](#2024-09-09)
 - [2024-09-10](#2024-09-10)
 - [2024-09-11](#2024-09-11)
+- [2024-09-12](#2024-09-12)
 ---
 ### 2024-09-05
 
@@ -95,3 +96,19 @@ Jag har lyckats lösa det igenom att köra ett shell script som en volym. Allt s
 Denna lösning känns som att den kommer att behöva förbättras, men den funkar för tillfället när vi behöver testa så att vi kan hämta data riktigt.
 
 Nästa steg är att sätta upp Express så att vi kan hämta datan igenom REST-API.
+
+--- 
+### 2024-09-12
+Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
+- **26 september**
+    - Alla delar ska vara klara och sättas ihop.
+- **1 oktober**
+    - Implementation.
+- **5 oktober**
+    - Sista debuggningen.
+- **11 oktober**
+    - Sammanfattning och reflektering.
+- **18 oktober**
+    - Inlämning.
+
+---

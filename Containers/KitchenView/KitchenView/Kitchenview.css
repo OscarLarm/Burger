@@ -1,0 +1,20 @@
+
+.header {
+    position: fixed; /* Keeps the header fixed */
+    top: 0; /* Aligns it to the top,left,right */
+    left: 0; 
+    right: 0;
+    width: 100%; /* Makes it full width */
+    background-color: white; /* Adjust as needed */
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+
+.Order {
+    margin-top:200px; /* Space below the fixed header */
+    width: 100%; /* Set the same width for consistency */
+    text-align: left; /* Align text to the left (or center as needed) */
+    
+    }
