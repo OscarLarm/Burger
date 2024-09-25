@@ -1,10 +1,10 @@
 #docker compose -f ./Containers/MenuStore/docker-compose.yml up
 services:
-  mongo:
+  mongodb:
     image: mongo:latest
-    container_name: MenuStore
     restart: always
     volumes:
-      - ./MenuStoreData.json:/MenuStoreData.json
-      - ./MakeDatabase.sh:/docker-entrypoint-initdb.d/MakeDatabase.sh
-    
+      - ./data/MenuStoreData.json:/data/db/MenuStoreData.json
+      - ./data/MakeDatabase.sh:/docker-entrypoint-initdb.d/MakeDatabase.sh
+    ports:
+      - 27017:27017
