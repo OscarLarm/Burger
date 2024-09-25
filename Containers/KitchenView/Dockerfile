@@ -1,14 +1,7 @@
-FROM ubuntu:latest
-
-RUN apt update
-RUN apt install python3 -y
-RUN apt install 
-RUN apt-get install python3-requests
-WORKDIR /KitchenView
-
-COPY . /kitchenView.py
-
-CMD [ "python3", "./kitchenView.py" ]
-
+FROM python3:latest   
+WORKDIR /usr/app/src
+COPY . .
+RUN pip install -r requirements.txt
+CMD [ "python", "./kitchenView.py" ]
 
 

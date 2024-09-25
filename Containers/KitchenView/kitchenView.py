@@ -11,18 +11,21 @@ import json
 def send_request():
     """Function sends a request for an order and then parse it"""
     url = ""
+    status_okay = 200
     appeal = requests.get(url)
-    if appeal.status_code == 200:
+    if status_okay == appeal.status_code:
         return json.loads(appeal)
     else:
-        return f"Error: {appeal.status_code}"
-    
+        print(f"Error: {appeal.status_code}")
+
 def print_order(new_order):
     """Loops the recived order and prints out its values"""
-    for i, j in new_order.items():
-        print(i," : ", j)
+    for key, value in new_order.items():
+        print(key," : ", value)
+        print("================")
 
 order = send_request()
 
-#Calls function print_order with the current order as a param.
-print_order(order)
+
+if order:
+    print_order(order)
