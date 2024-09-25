@@ -20,6 +20,8 @@ async function main() {
     const allFood = await FoodType.find({});
     const burgers = await FoodType.find({type: "burger"});
     const sides = await FoodType.find({type: "sides"});
+    const drinks = await FoodType.find({type: "drink"});
+    const salads = await FoodType.find({type: "salad"});
 
     app.get('/', (req, res) => {
         console.log("Getting all database data")
@@ -33,6 +35,14 @@ async function main() {
     app.get('/sides', (req, res) => {
         console.log("Getting all database 'sides' data")
         res.send(sides);
+    })
+    app.get('/drinks', (req, res) => {
+        console.log("Getting all database 'drinks' data")
+        res.send(drinks);
+    })
+    app.get('/salads', (req, res) => {
+        console.log("Getting all database 'salads' data")
+        res.send(salads);
     })
 };
 
