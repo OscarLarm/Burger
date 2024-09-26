@@ -1,4 +1,0 @@
-5 sep 2024 - idag fixade vi github och ssh nyckel och vi har även börjat planera. Vi bestämde oss för att vi skulle använda Github som en git-server. Vi satte upp ett Git-repo och sedan så testade alla att använa push, pull, add och commit.
-7 sep 2024 - idag så har vi planerat och jag har skivit in de desserterna som vi ska ha i våran meny. Ett problem som vi stätte på var att vi ändrade i main, så vi löste det problemet genom att skapa en ny branch som si mergar in i main.
-24 sep 2024 - jag har börjat med JavaScriptet. Ett problem uppstår när jag ska testa det i terminalen, jag får upp 'Error: Cannot find module' så detta ska jag försöka hitta en lösning på och sedan fortsätta med JS när det fungerar.
-                                  
