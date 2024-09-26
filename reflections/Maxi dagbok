@@ -1,4 +1,9 @@
-5 sep 2024 - idag fixade vi github och ssh nyckel och vi har även börjat planera. Vi bestämde oss för att vi skulle använda Github som en git-server. Vi satte upp ett Git-repo och sedan så testade alla att använa push, pull, add och commit.
-7 sep 2024 - idag så har vi planerat och jag har skivit in de desserterna som vi ska ha i våran meny. Ett problem som vi stätte på var att vi ändrade i main, så vi löste det problemet genom att skapa en ny branch som si mergar in i main.
-24 sep 2024 - jag har börjat med JavaScriptet. Ett problem uppstår när jag ska testa det i terminalen, jag får upp 'Error: Cannot find module' så detta ska jag försöka hitta en lösning på och sedan fortsätta med JS när det fungerar.
+5 sep 2024 - Today we set up GitHub and the SSH key, and we also started planning. We decided to use GitHub as a Git server. We set up a Git repository, and then everyone tested using push, pull, add, and commit.
+
+7 sep 2024 - Today we planned, and I added the desserts that we will have in our menu. One problem we encountered was that we made changes directly in the main branch, so we solved the issue by creating a new branch that we merged into the main branch.
+
+24 sep 2024 - I have started working on the JavaScript. I tried to write a small script just to see how things work. A problem occurs when I try to test it in the terminal; I get the error 'Error: Cannot find module'. I will try to find a solution to this issue and then continue with the JS once it works.
                                   
+25 sep 2024 - The problem was resolved; some characters had been missed, which is why the program couldn't run. We discussed how to organize the final part of the work and who would work on what to ensure everything gets finished in time.
+
+26 sep 2024 - Today i have been working on the JavaScript. I´ve having a hard time to figuring out how things work because it´s a new language for me. So it takes some time to figuring out how and what i should do.
