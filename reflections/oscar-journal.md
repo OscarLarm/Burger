@@ -270,3 +270,28 @@ I set up a "schema" and a model. Then I use the find method to filter what I wan
 I'm gonna see with my group if we want all of the data sent from Mongoose, then filter it with the REST-API or if we wanna filter it directly with Mongoose. 
 
 ---
+### 2024-09-25
+
+We met up to see if we could startcombining the different components, since we set the timeline for combining everything to the 26th. However there is still a lot of work left on BurgerOrderer, so we split BurgerOrderer into smaller parts. I'm gonna work with Gabriel on the "sending to kitchenview" part. 
+
+I've looked through the examples provided on the container labs we're gonna work on tomorrow, as well as the early example of what it might look like in flask.
+
+---
+### 2024-09-26
+
+We want to try and combine the components this week.
+I've used a lot of code that was provided as a example in the 5th lecture. I set up some temporary links in the express site and I made a static array of objects representing burgers. 
+My focus is not adding the ability to add or remove ingredients and customizing, I just want to get sending anything from BurgerOrderer to Kitchenview to work. I've made it so that clicking on a link will open a link of 127.0.0.1:3000/'nameoflink' where nameoflink is the burgername. It also has a route setup for /nameoflink, so now I think I just need to send that link to kitchenview, have kitchenview change it to a string and remove everything before 'nameoflink'. 
+
+Since we're 2 working on it, we've decided to work in seperate branches. I'm currently working in a local branch. I've made temporary copies of index.js and kitchenviewer. I will then take the things that work and move them into the original files, when I get it working. 
+We're gonna compare our solutions when they're ready. If we have done it in different ways, then we'll discuss which approach is the best. Right now I don't have any preferences to how we're gonna do it, I just want to get it working so we have a combined project that we can easier make tests for and add things to.
+
+---
+### 2024-09-27
+
+Currently I have 2 possible ways I can send it to kitchenview. The first is is using fetch, I'm gonna research how to use fetch. 
+
+The second is to set up another express file for the kitchenview, then somehow have them communicate with eachother. I don't think this is necessary. 
+
+I'm gonna try to use fetch. I heard from the group mention of "Axios" aswell, so I'm gonna look into it. I'd prefer to not add unnecessary libraries, but it seems like it makes it a lot smoother so I will give it a try. I'm gonna read [A Deep Dive into Axios, Fetch, and Express](https://medium.com/@workwithracian/a-deep-dive-into-axios-fetch-and-express-bf098b85e1f0).
+
