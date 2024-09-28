@@ -48,36 +48,15 @@ staticBurgers= [
 function renderFrontpage(){
     pg = "<h1>Order:</h1>"
     pg += "<P><UL>"
-    pg += `<form>`
     getBurgers().forEach(burger => {
-        pg += `<strong><input type="radio" name="burger" value="${burger["name"]}" onclick="addBurgerToCart('${burger["name"]}')">${burger["name"]}</input></strong>`
-        pg += `<br></br>Customize the burger:`
+        pg += `<h2>${burger["name"]}: <button type="button" onclick="buy('${burger["name"]}')">Add to Cart</button></h2>`
+        pg += `<h4>Ingredients:</h4>`;
         burger["ingredients"].forEach(ingredient => {
-            pg += `<li><input type ="checkbox" onclick="addOptionToCart('${ingredient}')">${ingredient}</input></li>`
-            
+            pg += `<li>${ingredient}</li>`;
         })
         pg += "<hr></hr>";
-        pg += "<br></br>";
     });
-    pg += `<button type="submit">Add to cart</button>`
-    pg += `</form>`
     pg += "</UL>";
-    pg += "<br> </br>";
-
-    pg += `<h2>Cart</h2>`;
-    pg += `<button type = "button" onclick="location.reload()">Clear</button>`;
-    pg += `<button type = "button" onclick="buy(order)">Buy</button>`;
-    pg += "<hr></hr>";
-    pg += `<ul id="cart">`;
-    pg += `<div>` 
-    pg += `<h2>Burger:</h2>`;
-    pg += `<div id = cartBurger></div>`;
-    pg += `</div>`
-    pg += `<div>` 
-    pg += `<h2>Customization:</h2>`;
-    pg += `<div id = cartOptions></div>`;
-    pg += `</div>`
-    pg += `</ul>`;
 
     pg += `
     <script> 
@@ -95,21 +74,6 @@ function renderFrontpage(){
         console.log('Sending KitchenView URL: ' + requrl);
         fetch(requrl);
         return
-    }
-
-    function addBurgerToCart(burgerName){
-        options = []
-        order += burgerName
-        cartBurger = document.getElementById("cartBurger");
-        cartBurger.innerHTML = '<li>' + burgerName + '</li>'
-        return console.log('Added ' + burgerName + ' to cart.');
-    }
-
-    function addOptionToCart(optionName){
-        options += optionName
-        cartOption = document.getElementById("cartOptions");
-        cartOption.innerHTML += '<li>optionName</li>'
-        return console.log('Added ' + optionName + ' to cart.');
     }
 
     function buy(burgerName){
