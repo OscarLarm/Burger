@@ -41,7 +41,8 @@ function sendToKitchen(burgerName, /*args */){
     // requrl = addOptions(requrl, args)
 
     // console.log('Sending KitchenView URL: ' + requrl)
-    fetch(`http://127.0.0.1:3001/order/${burgerName}`)
+    fetch(`http://127.0.0.1:3001/order/${burgerName}`
+    )
     return
 }
 
@@ -51,13 +52,12 @@ app.get('/', (req, res) => {
 
 app.get('/:burgerName', (req, res) => {
     function buy(burgerName) {
-        console.log('bought ' + burgerName);
+        // console.log('bought ' + burgerName);
         sendToKitchen(burgerName);
         return renderOrderingPage(burgerName);
     };
     res.send(buy(req.params.burgerName))
 });
-
 
 app.listen(3000, () => {
     console.log('app listening on port 3000');
