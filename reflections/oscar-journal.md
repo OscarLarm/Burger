@@ -21,6 +21,10 @@
 - [2024-09-18](#2024-09-18)
 - [2024-09-19](#2024-09-19)
 - [2024-09-20](#2024-09-20)
+- [2024-09-25](#2024-09-25)
+- [2024-09-26](#2024-09-26)
+- [2024-09-27](#2024-09-27)
+- [2024-09-29](#2024-09-29)
 ---
 
 ### 2024-09-05 (Swedish)
@@ -295,3 +299,37 @@ The second is to set up another express file for the kitchenview, then somehow h
 
 I'm gonna try to use fetch. I heard from the group mention of "Axios" aswell, so I'm gonna look into it. I'd prefer to not add unnecessary libraries, but it seems like it makes it a lot smoother so I will give it a try. I'm gonna read [A Deep Dive into Axios, Fetch, and Express](https://medium.com/@workwithracian/a-deep-dive-into-axios-fetch-and-express-bf098b85e1f0).
 
+---
+### 2024-09-29
+
+I sat all day yesterday trying to get it to work. I succeeded in sending a burgername to kitchenviewer. 
+I am currently using 2 express servers, one for kitchenviewer and one for burgerorderer. Kitchenviewer has a enpoint listening to /order/:, and burgerorderer has a "sendtokitchen" function that fetches to /order/burgerName. I also have a route that is "bought" which redirects the user after clicking the "buy" button to a site that prints "bought" "burger" where burger is replaced by the actual ordered burger. I also have a "back" button that returns to the mainpage.
+
+I tried a bunch of different solutions. At first I had a route for /order/burgerName in burgerorderer, like the flask example had, but it felt unecessary to have 2 routes that basically do the same thing. 
+
+But I am still fixing with it, and when we add everything then I might adjust some things to have it fit in with how everyone else has done things. This is why I have made temporary copies of kitchenviewer and burgerorderer, to avoid merge conflicts since were working in the same files. 
+When we merge, I'll take from the temporary files and paste into the originals, and see if it works. 
+
+Another reason I have it in a temporary file is that I have also added a few things that other people are working on, just for testing purposes and seeing if it works. For example, I generate all html from the expressapp now in a function. Later we wanna use the html file we have and "inject" into the express to render the site. Gabriel on the team mentioned that he'd gotten that to work.
+
+So the burgerorderer site currently lists all the burgers names with buttons underneath each for "buy", and they also have a list of all the ingredients that they contain.
+
+**The biggest issue:**
+
+- Something I spent most of yesterday on was trying to get the ability to add options to work smoothly. I tried to have a "cart" at the bottom, and have the ingredients as checkboxes, and whenever a checkbox gets ticked, it adds it to the cart. And I had the burgers as "radio" inputs, so you can only choose one burger, then the ingredients.
+- The problem with this approach is that I don't know how to get the checkboxes to only work when the corresponding radio option is checked. It's also a bit annoying to have the checkbox remove the ingredient from the cart if it's already checked and gets unchecked, since I use a "onclick" listener for the checkboxes. 
+
+**Possible solutions:**
+
+1. One solution might be to have a for loop for the "add option" which goes through a array which contains all of the options, then do a if its already there, remove it, if its not, add it. This feels clumsy and overly complex.
+
+2. Another solution I read about was to make use of the "forms" element more, and instead of sending the string, I'd send it as actual data to the cart, then format it. This also feels a bit too much. I assume you would be able to create a form for each burger, and have the options linked to that specific burger, and then have a submit button specifically for that burger. However I don't know if I'd want to have the ability to add more than one burger at a time. I think it would add a lot more complexity when displaying the order in kitchenviewer, and sorting everything when I press buy. I think I would then make it so that the "add to cart" submit button would work as a link to a seperate route that has the cart, and a button for "cancel" and one for "buy". This would make it so that you can only order one item at a time.
+
+3. Another possible way to fix it could be to add routes for each burger. So the frontpage only has the burgers listed. You either click on a button for the burger, or you click the radio input for the burger, then click a "next" button. The buttons are links to /burgerName and once there, the burgers ingredients are rendered. You check what you want to remove/add and then click order, then you go to a page, and its there the "calltokitchen" function gets called. I think this solution might be the simplest to do right now, but it also has the consequence of only being able to send one order at a time. One issue might be that several html pages might need to be loaded.
+
+I think I will try the 3rd solution first. The "issue" of only being able to send one order at a time isn't really a problem right now, I want to add things in small steps. I have added the ability to add a burger. Now I want to add the option of adding customization to the burger. Also adding the option to have a bunch of different burgers with different customizations is another "feature" that we can tackle once we get this to work. 
+
+I'm being mindful of not adding "technical debt" by going "we can fix this later" too much, but I think it's necessary currently since we don't have a working version, and just need to get something together that does the bare minimum. We can then polish it and add features, before the first "release" version.
+
+It's Sunday today and we wanted to try to get it combined before the end of the week. 
+I sent a message on Discord to everyone in the project server, asking how it's coming along and if we want to start merging into the branch today.
