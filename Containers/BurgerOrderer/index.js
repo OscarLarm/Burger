@@ -1,9 +1,10 @@
+const { json } = require('body-parser');
 const express = require('express');
 const { send } = require('express/lib/response');
 
 const app = express();
 const path = require('path');
-const baseurl = "http://burgerorder:8080/burger";
+const baseurl = "http://localhost:8080/burger";
 let orderUrl = "";
 let orderArray = {};
 
@@ -34,7 +35,8 @@ app.post("/send", (req, res) =>{
 
     app.get("/order", (req, res) => {
         var data = orderArray
-        res.json(data)
+        
+        res.send(JSON.stringify(data))
     });
    });
 

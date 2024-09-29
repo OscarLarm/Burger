@@ -6,7 +6,7 @@ Print out the contents to the terminal
 """
 import requests 
 import json
-import time
+
 
 #Get Api data
 def send_request():
@@ -15,19 +15,21 @@ def send_request():
     status_okay = 200
     try:
         appeal = requests.get(url, timeout=10)
-        if appeal.status_code == status_okay:
-            print(appeal)
-            return json.dumps(appeal)
-        else:
+       
+        if appeal.status_code == 400:
             print(f"Error: {appeal.status_code}")
-
+        else:
+            print(appeal)
+            print(appeal.json())
+            return json.loads(appeal)
+            
     except requests.exceptions.RequestException as e:
         print({"error": str(e)})
  
 
 def print_order(new_order):
     """Loops the recived order and prints out its values"""
-    for key, value in new_order.items():
+    for key, value in new_order():
         print(key," : ", value)
         print("================")
 
