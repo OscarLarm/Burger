@@ -47,7 +47,7 @@ function addOptions(url, args) {
     return query.length > 0 ? `${url}?${query}` : url;
 }
 
-// Skicka beställning till KitchenView
+// Skicka beställning till KitchenView och skicka tillbaka resultatet
 function sendToKitchen(burgerName, args) {
     let requrl = makeURL(burgerName);
     requrl = addOptions(requrl, args);
@@ -56,9 +56,11 @@ function sendToKitchen(burgerName, args) {
     axios.get(requrl)
         .then(response => {
             console.log('Order sent successfully');
+            res.send(renderOrderingPage(burgerName, args));
         })
         .catch(error => {
             console.error('Error sending order:', error);
+            res.status(500).send('Failed to send order to the kitchen.');
         });
 }
 
@@ -72,7 +74,7 @@ app.get('/buy/:burgerName', (req, res) => {
     const burgerName = req.params.burgerName;
     console.log('Placing an order on ' + burgerName);
     sendToKitchen(burgerName, req.query);
-    res.send(renderOrderingPage(burgerName, req.query));
+    res.send(renderOrderingPage(burgerName, req.query, res));
 });
 
 // Starta servern
