@@ -1,19 +1,20 @@
-version: "3"
+
 services: 
-  pythonRequest:
+  python_request:
     container_name: kitchen_view
-    build: ./kitchen_view
-    depends_on:
-      website:
-        condition: service_started
+    build: ./KitchenView
+    # depends_on:
+    #   website:
+    #     condition: service_started
     restart: always
 
   website:
-    image: burgerorder
+    container_name: burgerorder
+    build: ./BurgerOrderer
     ports: 
-      -"8080:8081"
-    depends_on:
-      - database:
+      - "8080:8080"
+    # depends_on:
+    #   - database
     # environment:
     #   DB_Host: database 
     #   DB_USER: root
@@ -21,13 +22,14 @@ services:
     #   DB_NAME: ""
     restart: always
   
-  database: 
-    mongo:
-      image: mongo:latest
-      container_name: MenuStore
-      restart: always
-      volumes:
-        - ./MenuStoreData.json:/MenuStoreData.json
-        - ./MakeDatabase.sh:/docker-entrypoint-initdb.d/MakeDatabase.sh
+  # database: 
+  #   image:  mongo
+  #   container_name: MenuStore
+  #   ports:
+  #     - "27017:27017"
+  #   restart: always
+  #   volumes:
+  #     - ./MenuStoreData.json:/MenuStoreData.json
+  #     - ./MakeDatabase.sh:/docker-entrypoint-initdb.d/MakeDatabase.sh
     
     

@@ -6,13 +6,21 @@
     <title>Beställa</title>
 </head>
 <body>
-            <form action="">
+    <form action="">
         <div class="grid">
             <h1>Köpa Burgare!</h1>
-            <button class="Submit" type="Submit">Send</button>
+            <script>
+                fetch("/burgersMenu")
+                    
+                    .then(console.log(response));
+                    
+
+                
+            </script>
+            <button id = "sendOrder", class="Submit" type="Submit">Send</button>
         </div>
 
-            </form>
+    </form>
     <script src="burger.js"></script>
 </body>
 </html>
