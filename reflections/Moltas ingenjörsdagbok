@@ -37,3 +37,6 @@ i put the salad, drinks and the desserts on the file. I have also read a bit on 
 
 25/9 Today we got togheter in the group and merges or work togheter. I also learn how to merge with other works.
 I also updated the server.cjs with the other options. I created app.get() with salads and drinks.
+
+29/9 Today i read index.js file on development i made a change in it that send a mail to the person 
+ordering of the order went througt or if the order failed.
