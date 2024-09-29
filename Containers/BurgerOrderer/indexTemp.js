@@ -60,7 +60,7 @@ function renderFrontpage(){
 
     pg += `
     <script> 
-    const baseURL = 'http://127.0.0.1:3001'
+    const baseURL = 'http://localhost:3001'
     var options = []
     var order = ''
 
