@@ -1,4 +1,5 @@
-const express = require('express');
+
+const express = require("express")
 const { stat } = require('fs');
 const path = require('path');
 
@@ -71,7 +72,7 @@ function renderFrontpage(){
         pg += `<h4>Ingredients:</h4>`;
         burger["ingredients"].forEach(ingredient => {
             pg += `<li>${ingredient}</li>`;
-        })
+        });
         pg += "<hr></hr>";
     });
     pg += "</UL>";
