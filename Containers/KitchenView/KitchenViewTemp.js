@@ -2,16 +2,32 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded());
+
 
 // Allow all CORS 
 app.use(cors());
 
-app.get(`/order/:burgerName`, (req, res) => {
-    res.send(console.log(req.params.burgerName))
-});
+function getOrder(data){
+    message = `\n-------------------NEW ORDER-------------------\n`
+    if (data["ingredients"]) {
+        message += `A ${data["burger"]} customized with`
+        let ingredients = []
+        ingredients.push(data["ingredients"])
 
-app.get(`/`, (req, res) => {
-    res.send("Test")
+        ingredients = ingredients.join(', ')
+        message += ` ${ingredients}.`
+    }
+    else{
+        message += `A default ${data["burger"]}`
+    }
+    return message
+}
+
+app.post(`/order`, (req, res) => {
+    data = req.body
+    console.log(getOrder(data))
 });
 
 app.listen(3001, () => {
