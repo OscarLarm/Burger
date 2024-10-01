@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const express = require('express');
 const { send } = require('express/lib/response');
 
@@ -71,4 +69,3 @@ function renderOptions(){
 
 // fetch(url)
 //     .then(res => res.json);
->>>>>>> 9fdeadc35dfc7d34298c04e2bd363d64f1b5ce5a
