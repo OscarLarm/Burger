@@ -4,6 +4,7 @@ const { stat } = require('fs');
 const path = require('path');
 
 const app = express();
+app.use(express.static(path.join(__dirname,  '/public')));
 
 // app.use(express.static('./Containers/BurgerOrderer'));
 
@@ -22,7 +23,7 @@ function clearCart(){
     drinks = null
     cart = document.getElementById('cart')
     cart.innerHTML = ""
-}
+};
 
 
 staticBurgers = [
@@ -63,50 +64,6 @@ staticBurgers = [
     function getBurgers(){
         return staticBurgers;
     };
-
-function renderFrontpage(){
-    pg = "<h1>Order:</h1>"
-    pg += "<P><UL>"
-    getBurgers().forEach(burger => {
-        pg += `<h2>${burger["name"]}: <button type="button" onclick="buy('${burger["name"]}')">Add to Cart</button></h2>`
-        pg += `<h4>Ingredients:</h4>`;
-        burger["ingredients"].forEach(ingredient => {
-            pg += `<li>${ingredient}</li>`;
-        });
-        pg += "<hr></hr>";
-    });
-    pg += "</UL>";
-    pg += "<hr></hr>"
-    pg += '<div id="cart"'
-    
-    pg += '</div>'
-
-    pg += `
-    <script> 
-    const baseURL = 'http://localhost:3001'
-    var options = []
-    var order = ''
-
-    function makeURL(burgerName){
-        return baseURL + '/order/' + burgerName
-    }
-
-    function sendToKitchen(burgerName){
-        requrl = makeURL(burgerName);
-        
-        console.log('Sending KitchenView URL: ' + requrl);
-        fetch(requrl);
-        return
-    }
-
-    function buy(burgerName){
-        console.log('Sending' + burgerName);
-        sendToKitchen(burgerName);
-        window.location = '/bought/' + burgerName
-    }
-    </script>`
-    return pg;
-};
 
 app.get('/', (req, res) => {
     res.send(renderFrontpage());

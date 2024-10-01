@@ -1,48 +1,53 @@
-
-const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
-const form = document.querySelector("form");
-const button = document.getElementById("sendOrder");
-baseurl = "http://localhost:8080";
-let options = [];
-
-
-const dataContainer = document.getElementById("container");
-const menuOptions = fetch("http://localhost:8080/api")
-.then((response) => response.text())
-.then((text) => {
-    console.log("Got orders")
-    dataContainer.innerHTML = text;
-});
-
-    
-    function selectOrder(){
-        
-       
-        document.querySelectorAll("[type='checkbox']").forEach(item => {
-            if(item.checked == true){
-                options.push({ "Order" : item.value});
-            }
-            
-            
-        });
-        console.log(options)
-        return options;
-    }
-
-button.addEventListener('click', (e) => {
-    console.log("Pressed send")
-    options = selectOrder();
-
-    if (options == "") {return}
-    const res = fetch(baseurl + "/send", 
+staticBurgers = [
     {
-            method: "POST", 
-            headers: {
-                "Content-Type": 'application/json'
-            },
-        body: JSON.stringify({
-            parcel: options
-        }),
-    
+        "name":"fettburgare",
+        "ingredients": [
+            "Beef Patty",
+            "Cheddar Cheese",
+            "Letuce",
+            "Fried Onion",
+            "Dressing",
+            "Bacon",
+            "Sesame Bread"
+        ]
+    },
+    {
+        "name":"gnuttburgare",
+        "ingredients": [
+            "Beef patty",
+            "Cheddar Cheese",
+            "Mustard",
+            "Ketchup",
+            "Pickles",
+            "Sesame Bread"
+        ]
+    },
+    {
+        "name":"isterburgare",
+        "ingredients": [
+            "Fried Chicken Patty",
+            "Bread",
+            "Dressing",
+            "Brioche bread"
+        ]
+    }
+];
+
+function getBurgers(){
+    return staticBurgers;
+};
+
+function renderFrontpage(){
+    var container = document.getElementById("container")
+    getBurgers().forEach(burger => {
+        container.innerHTML += `<h2>${burger["name"]}: <button type="button" onclick="buy('${burger["name"]}')">Add to Cart</button></h2>`
+        container.innerHTML += `<h4>Ingredients:</h4>`;
+        burger["ingredients"].forEach(ingredient => {
+            container.innerHTML += `<li>${ingredient}</li>`;
+        });
+        container.innerHTML += "<hr></hr>";
     });
-});
+    container.innerHTML += "</UL>";
+}
+
+renderFrontpage()
