@@ -6,7 +6,25 @@ const app = express();
 
 // app.use(express.static('./Containers/BurgerOrderer'));
 
-staticBurgers= [
+const userOrder = {
+    burger: null,
+    customization: [],
+    sides: null,
+    drinks: null
+
+};
+
+function clearCart(){
+    burger = null
+    customization = []
+    sides = null
+    drinks = null
+    cart = document.getElementById('cart')
+    cart.innerHTML = ""
+}
+
+
+staticBurgers = [
     {
         "name":"fettburgare",
         "ingredients": [
@@ -57,6 +75,10 @@ function renderFrontpage(){
         pg += "<hr></hr>";
     });
     pg += "</UL>";
+    pg += "<hr></hr>"
+    pg += '<div id="cart"'
+    
+    pg += '</div>'
 
     pg += `
     <script> 
@@ -100,3 +122,11 @@ function renderOrderingPage(order) {
 app.listen(3000, () => {
     console.log('app listening on port 3000');
 });
+
+function addToCart(item, type){
+    userOrder.type = item
+}
+
+function sendCartToKitchen(){
+
+}
