@@ -4,9 +4,9 @@ const { send } = require('express/lib/response');
 
 const app = express();
 const path = require('path');
-const baseurl = "http://localhost:8080/burger";
+const baseurl = "http://kitchenview:8081/";
 let orderUrl = "";
-let orderArray = {};
+let orderArray = [];
 
 app.use(express.static(path.join(__dirname,  '/public')));
 app.use(express.json());
@@ -33,34 +33,80 @@ app.post("/send", (req, res) =>{
     orderArray = parcel;
     res.status(200).send({status: "recived"});
 
-    app.get("/order", (req, res) => {
-        var data = orderArray
-        
-        res.send(JSON.stringify(data))
-    });
+    newUrl = createURL(orderArray)
+    sendToKitchen(newUrl, orderArray)
    });
 
-const menu = ["burger", "heartstopper", "Kidneykiller"];
+const menu = [ {
+    "name":"fettburgare",
+    "ingredients": [
+        "Beef Patty",
+        "Cheddar Cheese",
+        "Letuce",
+        "Fried Onion",
+        "Dressing",
+        "Bacon",
+        "Sesame Bread"
+    ]
+},
+{
+    "name":"gnuttburgare",
+    "ingredients": [
+        "Beef patty",
+        "Cheddar Cheese",
+        "Mustard",
+        "Ketchup",
+        "Pickles",
+        "Sesame Bread"
+    ]
+},
+{
+    "name":"isterburgare",
+    "ingredients": [
+        "Fried Chicken Patty",
+        "Bread",
+        "Dressing",
+        "Brioche bread"
+    ]
+}];
 
 function getburger(){
     return menu;
 }
 
 
-// function createURL(arr){
-//     orderUrl = baseurl + "order/";
-//     arr.forEach(item =>{
-//         orderUrl += "?" + String(item);
-//     });
-//     console.log(orderUrl);
-//     return orderUrl;
-// }
+function createURL(arr){
+    orderUrl = baseurl + "order/";
+
+  
+    arr.forEach(item =>{
+        orderUrl += String(item);
+    });
+    console.log(orderUrl);
+    return orderUrl;
+}
+
+function sendToKitchen(url, object){
+    console.log('Sending KitchenView URL: ' + url);
+        fetch(url,{
+            method: "POST",
+            headers:{
+                "Content-type" : "application/json"
+            },
+            body: JSON.stringify(object),
+            
+        });
+        console.log(object)
+}
 function renderOptions(){
     newArray = getburger();
     pg = "<h2> Options </h2>";
     pg += "<ul>";
     newArray.forEach(element => {
-        pg += "<li>" + "<input type=\"checkbox\" value=" + element + ">" + element + "<br />" + "</li>";
+        pg += "<li>" + "<input type=\"checkbox\" value=" + element["name"] + ">" + element["name"] + "<br />" + "</li>";
+        element["ingredients"].forEach(ingredient => {
+            pg += "<li>" + ingredient + "</li>";
+        });
     });
     pg += "</ul>";
     return pg;
