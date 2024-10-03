@@ -1,22 +1,3 @@
-9/9 Fixade linken mellan startsidan och menyval sidan så att man kan gå från startsidan till menyn. Jag satt alla val i en 
-form på valsidan så att man kan lättare hämta infomationen. Jag har gjort all chechboxar men jag ska flytta dem så de är 
-bredvid dem istället för under. Jag har delat upp menyn i två columner man kan inte få dem att vara brevid varandra. 
-Jag har också läst om fetch() och hur man ska hämta infomationen från checkboxarna och sedan skicka vidare 
-them till servern. Jag har också gjort css till val sidan. Fick css att funka så att cloumnerna är bredvid 
-varandra löste detta genom att göra en div till .grid istället för body som gjorde att det inte fungerade. Hittade hur jag kunde undvika merges vilket jag gjorde genom att skriva dagboken på vscode istället för på github vilket gjorde att jag behövde merga då det var olika versioner på datorn och github.
-
-10/9 Jag fixade en knapp, att alla checkboxar hamnade bredvid saken istället för under och jag fixade så att all checkboxar 
-har ett namn som är saken de repensenterar. Nästa gång ska jag börja fixa en js file där jag tar hämta infomation från html filen. 
-Ska sedan se hur man göra så att när man  vill ha en hamburgare fylls alla checkboxar undern den hamburgaren man vill ha 
-och sedan kan man ta bort om man inte vill ha någon specielt på hamburgaren.
-
-14/9 Jag inser att vi ska göra tvärtom vilket är att vi inte ska hämta infomation från hemsidan och sedan
-skicka till servern utan vi ska göra tvärtom om vilket innebär att vi hämta infomation från servern och visa på html 
-filen vilket innebär mycket av det jag har gjort och läst är helt i onödan. Jag har länkat BurgersBal.html filen till Burgers.js. 
-Jag behöver kolla hur man lägger upp infomation på html.filen via infomatoin man hämta från servern.
-
--------------------------------------------------------------------------------------------------------
-
 5/9 We looked on how you put up commits on github through the terminal. We created a ssh key so we could link our computer to github. 
 We did this thorugh a youtube video and google where they show you how to create a ssh key. We also went through the git commands 
 we are going to use to update the project on github. An example is git push, git pull, git commit -m"text" and git add . 
