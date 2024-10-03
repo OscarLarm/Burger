@@ -36,7 +36,6 @@ staticBurgers = [
 function getBurgers(){
     return staticBurgers;
 };
-var cart = document.getElementById("cart")
 
 function renderBurgers(){
     var container = document.getElementById("container")

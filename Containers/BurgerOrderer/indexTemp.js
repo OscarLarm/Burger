@@ -24,17 +24,16 @@ function orderPage(data){
     return page
 }
 
-async function sendToKitchen(data){
-    const sendData = await fetch("http://localhost:3001/order", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-}
-
 app.post('/order', (req, res) => {
+    async function sendToKitchen(data){
+        const sendData = await fetch("http://localhost:3001/order", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
     data = req.body
     sendToKitchen(data)
     res.send(orderPage(data))
