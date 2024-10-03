@@ -332,4 +332,22 @@ I think I will try the 3rd solution first. The "issue" of only being able to sen
 I'm being mindful of not adding "technical debt" by going "we can fix this later" too much, but I think it's necessary currently since we don't have a working version, and just need to get something together that does the bare minimum. We can then polish it and add features, before the first "release" version.
 
 It's Sunday today and we wanted to try to get it combined before the end of the week. 
-I sent a message on Discord to everyone in the project server, asking how it's coming along and if we want to start merging into the branch today.
+
+---
+### 2024-10-01
+
+After the lecture a few of use sat down to see how far we've gotten. There's still a bit to go before we're ready to combine everything, so we'll continues working on it. There isn't a lot more that needs to be done. 
+
+I'm gonna try to make it so that everything gets sent as a post of the .json instead of just sending a get for the url. I think this will make it easier to send more data.
+
+---
+### 2024-10-03
+
+I've worked all day on getting it to work and I think I got the send function to work. It wasn't working for the longest time. The fix was to add middleware for urlencoding, which apparently is necessary when formatting html from data into .json format. I'm also using .json middleware.
+I ended up going with the possible solution #2 that I wrote about on [2024-09-29](#2024-09-29).
+
+I have it set up so that the "submit" button posts the data to the websites /order/ endpoint. That endpoint then takes the data, sends it to a "sendToKitchen()" function, then calls on another function which renders a "ordered" page that prints out on the page what the user has ordered. The sendToKitchen function makes a post [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to the kitchenviewer express server, on the endpoint /order. Kitchenviewer takes the data and calls on a function which goes through the data and makes a string that says e.g. "one fettburger" and it checks if any "ingredients" has been added and if it has then it adds "with " and then all ingredients.
+
+I would like to add a "cart", and the ability to add and remove stuff to it, then send everything inside the cart. But I think this is enough for now, when we've combined everything we'll be able to add more things.
+
+Tomorrow is a "lab" so I'm gonna show what I added and see if we want to combine everything.
