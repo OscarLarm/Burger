@@ -353,3 +353,8 @@ I have it set up so that the "submit" button posts the data to the websites /ord
 I would like to add a "cart", and the ability to add and remove stuff to it, then send everything inside the cart. But I think this is enough for now, when we've combined everything we'll be able to add more things.
 
 Tomorrow is a "lab" so I'm gonna show what I added and see if we want to combine everything.
+
+---
+### 2024-10-04
+
+I sent a message in the group chat to see how it's progressing. Malte said that he had fixed the endpoint for kitchenview, and gotten it to read json.
