@@ -357,4 +357,4 @@ Tomorrow is a "lab" so I'm gonna show what I added and see if we want to combine
 ---
 ### 2024-10-04
 
-I sent a message in the group chat to see how it's progressing. Malte said that he had fixed the endpoint for kitchenview, and gotten it to read json.
+I sent a message in the group chat to see how it's progressing. We should try to meet up as a group this weekend to get things put together.
