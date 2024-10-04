@@ -14,13 +14,18 @@ app = Flask(__name__)
 def frontpage():
     return "Choose a burger to buy"
 
-@app.route('/order/<burgerName>', methods=["post"])
-def order(burgerName):
-    print(request.args.get(burgerName))
-    # order = request.args.get(burgerName)
+@app.route('/order/<burger_name>', methods=['POST'])
+def order(burger_name):
+
+   
+    data = request.json
+   
     
+    print_order(data)
+    # order = request.args.get(burgerName)
+
     # print_order(order)
-    return "Order got sent succesfully"
+    return {"order ": "recived"}
     
 
 #Get Api data
@@ -42,14 +47,14 @@ def order(burgerName):
 #         print({"error": str(e)})
  
 
-# def print_order(new_order):
-#     """Loops the recived order and prints out its values"""
-#     for key in new_order:
-#         print(key)
-#         print("================")
+def print_order(new_order):
+    """Loops the recived order and prints out its values"""
+    for key in new_order:
+        print(key)
+        print("================")
 
 
 
 if __name__ == "__main__":
-    app.run(host= "0.0.0.0", port=8081)
+    app.run(debug=True, host= "0.0.0.0", port=8081)
 

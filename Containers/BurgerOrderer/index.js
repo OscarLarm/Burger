@@ -77,11 +77,14 @@ function getburger(){
 
 function createURL(arr){
     orderUrl = baseurl + "order/";
-
-  
-    arr.forEach(item =>{
-        orderUrl += String(item);
+    
+    arr.forEach(element => {
+        orderUrl += element
     });
+    
+    
+
+    
     console.log(orderUrl);
     return orderUrl;
 }
@@ -95,20 +98,39 @@ function sendToKitchen(url, object){
             },
             body: JSON.stringify(object),
             
+        })
+        .then((response) => {
+
+            if(response.ok) {
+                response.json()
+                .then(function(response) {
+                    console.log(response);
+                });
+            }
+            else {
+                throw Error('Something went wrong');
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
         });
         console.log(object)
 }
 function renderOptions(){
     newArray = getburger();
     pg = "<h2> Options </h2>";
-    pg += "<ul>";
+    
     newArray.forEach(element => {
-        pg += "<li>" + "<input type=\"checkbox\" value=" + element["name"] + ">" + element["name"] + "<br />" + "</li>";
-        element["ingredients"].forEach(ingredient => {
-            pg += "<li>" + ingredient + "</li>";
-        });
+        pg += "<ul>";
+            pg += "<li>" + "<input type=\"checkbox\" class='parent'" + "value=" + element["name"] + ">" + "<b>" + element["name"] + "</b>" 
+            pg += "<h4>Ingredients </h4><ul>"
+            element["ingredients"].forEach(ingredient => {
+                pg += "<li>" + "<input type=\"checkbox\" class ='child'" + "value="+ ingredient + ">"+ ingredient + "</li>";
+            });
+        pg += "</ul> </li></ul>"
+        
     });
-    pg += "</ul>";
+
     return pg;
 }
 
