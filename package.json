@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node Containers/MenuStore/server.cjs",
-    "order": "nodemon Containers/BurgerOrderer/indexTemp.js",
-    "kitchen": "nodemon Containers/KitchenView/KitchenViewTemp.js"
+    "order": "nodemon Containers/BurgerOrderer/index.js",
+    "kitchen": "nodemon Containers/KitchenView/KitchenView.js"
   },
   "keywords": [],
   "author": "",
