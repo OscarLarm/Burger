@@ -1,3 +1,8 @@
+
+
+
+
+
 var checkbox = document.querySelectorAll('input[type="checkbox"]');
 
 const form = document.querySelector("form");
