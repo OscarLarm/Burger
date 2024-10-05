@@ -33,7 +33,7 @@
 .BurgerMeny:hover {
     background: rgb(85, 13, 118)
 }
-
+/* 
 .grid {  
     display: grid;
     background-color: aqua;
@@ -42,7 +42,7 @@
     margin-right: 15%;
     text-align: center;
     grid-template-rows: 1fr auto;
-  }
+  } */
 
 .Submit {
   width: 10%;

@@ -16,28 +16,19 @@ console.log("parent", parent)
 console.log("child", child)
 
 
-    // for(var i=0; i < child.length; i++){
-    //     child[i].onclick = function(){
-    //         var childrenBoxes = document.querySelectorAll(".child:checked").length;
-
-    //         this.closest(".parent") = childrenBoxes > 0
-    //     }
-    // }
+    
     parent.forEach((element, index) => {
-        console.log("event", parent)
+        
         element.onclick = function(){
-            const index1 = index
             
-            
-           
             for(i=0;i<checkbox.length; i++)
+                
                 if(checkbox[i].value == element.value){
                     index = i
-                    console.log("looped index",index)
                     break
                 }
                 for(var j = index; j < checkbox.length; j++){
-                    console.log("j" , j)
+                    
                     if (checkbox[j+1].classList.contains("parent")){
                         checkbox[j].checked = this.checked;
                         break
@@ -66,9 +57,11 @@ function selectOrder(){
     options = []
     console.log("array", options)
     checkbox.forEach((item, index) => {
+        
         if (item.checked == true && item.classList.contains("parent")){
-            options.push(item.value)
+            options.push("One "+ item.value)
             console.log("index__",index)
+
             for(i = index + 1; i < checkbox.length; i++)
                 
                 if (checkbox[i+1].classList.contains("parent")){
