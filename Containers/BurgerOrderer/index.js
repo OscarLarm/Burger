@@ -1,119 +1,44 @@
-const { json } = require('body-parser');
-const express = require('express');
-const { send } = require('express/lib/response');
+
+const express = require("express")
+const path = require('path');
 
 const app = express();
-const path = require('path');
-const baseurl = "http://kitchenview:8081/";
-let orderUrl = "";
-let orderArray = [];
-
 app.use(express.static(path.join(__dirname,  '/public')));
+
 app.use(express.json());
+app.use(express.urlencoded());
 
-
-
-app.listen(8080, () => {
-    console.log('app listening on port 8080');
-});
-app.get("/", (req, res) => {
-    res.send();
-})
-
- app.get("/api", (req, res) =>{
-    let stuff = renderOptions();
-    res.send(stuff);
-});
-
-
-
-app.post("/send", (req, res) =>{
-    let {parcel} = req.body;
-    console.log(parcel);
-    orderArray = parcel;
-    res.status(200).send({status: "recived"});
-
-    newUrl = createURL(orderArray)
-    sendToKitchen(newUrl, orderArray)
-   });
-
-const menu = [ {
-    "name":"fettburgare",
-    "ingredients": [
-        "Beef Patty",
-        "Cheddar Cheese",
-        "Letuce",
-        "Fried Onion",
-        "Dressing",
-        "Bacon",
-        "Sesame Bread"
-    ]
-},
-{
-    "name":"gnuttburgare",
-    "ingredients": [
-        "Beef patty",
-        "Cheddar Cheese",
-        "Mustard",
-        "Ketchup",
-        "Pickles",
-        "Sesame Bread"
-    ]
-},
-{
-    "name":"isterburgare",
-    "ingredients": [
-        "Fried Chicken Patty",
-        "Bread",
-        "Dressing",
-        "Brioche bread"
-    ]
-}];
-
-function getburger(){
-    return menu;
+function orderPage(data){
+    JSON.stringify(data)
+    page = '<h2>Order sent!</h2>'
+    page += `<a href = "/">Back</a>`
+    page += `<hr>`
+    page += `<p>One ${data["burger"]}`
+    if (data["ingredients"]) {
+        page += ` with `
+        let ingredients = [data["ingredients"]]
+        ingredients.join(", ")
+        page += `${ingredients}.`
+    }
+    page += `</p>`
+    return page
 }
 
-
-function createURL(arr){
-    orderUrl = baseurl + "order/";
-
-  
-    arr.forEach(item =>{
-        orderUrl += String(item);
-    });
-    console.log(orderUrl);
-    return orderUrl;
-}
-
-function sendToKitchen(url, object){
-    console.log('Sending KitchenView URL: ' + url);
-        fetch(url,{
+app.post('/order', (req, res) => {
+    async function sendToKitchen(data){
+        const sendData = await fetch("http://localhost:3001/order", {
             method: "POST",
-            headers:{
-                "Content-type" : "application/json"
-            },
-            body: JSON.stringify(object),
-            
-        });
-        console.log(object)
-}
-function renderOptions(){
-    newArray = getburger();
-    pg = "<h2> Options </h2>";
-    pg += "<ul>";
-    newArray.forEach(element => {
-        pg += "<li>" + "<input type=\"checkbox\" value=" + element["name"] + ">" + element["name"] + "<br />" + "</li>";
-        element["ingredients"].forEach(ingredient => {
-            pg += "<li>" + ingredient + "</li>";
-        });
-    });
-    pg += "</ul>";
-    return pg;
-}
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+    data = req.body
+    sendToKitchen(data)
+    res.send(orderPage(data))
+});
 
-
-
-
-// fetch(url)
-//     .then(res => res.json);
+app.listen(3000, () => {
+    console.log('app listening on port 3000');
+});
