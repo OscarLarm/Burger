@@ -103,6 +103,25 @@ börja med att lära mig strukturen på HTML använde mig bland annat av [HTML](
 
 extension <live server>
 
+### 2024-09-25 ###
+we all sat down today and tried to push everything we have done indeviduly. We are now trying to connect everything re-group and looking at that the next step in development will be, if we have followed the general time line our plan was to do this te 26th but we had timetoday and it saves time becuse we all feelt like we were pretty done with our projekts.
+
+its all suppoed to work before 1 october.
+so now we need to decide who needs to do what in the upcoming week
+
+
+
+Docker
+
+Databass    
+
+Kitchenview -> JS (Malte)
+
+Burgerorder -> JS (Max)
+
+### 2024-09-27 ###
+
+starting to really dig deep in to rest api 
 
 ### 2024-00-00 ###
 WRITE THE REST IN ENGLSH 
@@ -119,3 +138,4 @@ Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
     - Sammanfattning och reflektering.
 - **18 oktober**
     - Inlämning.
+
