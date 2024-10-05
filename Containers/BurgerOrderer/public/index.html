@@ -6,31 +6,6 @@
     <title>Burgers</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <form>
-        <div class="grid">
-            <h1>Köpa Burgare!</h1>
-            
-            <div id = "container" class="options">
-                <script>
-                    fetch("http://localhost:8080/api")
-                        .then(response => response.text())
-                        .then(text => {
-                            document.getElementById("container").innerHTML = text
-                        
-                        })
-                    var script = document.createElement("script")
-                    script.src = "burger.js";
-                    document.body.appendChild(script)
-                </script>
-            </div>
-            
-        </div>
-        <button id = "addOrder", class="Submit" type="submit">Add</button>
-        <button id = "sendOrder", class="Submit" type="click">Send</button>
-    </form>
-    
-=======
     <div class="grid">
         <h1>Köpa Burgare!</h1>
         <div id = "container", class="options">
@@ -42,7 +17,6 @@
     <button id = "addOrder", class="Submit" type="submit">Add</button>
     <button id = "sendOrder", class="Submit" type="click">Send</button>
     <script src="burger.js"></script>
->>>>>>> 2009001a114641cea0a9df477a5caf09cb556929
     
     <!-- onclick = "window.location.href='BurgersVal.html';">Meny</button> -->
 </body>

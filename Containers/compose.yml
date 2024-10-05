@@ -26,7 +26,7 @@ services:
     ports: 
       - "3000:3000"
     depends_on:
-      - database
+      - mongodb
     #environment:
     #   DB_Host: database 
     #   DB_USER: root
@@ -36,7 +36,7 @@ services:
   
   mongodb:
     image: mongo:latest
-    
+    container_name: menustore
     restart: always
     command: tail -f /dev/null
     volumes:
