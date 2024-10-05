@@ -26,7 +26,7 @@ function orderPage(data){
 
 app.post('/order', (req, res) => {
     async function sendToKitchen(data){
-        const sendData = await fetch("http://localhost:3001/order", {
+        const sendData = await fetch("http://kitchenview:3001/order", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -40,5 +40,5 @@ app.post('/order', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('app listening on port 3000');
+    console.log('app running on http://localhost:3000');
 });

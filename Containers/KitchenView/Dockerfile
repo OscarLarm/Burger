@@ -1,8 +1,8 @@
-FROM python:3.8-slim
+FROM node:latest
 WORKDIR /app
+COPY package*json .
+RUN npm install
 COPY . .
-RUN pip install -r requirements.txt
-EXPOSE 8081
-CMD [ "python", "./kitchenView.py" ]
-
+EXPOSE 3001
+CMD ["node", "KitchenView.js"]
 

@@ -1,23 +1,31 @@
 
 services: 
-  python_request:
-    container_name: kitchenview
-    build: ./KitchenView
-    # depends_on:
+ # python_request:
+  #  container_name: kitchenview
+  #build: ./BurgerOrderer
+  # # depends_on:
     #   website:
     #     condition: service_started
+#ports:
+  #  - 8081:8081
+  # restart: always
+
+  kitchenview:
+    container_name: kitchenview
+    build: ./KitchenView
+
     ports:
-     - 8081:8081
+      - "3001:3001"
     restart: always
 
   website:
     container_name: burgerorder
     build: ./BurgerOrderer
     ports: 
-      - "8080:8080"
-    # depends_on:
-    #   - database
-    # environment:
+      - "3000:3000"
+     #depends_on:
+      # - database
+     #environment:
     #   DB_Host: database 
     #   DB_USER: root
     #   DB_PASSWORD: ""
