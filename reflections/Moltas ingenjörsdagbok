@@ -16,9 +16,6 @@ not finnish i most talk to my colleagues about if we have more products that are
 css to the order site and i most do the checkboxes to the menu. I used the https://www.w3schools.com/ to remember how to do some 
 stuff like margin and borders on the button. I got som problem with git but i succeded to solv it im not 100% sure how i did it 
 
-<<<<<<< HEAD
-23/9 Today i have transalting a bit more of the journal to english and i have put more stuff on the json.file on the database. i put the salad, drinks and the desserts on the file. I have also read a bit on jso
-=======
 9/10 Fixed the link between the homepage and the menu selection page so that you can go from the homepage to the menu. 
 I put all the options in a form on the selection page to make it easier to retrieve the information. I have created all 
 the checkboxes, but I will move them so they are next to the items instead of below. I have divided the menu into two columns, 
@@ -59,4 +56,3 @@ ordering of the order went througt or if the order failed. I also translated mor
 
 3/10 Translating the last text to from my journal to english. Iam reading the code the my colleagues have writin in dockers and in 
 JavaScript file.
->>>>>>> Moltas
