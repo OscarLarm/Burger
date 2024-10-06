@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="burger.css" />
+    <title>Burgers</title>
+</head>
+<body>
+    <form>
+        <div class="grid">
+            <h1>Köpa Burgare!</h1>
+            
+            <div id = "container" class="options">
+                <script>
+                    fetch("http://localhost:8080/api")
+                        .then(response => response.text())
+                        .then(text => {
+                            document.getElementById("container").innerHTML = text
+                        
+                        })
+                    var script = document.createElement("script")
+                    script.src = "burger.js";
+                    document.body.appendChild(script)
+                </script>
+            </div>
+            
+        </div>
+        <button id = "addOrder", class="Submit" type="submit">Add</button>
+        <button id = "sendOrder", class="Submit" type="click">Send</button>
+    </form>
+    
+    
+    <!-- onclick = "window.location.href='BurgersVal.html';">Meny</button> -->
+</body>
+
+</html>

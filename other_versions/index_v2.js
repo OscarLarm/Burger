@@ -125,7 +125,7 @@ function renderOptions(){
             pg += "<li>" + "<input type=\"checkbox\" class='parent'" + "value=" + element["name"] + ">" + "<b>" + element["name"] + "</b>" 
             pg += "<h4>Ingredients </h4><ul>"
             element["ingredients"].forEach(ingredient => {
-                pg += "<li>" + "<input type=\"checkbox\" class ='child'" + "value="+ ingredient + ">"+ ingredient + "</li>";
+                pg += "<li>" + "<input type=\"checkbox\" class ='child'" +     `value${ingredient}>`+ ingredient + "</li>";
             });
         pg += "</ul> </li></ul>"
         
