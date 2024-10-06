@@ -37,6 +37,9 @@ function getBurgers(){
     return staticBurgers;
 };
 
+/**
+ * Adds HTML to the div "container" on static site, containing forms with vales from the keys "burger" and "ingredients".
+ */
 function renderBurgers(){
     var container = document.getElementById("container")
     container.innerHTML += "<ul id=burgerList>"
@@ -55,6 +58,6 @@ function renderBurgers(){
         burgerContainer.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
-}
+};
 
 renderBurgers()
