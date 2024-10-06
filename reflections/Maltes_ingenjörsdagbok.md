@@ -9,6 +9,10 @@
 - [2024-09-17](#2024-09-17)
 - [2024-09-18](#2024-09-18)
 - [2024-09-19](#2024-09-19)
+- [2024-09-19](#2024-09-19)
+- [2024-09-25](#2024-09-25)
+- [2024-10-05](#2024-10-05)
+- [2024-10-06](#2024-10-06)
 
 ### Bra saker att komma ihåg medans man skriver ###
 Det här är er Ingenjörsdagbok 
@@ -114,7 +118,13 @@ we meet today again after a few days to see were everyone is at i implimented my
 
 We have everythin gup and running at this point of the projekt everything works as planned 
 
-now we only need to do 
+now we only need to do the rearengeing the files to make a better structure of the file system so its not as confusing and esier to navigate.
+
+### 2024-10-06 ### 
+Today i fixed the file system with help of 2 others in the groupp and made sure that it was easier to navigate and put some unused files to a specific map so we still have them if needed but they dont clutter and confuse the projekt itself.
+
+today we are gonna spend time to document all the files and make a descripsion on how to start the projekt from a docker compose file.
+
 
 ### 2024-09-27 ###
 
