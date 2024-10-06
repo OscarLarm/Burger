@@ -125,6 +125,10 @@ Today i fixed the file system with help of 2 others in the groupp and made sure 
 
 today we are gonna spend time to document all the files and make a descripsion on how to start the projekt from a docker compose file.
 
+we noticed that Gabe's commits was under another name tho to some local problems he had so Gabriel- and Gabe-Hog is the same user.
+
+i changed the 3.3/4.3/5.3 to an md and made the structure of it so its esier for us all to sit down later and write the text and hopefully it goes faster.
+
 
 ### 2024-09-27 ###
 
