@@ -109,15 +109,12 @@ we all sat down today and tried to push everything we have done indeviduly. We a
 its all suppoed to work before 1 october.
 so now we need to decide who needs to do what in the upcoming week
 
+### 2024-10-05 ###
+we meet today again after a few days to see were everyone is at i implimented my docker file in to the program to make sure it works while 2 of the others tried to get a overview of the projekt and make sure that everything works as planned.
 
+We have everythin gup and running at this point of the projekt everything works as planned 
 
-Docker
-
-Databass    
-
-Kitchenview -> JS (Malte)
-
-Burgerorder -> JS (Max)
+now we only need to do 
 
 ### 2024-09-27 ###
 
