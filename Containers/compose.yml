@@ -1,11 +1,13 @@
 
 services: 
   python_request:
-    container_name: kitchen_view
+    container_name: kitchenview
     build: ./KitchenView
     # depends_on:
     #   website:
     #     condition: service_started
+    ports:
+     - 8081:8081
     restart: always
 
   website:
