@@ -1,37 +1,23 @@
-staticBurgers = [
-    {
-        "name":"Fettburgare",
-        "ingredients": [
-            "Beef Patty",
-            "Cheddar Cheese",
-            "Letuce",
-            "Fried Onion",
-            "Dressing",
-            "Bacon",
-            "Sesame Bread"
-        ]
-    },
-    {
-        "name":"Gnuttburgare",
-        "ingredients": [
-            "Beef patty",
-            "Cheddar Cheese",
-            "Mustard",
-            "Ketchup",
-            "Pickles",
-            "Sesame Bread"
-        ]
-    },
-    {
-        "name":"Isterburgare",
-        "ingredients": [
-            "Fried Chicken Patty",
-            "Bread",
-            "Dressing",
-            "Brioche bread"
-        ]
+const mongoose = require('mongoose');
+
+
+const foodSchema = new mongoose.Schema({
+    id: String,
+    type: String,
+    name: String,
+    ingredients: [{ type: String }]
+});
+
+const Foods = mongoose.model("Food", foodSchema, 'FoodItems');
+
+async function connectToDB() {
+    try {
+        await mongoose.connect('mongodb://127.0.0.1:27017/MenuStore');
+        console.log('Connected to MenuStore');
+    } catch (err) {
+        console.error('Error connecting to the database', err);
     }
-];
+}
 
 function getBurgers(){
     return staticBurgers;
