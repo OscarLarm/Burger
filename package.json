@@ -7,13 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node Containers/MenuStore/server.cjs",
-    "order": "nodemon Containers/BurgerOrderer/indexTemp.js",
-    "kitchen": "nodemon Containers/KitchenView/KitchenViewTemp.js"
+    "order": "nodemon Containers/BurgerOrderer/index.js",
+    "kitchen": "nodemon Containers/KitchenView/KitchenView.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "cors": "^2.8.5",
     "express": "^5.0.0",
     "mongoose": "^8.6.3",

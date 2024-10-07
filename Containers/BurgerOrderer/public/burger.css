@@ -20,11 +20,20 @@
     text-shadow: 0px 1px 20px rgba(0, 0, 0, 1);
     background:rgba(144, 19, 254, 1);
 }
+.container{
+  float:left;
+}
+.parent{
+  color:red;
+}
+.child{
+  color:blueviolet;
+}
 
 .BurgerMeny:hover {
     background: rgb(85, 13, 118)
 }
-
+/* 
 .grid {  
     display: grid;
     background-color: aqua;
@@ -33,7 +42,7 @@
     margin-right: 15%;
     text-align: center;
     grid-template-rows: 1fr auto;
-  }
+  } */
 
 .Submit {
   width: 10%;
