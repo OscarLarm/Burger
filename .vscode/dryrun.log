@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/tatte01/Bruger_Projekt/Burger'
+docker-compose -f Containers/compose.yml up
+docker-compose -f Containers/compose.yml down
+echo ello
+docker rm -vf menustore burgerorder kitchenview
+docker rmi -f mongo containers-website containers-kitchenview
+docker builder prune -f
+make: Leaving directory '/home/tatte01/Bruger_Projekt/Burger'
+ 
