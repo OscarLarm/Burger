@@ -29,6 +29,6 @@ async function renderBurgers(){
         // burgerContainer.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
-}
+};
 
 renderBurgers()

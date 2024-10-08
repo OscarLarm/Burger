@@ -9,6 +9,11 @@ app.use(express.urlencoded());
 // Allow all CORS 
 app.use(cors());
 
+/**
+ *  Creates a string of the order, based on the data argument.
+ * @param {*} data Data being checked for the keys "burger" and "ingredients".
+ * @returns String with order from burgerOrderer.
+ */
 function getOrder(data){
     message = `\n-------------------NEW ORDER-------------------\n`
     if (data["ingredients"]) {

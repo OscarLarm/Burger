@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docker: Attach to BurgerOrderer",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/Containers/BurgerOrderer",
+            "remoteRoot": "/app",
+            
+            "skipFiles": [
+              "${workspaceFolder}/node_modules/**/*.js",
+              "<node_internals>/**/*.js"
+            ]
+        },
+
+        {
+            "name": "KitchenView",
+            "type": "node",
+            "request": "attach",
+            "port": 9230,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/Containers/KitchenView",
+            "remoteRoot": "/app",
+            
+            "skipFiles": [
+              "${workspaceFolder}/node_modules/**/*.js",
+              "<node_internals>/**/*.js"
+            ]
+        }
+    ]
+
+  }

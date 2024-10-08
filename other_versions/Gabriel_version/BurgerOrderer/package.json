@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node Containers/MenuStore/server.cjs",
     "order": "nodemon Containers/BurgerOrderer/index.js",
-    "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
-    "start-debug": "node --inspect=0.0.0.0 index.js"
-    
+    "kitchen": "nodemon Containers/KitchenView/KitchenView.js"
   },
   "keywords": [],
   "author": "",
