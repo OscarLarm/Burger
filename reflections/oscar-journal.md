@@ -27,6 +27,13 @@
 - [2024-09-29](#2024-09-29)
 - [2024-10-01](#2024-10-01)
 - [2024-10-03](#2024-10-03)
+- [2024-10-04](#2024-10-04)
+- [2024-10-05](#2024-10-05)
+- [2024-10-06](#2024-10-06)
+- [2024-10-07](#2024-10-07)
+- [2024-10-08](#2024-10-08)
+- [2024-10-09](#2024-10-09)
+
 ---
 
 ### 2024-09-05 (Swedish)
@@ -362,3 +369,108 @@ I've previously used static data and sites just to test the functionality, so it
 
 ---
 ### 2024-10-05
+
+We met up and managed to combine everything except the database. 
+All 3 components are containerized and in a docker compose file. 
+The person working on getting data from the database wasn't available this weekend so we're planning on adding that part during the week. There was a few merge-conflicts but we solved them in vscides merge conflict tools, where it's visualized which the incoming changed are and which the current ones are.
+
+The project has a lot of files that aren't being used. We decided to make a folder where files that aren't being used can go incase we might use them in the future. Since me and Gabriel worked on the same part and used different methods we could potentially add some things from both versions. 
+
+We ended up using my version for now since it seems to be working with the other parts, but it would be smart to add the best parts from both versions into one file later.
+
+There were some issues with getting the dockerfiles to access the package.json and package-lock.json that were in the parent folder. We ended up making one for each dockerfile. We might look into changing those package.json files to only include the packages that each component use. Right now they're the same.
+
+We've come a long way with the project today. What's left to do is:
+1. Add the function for getting the data from the database. 
+2. Documentation, both in code and for the entire project in the readme.
+3. Create and add automatic tests.
+4. Create and add easier startup from the project root, example a makefile or a shellscript.
+5. Everyone do a individual debug session and document it.
+6. Write the summaries as a group for each of the 3 assignments.
+
+Besides that, there's some adjustments and improvements we could do, but we'll see how long the above takes. It looks like there's a lot, but I think we can get most of them done this week.
+
+We merge the dev branch into main.
+
+---
+### 2024-10-06
+
+Today we worked on documentation. 
+
+However we encountered a big problem.
+We noticed that a while back, Gabriel's commits were not properly linked to his github account. This means that if you check the "contributors" tab then his account doesn't have a lot of commits, even though he's added a lot. His account is called Gabe-Hog but the commits were authored by "Gabriel-". 
+
+I've changed my git email before so I had an idea about what to do. We searched online and found the commands to change the global gitconfig email and username. He tried making a commit and it seems to work now.
+
+However, the old commits were still authored wrong. We searched around and found a few possible fixes, but a few of them seemed to only work whrn changing the entire git history, not just for one user. 
+
+We tried to git log all messages with the faulty author, then use rebase, but this didn't list the authors, just all commit messages and hashes. Also, changing each commit individually would take a lot of time, and I felt like there must be some tool that would make it possible to change a lot of messages at once. 
+
+We saw a few threads and articles talk about [filter-branch](https://git-scm.com/docs/git-filter-branch), but a lot of them had updates mentioning that filter-branch wasn't recommended anymore because of high risks of messing up the commit history. Even the documentation linked above recommends against using it. Many mention [git-filter-repo](https://github.com/newren/git-filter-repo) as a better and safer alternative, and it seemed promising.
+
+We installed git-filter-repo with pip. We then made a new temporary branch and then followed some relevant documentation we found from their repo. We then tried to merge it, but got a error Regarding unrelated histories. We Googled the error and how to fix it, and got a flag to add to allow unrelated histories. When we did this, it doubled all commits. The branch suddenly had 2x the commits and looking in the commit history, it had duplicated each commit once. 
+
+We decided to hold off on trying to change it, and instead mention in the journals that the commit author for "Gabriel-" belong to "Gabe-Hog". 
+When we removed the branch and he tried to use git pull, we got a error that the remote branch was untracked. We tried to set upstream but it wasn't fixing it. 
+Everything seemed to stop working, and he couldn't pull, push or merge anything. We double checked that he didn't have any local branches that weren't pushed to remote, then we decided to just remove the entire repo folder from the pc, then clone it again. That fixed it.
+
+While we were doing this, Malte cleaned up the folders and moved unused files to a seperate folder, like we had discussed yesterday.
+
+I now started working on documentation for functions. Similar to javadoc, which has been mentioned in the course, I found jsdoc. It was mentioned in the article [Whats the best way to document Javascript](https://gomakethings.com/whats-the-best-way-to-document-javascript/). The article is a bit too opiniated regarding self documented code, but jsdoc seemed interesting so I looked through the examples and looked up the [official jsdoc documentation](https://jsdoc.app/). 
+
+I've now added documentation dor the functions I've written. I've tried to avoid commenting too much, and avoided explaining what each line does, and instead tries to explain the entire function as a whole.
+
+Something I noticed was that a lot of the functions I've made are very specific, and they could be made a lot more general and easier to use, if I add another 1 or 2 arguments. I'm gonna try to look into this if we have a bit if time left before the assignment deadline.
+
+It says in the assignment that each method and each container should be documented, but I'm not certain where the container documentation should be. Documenting/commenting in the dockerfiles seem unnecessary. I think you could add a description at the top of each of the 3 components main files.
+
+Tomorrow we're gonna try to finish the documentation for functions, containers and the big project documentation with "how to start" Instructions for the project. I think we'll put the project documentation in the README.md. Right now in the README.md, there are some git commands and short descriptions that I wrote and added about right when we started the project. They're no longer necessary, it feels like we've gotten more comfortable with using git.
+
+We'll also look into a testing framework to make tests more efficient and easier to do. I found some recommendations for [Jest](https://jestjs.io/) when testing JavaScript. I'll look into it more tomorrow.
+
+---
+### 2024-10-07
+
+Today we did a lot with the project. I started up with documenting a few functions I've written, and I also made the outline for the README page, which I figured could work as a part of the project documentation. I filled in some information into the README as well.
+
+Max has worked on the part that's going to get the data from the database. We're trying to get it working with the components we have. There's a function for connecting to the mongodb database using mongoose. I had some trouble connecting. I called on the function from the "listening to" part of the express app, but it wasn't working. I also tried adding it to a route but didn't seem to work. I tried adding it outside any routes, and it seems to be working, based on the fact that the function logs when connection has been established.
+
+Reading on [mongoose docs about connection](https://mongoosejs.com/docs/connections.html), they say that mongoose.connect buffers. I don't fully understand it but from reading, it seems to be able to keep trying to connect, while the code is being run.
+
+I tried getting the data from the database, to the Javascript but it wasn't working. It might have something to do with the Javascript being loaded through the express app. I also wasn't sure how I would access mongodb without mongoose, and since mongoose is for node.js, I think we should get the data from the website express app.
+
+I felt very confused on how to go about it. I also had a hard time at first searching on google for examples or articles talking about it, since I wasn't sure how to describe what I wanted to do fully.
+
+I ended up finding a few different sources and started making a endpoint in the burgerorderer express file. The website Javascript should first make a fetch request to that route, then the route should send everything from the database to the site script. It should then save it as a object. Then we can just replace some words when calling on key-value pairs, when generating the html.
+
+I wasn't able to get it to work properly. I added console.log to a lot of places to see where I was going wrong. I'm sending it as a response in the form of .json() but I'm uncertain of the syntax.
+
+Gabriel managed to get debuggers into the containers which is very good. Malte also made a makefile that does docker compose from root. It also is able to take down the docker compose like docker compose down, as well as having a reset command which removes containers, volumes and images.
+This saves time when testing changes in the containers. It also automates the starting part of the project.
+
+We decided to try to work on unit testing tomorrow.
+
+---
+### 2024-10-08
+
+I wasn't able to get started working on unit testing today since I wasn't able to get the database fetch function to work until later.
+
+I finally managed to get it working. I managed to get data to be sent to the website Javascript, verified with logging, but I wasn't sure how to get all objects that had a specific key-value combination. I found some stackoverflow threads mentioning the "filter()" function which filters based on given parameters. 
+I found some examples on how to use it [here](https://forum.freecodecamp.org/t/filtering-json-object/244160/2) and also [here](https://medium.com/@melaniecp/filtering-an-arrays-objects-based-on-a-value-in-a-key-value-array-using-filter-and-includes-27268968308f). The first one is very similar to how I ended up doing it, but the second one was better at explaining what it was doing. So I checked all objects in the array which had the key-value pair "type: 'burger' ". This saves it into a new array, which I then use a foreach loop to add html elements, such as forms and input, to each burger. 
+I also have a foreach loop for each ingredient for the burgers. The way it makes html based on data is pretty much the same as before, changed from using static data to data from the database.
+Something which also helped was removing the .find() method from the model and put it directly into the endpoint which gets the data from the database.
+
+The rest of the team worked on other things. Gabriel and Malte were also looking into frameworks for unit testing. They mentioned that they had heard recommendations for [Mocha](https://mochajs.org/). I think Gabriel managed to get Mocha into the containers through NPM.
+
+Since the site now takes the data from the database then sends it to kitchenview, I think we can consider the "combine parts" goal done. Before heading home, we sat and worked on some more documentation, and decided to continue work on unit testing tomorrow. The plan is to all work on it together, preferably using a group room and connecting one persons laptop to the tv, then work together to get the automatic unit testing fully implemented.
+
+Some additional improvements I should consider making when we got the necessities in place:
+- Make the database container stop "spamming" the log with output. It makes it hard to see KitchenViews terminal from vscodes integrated terminal, when using docker compose and all 3 containers output is shown in the same terminal. Using docker-desktop makes it easy to see individual containers terminals, but it would be nice to clean up the shared terminal view.
+- Right now some functions I made are very "specific", but they could be made more "general" by adding some arguments, and making them more "reusable". One example is the function for generating burgers. I should instead make it so that it generates whatever is put into the argument.
+- I am only generating burgers on the site right now. We have other "types" in the database (sides, drinks, salad) and it should be easy to add since I've already saved all the types in their corresponding arrays, but I'll have to do the above step first to keep the code as DRY as possible. If I just copied, pasted it but changed the names then it would just be a big chunk of text that is mostly just repeats.
+
+However these things I feel can wait until the necessities are in place.
+
+---
+### 2024-10-09
+
