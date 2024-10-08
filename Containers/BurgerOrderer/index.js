@@ -1,5 +1,5 @@
 
-const express = require("express")
+const express = require("express");
 const path = require('path');
 
 const app = express();
@@ -8,6 +8,12 @@ app.use(express.static(path.join(__dirname,  '/public')));
 app.use(express.json());
 app.use(express.urlencoded());
 
+/**
+ * Returns a html-formatted string stating that an order has been placed for the values from 
+ * the keys "burger" and "ingredients" in argument data.
+ * @param {*} data The data being read.
+ * @returns {string} String formatted as html, stating the orders placed from data.
+ */
 function orderPage(data){
     JSON.stringify(data)
     page = '<h2>Order sent!</h2>'
@@ -22,9 +28,14 @@ function orderPage(data){
     }
     page += `</p>`
     return page
-}
+};
 
+// Route being called from the forms on the burgerOrderer site.
 app.post('/order', (req, res) => {
+    /**
+     * Fetch post the data to the kitchenview /order endpoint.
+     * @param {*} data The data to send.
+     */
     async function sendToKitchen(data){
         const sendData = await fetch("http://kitchenview:3001/order", {
             method: "POST",
@@ -32,8 +43,8 @@ app.post('/order', (req, res) => {
             headers: {
                 "Content-Type": "application/json"
             }
-        })
-    }
+        });
+    };
     data = req.body
     sendToKitchen(data)
     res.send(orderPage(data))
