@@ -36,9 +36,10 @@
 
 .Submit {
   width: 10%;
-  height: 2vh;
+  height: 3vh;
   text-align: center;
-  align-self: end;  
+  align-self: center;  
   justify-self: center;
+  margin-top: 5%;
   margin-bottom: 10%;
 }
