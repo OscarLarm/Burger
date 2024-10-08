@@ -5,10 +5,13 @@
   "description": "Useful git commands: ```bash git pull # Pulls changes from remote branch into local branch ``` ```bash git add 'changed-files' # Stage files before committing changes. Specify which files you want to stage. Use . while in the root dir to stage every changed file. ``` ```bash git commit -m \"A good commit message\" # Commit the changes. Add a message describing the changes made ``` ```bash git push # Push up the local changes to the remote branch",
   "main": "index.js",
   "scripts": {
+    
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node Containers/MenuStore/server.cjs",
     "order": "nodemon Containers/BurgerOrderer/index.js",
-    "kitchen": "nodemon Containers/KitchenView/KitchenView.js"
+    "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
+    "start-debug": "node --inspect=0.0.0.0 KitchenView.js"
+    
   },
   "keywords": [],
   "author": "",

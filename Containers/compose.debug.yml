@@ -1,0 +1,12 @@
+services:
+  kitchenview: 
+    ports:
+      - 3001:3001
+      - 9230:9229
+    command: ["npm", "run", "start-debug"]
+
+  website:
+    ports: 
+      - 3000:3000
+      - 9229:9229
+    command: ["npm", "run", "start-debug"]

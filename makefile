@@ -8,10 +8,10 @@
 all: up down test reset
 
 up:
-	docker-compose -f Containers/compose.yml up
+	docker compose -f Containers/compose.yml up
 
 down:
-	docker-compose -f Containers/compose.yml down
+	docker compose -f Containers/compose.yml down
 
 test:
 	echo ello

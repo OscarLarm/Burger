@@ -1,43 +1,74 @@
 # Burger
 
-Useful git commands:
-```bash
-git pull
-# Pulls changes from remote branch into local branch
-```
-```bash
-git add 'changed-files'
-# Stage files before committing changes. Specify which files you want to stage. Use . while in the root dir to stage every changed file.
-```
-```bash
-git commit -m "A good commit message"
-# Commit the changes. Add a message describing the changes made
-```
-```bash
-git push
-# Push up the local changes to the remote branch
+This is our project for the BTH course 'Basic Software Engineering - PA1489' from 2024.
 
-git push -u origin 'branch-name'
-#Use this if you've made a new branch that doesn't have a remote branch
-```
-```bash
-git fetch
-#Fetch all remote branches
-```
-```bash
-git branch
-#Only shows the local branches
+- [Description](#description)
+- [Components](#components)
+- [Usage](#usage)
+- [Installation](#installation)
+    - [Requirements](#requirements)
+    - [Setup](#setup)
+- [Authors](#authors)
 
-git branch -a
-#Shows the local and remote branches
+## Description
 
-git branch -d
-#Deletes local branch
-```
+## Components
+Each component is containerized in Docker containers.
+
+Both BurgerOrderer and KitchenView is running with Express.
+
+### MenuStore
+MenuStore is a noSQL Database running on mongoDB. It stores all food items available to order.
+
+The MongoDB Image is on ports: 27017 which is default. 
+
+[MongoDB Docker Official Image](https://hub.docker.com/_/mongo)
+
+### BurgerOrderer
+The website where customers can order food. The food displayed is retrieved from the MenuStore database.
+
+When a user places an order, the data is converted and sent in JSON format to a route on BurgerOrderer, which then sends it to an endpoint in the KitchenView component.
+
+### KitchenView
+KitchenView is where the data is sent from BurgerOrderer. Kitchenview goes through the data and prints it in KitchenViews Terminal.
+
+## Usage
+
+### Requirements:
+
+- Makefile
+- Docker
+
+### Installation:
+
+1. Clone the repository to your local machine. Either with SSH or with HTTPS.
+    
+    SSH:
+    ```bash
+    git clone git@github.com:oscar-larm/Burger.git
+    ```
+
+    HTTPS:
+    ```bash
+    git clone https://github.com/oscar-larm/Burger.git
+    ```
+2. Go into the project root folder and start the containers with the makefile script:
+    ```bash
+    # From Project Root
+    make start
+    ```
+
+### Testing:
+
+To test, repeat step 1 from [Installation](#installation), then run
 ```bash
-git checkout 'existing-branch'
-#Switch to another branch
-
-git checkout -b 'new-branch'
-#Make a new local branch and then switch to it
+make test
 ```
+
+## Authors
+
+### [Gabriel Höglund / Gabe-Hog/Gabriel-](https://github.com/Gabe-Hog)
+### [Malte Eriksson / Tatte01](https://github.com/Tatte01)
+### [Moltas Åkerström / Molake00](https://github.com/Molake00)
+### [Maximilian Åberg / MaxiL04](https://github.com/MaxiL04)
+### [Oscar Larm / oscar-larm](https://github.com/oscar-larm)
