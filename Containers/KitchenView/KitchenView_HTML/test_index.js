@@ -1,7 +1,7 @@
-const express = require('express');
-const fs = require('fs');
+const express = require('express'); // show that we need express to run this 
+const fs = require('fs'); // so i can read the file later on the the program
 const app = express();
-const port = 3000;
+const port = 3000; // opens port 3000 so you can accses it from the http://localhost:${port}
 
 // Endpoint to serve data from JSON file
 app.get('/api/data', (req, res) => {
@@ -18,5 +18,7 @@ app.get('/api/data', (req, res) => {
 app.use(express.static('public'));
 
 app.listen(port, () => {
+    // puts the text in the console to tell the user were to go
     console.log(`Server is running on http://localhost:${port}`);
+    
 });

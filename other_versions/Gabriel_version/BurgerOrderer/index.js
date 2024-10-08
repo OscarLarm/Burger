@@ -1,10 +1,9 @@
 const { json } = require('body-parser');
 const express = require('express');
 const { send } = require('express/lib/response');
-
 const app = express();
 const path = require('path');
-const baseurl = "http://kitchenview:8081/";
+const kitchenUrl = "http://kitchenview2:8081/order";
 let orderUrl = "";
 let orderArray = [];
 
@@ -16,25 +15,27 @@ app.use(express.json());
 app.listen(8080, () => {
     console.log('app listening on port 8080');
 });
+
 app.get("/", (req, res) => {
     res.send();
-})
+});
 
+//Endpoint for getting order in html.
  app.get("/api", (req, res) =>{
     let stuff = renderOptions();
     res.send(stuff);
 });
 
 
-
+//Endpoint for reciving order from frontend as post request.
 app.post("/send", (req, res) =>{
     let {parcel} = req.body;
     console.log(parcel);
     orderArray = parcel;
     res.status(200).send({status: "recived"});
 
-    newUrl = createURL(orderArray)
-    sendToKitchen(newUrl, orderArray)
+
+    sendToKitchen(orderArray)
    });
 
 const menu = [ {
@@ -69,29 +70,37 @@ const menu = [ {
         "Brioche bread"
     ]
 }];
-
+/**
+ * Function is used to get the burger menu.
+ * @returns Returns the burger menu
+ */
 function getburger(){
     return menu;
 }
 
 
-function createURL(arr){
-    orderUrl = baseurl + "order/";
+// function createURL(arr){
+//     orderUrl = baseurl + "order/";
     
-    arr.forEach(element => {
-        orderUrl += element
-    });
+//     arr.forEach(element => {
+//         orderUrl += element
+//     });
     
     
 
     
-    console.log(orderUrl);
-    return orderUrl;
-}
+//     console.log(orderUrl);
+//     return orderUrl;
+// }
 
-function sendToKitchen(url, object){
-    console.log('Sending KitchenView URL: ' + url);
-        fetch(url,{
+/**
+ * Function sends a fetch Post request and sends the order to the kitchen.
+ * Throws error if fetch failed.
+ * @param {*} object Array containing the current order from frontend.
+ */
+function sendToKitchen(object){
+    console.log('Sending KitchenView URL: ' + kitchenUrl);
+        fetch(kitchenUrl,{
             method: "POST",
             headers:{
                 "Content-type" : "application/json"
@@ -114,10 +123,16 @@ function sendToKitchen(url, object){
         .catch(function(error) {
             console.log(error);
         });
-        console.log(object)
+   
 }
+
+/**
+ * Formats a string of html elements with the menu options and its ingredients.
+ * @returns Formated string.
+ */
 function renderOptions(){
     newArray = getburger();
+
     pg = "<h2> Options </h2>";
     
     newArray.forEach(element => {
@@ -125,7 +140,7 @@ function renderOptions(){
             pg += "<li>" + "<input type=\"checkbox\" class='parent'" + "value=" + element["name"] + ">" + "<b>" + element["name"] + "</b>" 
             pg += "<h4>Ingredients </h4><ul>"
             element["ingredients"].forEach(ingredient => {
-                pg += "<li>" + "<input type=\"checkbox\" class ='child'" + "value="+ ingredient + ">"+ ingredient + "</li>";
+                pg += `<li> <input type=\"checkbox\" class="child"              value="${ingredient}">  ${ingredient}  </li>`;
             });
         pg += "</ul> </li></ul>"
         
@@ -137,5 +152,3 @@ function renderOptions(){
 
 
 
-// fetch(url)
-//     .then(res => res.json);

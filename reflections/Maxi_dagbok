@@ -1,0 +1,15 @@
+5 sep 2024 - idag fixade vi github och ssh nyckel och vi har även börjat planera. Vi bestämde oss för att vi skulle använda Github som en git-server. Vi satte upp ett Git-repo och sedan så testade alla att använa push, pull, add och commit.
+
+7 sep 2024 - idag så har vi planerat och jag har skivit in de desserterna som vi ska ha i våran meny. Ett problem som vi stätte på var att vi ändrade i main, så vi löste det problemet genom att skapa en ny branch som si mergar in i main.
+
+17 sep 2024 - Jag har kollat runt och samlat fakta och information om de olika sakerna som vi använder oss av och som vi använt oss av. Jag tycker personligen att det är mycket iformation att ta in t.ex databaser, vad som ska skickas vart och hur saker kommer dit de ska. 
+
+24 sep 2024 - jag har testat ett litet JavaScript för att se hur det fungerar. Ett problem uppstår när jag ska testa det i terminalen, jag får upp 'Error: Cannot find module' så detta ska jag försöka hitta en lösning på och sedan fortsätta med JS när det fungerar.
+                                  
+25 sep 2024 - Today we planned out the final part of the project and assigned tasks to make sure everything is completed on time. I also solved the problem with my JavaScript code—it turned out to be some missing characters that was causing the program not to run. Now that it's fixed, I can continue working.
+
+26 sep 2024 - Today I wrote some JavaScript. I found it difficult at first, but then I came across this site https://mongoosejs.com/docs/guide.html that explained the different parts and how it all works. I also watched a lot of YouTube clips and tutorials on how to use Mongoose. After that, I felt like things started to flow more smoothly, but it's not fully developed yet, so I still have a few days left to work on it.
+
+1 oct 2024 - Today, I continued working with JavaScript. What I had written before wasn't completely correct, so I have to take parts of it and incorporate them into something else to make it work as it should. I find it difficult to get it to function properly and to find the right information.
+
+3 oct 2024 - Today i have been working on trying to import from the database. I think it´s difficult to figure out how i should do it and implement it into the burgerstore. It seems that there´s a few diffrent ways to do it, so i think that´s why i find it so difficult.
