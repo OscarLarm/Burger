@@ -13,22 +13,21 @@ async function renderBurgers(){
     const salad = menuData.filter(salad => salad.type === 'salad')
 
     var container = document.getElementById("container")
-    container.innerHTML += "<ul id=burgerList>"
+    container.innerHTML += `<ul id=burgerList>`
     var burgerList = document.getElementById("burgerList")
     burgers.forEach(burger => {
-        burgerList.innerHTML += "<hr></hr>";
-        burgerList.innerHTML += `<form action="/order" method="post" id=${burger.name}>`
-        
-        // burgerContainer.innerHTML += `<h2>${burger.name}</h2>`
-        // burgerContainer.innerHTML += `<input type="hidden" name="burger" value="${burger.name}"</input>`
-        // burgerContainer.innerHTML += `<h4>Ingredients:</h4>`;
-        // // burger["ingredients"].forEach(ingredient => {
-        // //     burgerContainer.innerHTML += `<input type="checkbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
-        // // });
-        // burgerContainer.innerHTML += `<input type="submit" value= "Add to Cart">`
-        // burgerContainer.innerHTML += `</form>`
+        burgerList.innerHTML += `<form action="/order" method="post" id="${burger.name}">`
+        container = document.getElementById(`${burger.name}`)
+        container.innerHTML += `<h2>${burger.name}</h2>`
+        container.innerHTML += `<input type="hidden" name="burger" value="${burger.name}"</input>`
+        container.innerHTML += `<h4>Ingredients:</h4>`;
+        burger["ingredients"].forEach(ingredient => {
+            container.innerHTML += `<input type="checkbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
+        });
+        container.innerHTML += `<input type="submit" value= "Buy"></input>`
+        container.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
 };
 
-renderBurgers()
+renderBurgers();

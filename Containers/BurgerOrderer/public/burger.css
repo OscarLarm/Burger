@@ -42,6 +42,7 @@
     margin-right: 15%;
     text-align: center;
     grid-template-rows: 1fr auto;
+    padding: 0;
   }
 
 .Submit {
@@ -51,4 +52,8 @@
   align-self: end;  
   justify-self: center;
   margin-bottom: 10%;
+}
+
+h1{
+  text-align: center;
 }

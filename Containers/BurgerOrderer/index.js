@@ -20,7 +20,6 @@ const foodSchema = new mongoose.Schema({
 });
 
 const Foods = mongoose.model("Food", foodSchema, 'FoodItems');
-const fullMenu = Foods.find()
 
 async function connectToDB() {
     try {
@@ -44,7 +43,7 @@ function orderPage(data){
     page = '<h2>Order sent!</h2>'
     page += `<a href = "/">Back</a>`
     page += `<hr>`
-    page += `<p>One ${data["burger"]}`
+    page += `<p>One ${data.name}`
     if (data["ingredients"]) {
         page += ` with `
         let ingredients = [data["ingredients"]]
@@ -76,9 +75,8 @@ app.post('/order', (req, res) => {
 });
 
 app.get('/database', async (req, res) => {
-    const db = await fullMenu
+    const db = await Foods.find()
     res.json(db)
-    console.log(JSON.stringify(db))
 })
 
 app.listen(3000, () => {
