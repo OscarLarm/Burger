@@ -38,7 +38,7 @@ services:
   #   image: mongo:latest
   #   container_name: menustore
   #   restart: always
-  #   command: tail -f /dev/null
+
   #   volumes:
   #     - .MenuStore/data/MenuStoreData.json:/data/db/MenuStoreData.json
   #     - .MenuStore/data/MakeDatabase.sh:/docker-entrypoint-initdb.d/MakeDatabase.sh

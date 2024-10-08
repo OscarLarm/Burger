@@ -1,29 +1,19 @@
-
 var checkbox = document.querySelectorAll('input[type="checkbox"]');
 const form = document.querySelector("form");
 const button = document.getElementById("sendOrder");
 baseurl = "http://localhost:8080";
 let options = [];
 
+var parent = document.querySelectorAll(".parent");
+var child = document.querySelectorAll(".child");
 
-async function getHTML(){
-    await fetch("http://localhost:8080/api")
-        .then(response => response.text())
-        .then(text => {
-            document.getElementById("container").innerHTML = text
-        
-        })
-}
-getHTML();
-var parent = document.querySelectorAll(".parent")
-var child = document.querySelectorAll(".child")
-console.log("")
 //Loops parent checkboxes and adds onclick function.
-parent.forEach((element) => {
+parent.forEach((element, i) => {
         
     element.onclick = function(){
             
-        var index = getCheckboxIndex(element)
+        var index = getCheckboxIndex(element);
+        
         // checkNestedChildren(index);
         //Loops nested checkboxes under selected parent and checks them
             for(var i = index; i < checkbox.length - 1; i++){

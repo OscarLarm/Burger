@@ -12,15 +12,15 @@
             
             <div id = "container" class="options">
                 <script>
-                //    await fetch("http://localhost:8080/api")
-                //         .then(response => response.text())
-                //         .then(text => {
-                //             document.getElementById("container").innerHTML = text
+                    const html = fetch("http://localhost:8080/api")
+                        .then(response => response.text())
+                        .then(text => {
+                            document.getElementById("container").innerHTML = text
                         
-                //         })
-                    // var script = document.createElement("script")
-                    // script.src = "burger.js";
-                    // document.body.appendChild(script)
+                        })
+                    var script = document.createElement("script")
+                    script.src = "burger.js";
+                    document.body.appendChild(script)
                 </script>
             </div>
             
@@ -29,7 +29,7 @@
         <button id = "sendOrder", class="Submit" type="click">Send</button>
     </form>
     
-    <script src="burger.js"></script>
+    
     <!-- onclick = "window.location.href='BurgersVal.html';">Meny</button> -->
 </body>
 
