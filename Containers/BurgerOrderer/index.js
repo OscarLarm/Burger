@@ -20,15 +20,18 @@ const foodSchema = new mongoose.Schema({
 });
 
 const Foods = mongoose.model("Food", foodSchema, 'FoodItems');
+const fullMenu = Foods.find()
 
 async function connectToDB() {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/MenuStore');
+        await mongoose.connect('mongodb://mongodb/MenuStore');
         console.log('Connected to MenuStore');
     } catch (err) {
         console.error('Error connecting to the database', err);
     }
 }
+
+connectToDB()
 
 function orderPage(data){
     JSON.stringify(data)
@@ -60,6 +63,12 @@ app.post('/order', (req, res) => {
     sendToKitchen(data)
     res.send(orderPage(data))
 });
+
+app.get('/database', async (req, res) => {
+    const db = await fullMenu
+    res.json(db)
+    console.log(JSON.stringify(db))
+})
 
 app.listen(3000, () => {
     console.log('app running on http://localhost:3000');
