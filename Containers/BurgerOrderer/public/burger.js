@@ -1,64 +1,31 @@
-staticBurgers = [
-    {
-        "name":"Fettburgare",
-        "ingredients": [
-            "Beef Patty",
-            "Cheddar Cheese",
-            "Letuce",
-            "Fried Onion",
-            "Dressing",
-            "Bacon",
-            "Sesame Bread"
-        ]
-    },
-    {
-        "name":"Gnuttburgare",
-        "ingredients": [
-            "Beef patty",
-            "Cheddar Cheese",
-            "Mustard",
-            "Ketchup",
-            "Pickles",
-            "Sesame Bread"
-        ]
-    },
-    {
-        "name":"Isterburgare",
-        "ingredients": [
-            "Fried Chicken Patty",
-            "Bread",
-            "Dressing",
-            "Brioche bread"
-        ]
-    }
-];
+let menu = {}
+async function getData() {
+    var res = await fetch('/database');
+    menu = await res.json()
+    return menu
+}
 
-function getBurgers(){
-    return staticBurgers;
-};
+async function renderBurgers(){
+    const menuData = await getData()
+    const burgers = menuData.filter(burger => burger.type === 'burger');
+    const sides = menuData.filter(sides => sides.type === 'sides')
+    const drinks = menuData.filter(drinks => drinks.type === 'drinks')
+    const salad = menuData.filter(salad => salad.type === 'salad')
 
-/**
- * Adds HTML to the div "container" on static site, containing forms with vales from the keys "burger" and "ingredients".
- * Adds checkboxes to all elemnt and burger and check if burger box is pressed all other checkboxes in that form also presses.
- */
-function renderBurgers(){
     var container = document.getElementById("container")
-    container.innerHTML += "<ul id=burgerList>"
+    container.innerHTML += `<ul id=burgerList>`
     var burgerList = document.getElementById("burgerList")
-
-    getBurgers().forEach(burger => {
-        burgerList.innerHTML += "<hr></hr>";
-        burgerList.innerHTML += `<form action="/order" method="post" id=${burger["name"]}>`
-        burgerContainer = document.getElementById(`${burger["name"]}`)
-        burgerContainer.innerHTML += `<h2>${burger["name"]} <input type="checkbox" class="burgerCheckbox" name="burger" value="${burger["name"]}"</input></h2>`
-        burgerContainer.innerHTML += `<h4>Ingredients:</h4>`;
+    burgers.forEach(burger => {
+        burgerList.innerHTML += `<form action="/order" method="post" id="${burger.name}">`
+        container = document.getElementById(`${burger.name}`)
+        container.innerHTML += `<h2>${burger.name}</h2>`
+        container.innerHTML += `<input type="hidden" name="burger" value="${burger.name}"</input>`
+        container.innerHTML += `<h4>Ingredients:</h4>`;
         burger["ingredients"].forEach(ingredient => {
-        burgerContainer.innerHTML += `<input type="checkbox" class="ingredientCheckbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
-            
+            container.innerHTML += `<input type="checkbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
         });
-        burgerContainer.innerHTML += `<br><br>`
-        burgerContainer.innerHTML += `<input type="submit" value= "Add to Cart">`
-        burgerContainer.innerHTML += `</form>`
+        container.innerHTML += `<input type="submit" value= "Buy"></input>`
+        container.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
 
@@ -74,4 +41,4 @@ function renderBurgers(){
     });
 }
 
-renderBurgers()
+renderBurgers();
