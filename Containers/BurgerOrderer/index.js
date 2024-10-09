@@ -42,7 +42,7 @@ function orderPage(data){
     page = '<h2>Order sent!</h2>'
     page += `<a href = "/">Back</a>`
     page += `<hr>`
-    page += `<p>One ${data.name}`
+    page += `<p>One ${data["burger"]}`
     if (data["ingredients"]) {
         page += ` with `
         let ingredients = [data["ingredients"]]
