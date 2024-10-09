@@ -1,0 +1,265 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Oct  8 15:21:51 2024
+
+# Variables
+
+# environment
+LC_ALL = C
+# environment
+PULSE_SERVER = unix:/mnt/wslg/PulseServer
+# environment
+define WSLENV
+ELECTRON_RUN_AS_NODE/w:
+
+endef
+# environment
+VSCODE_CWD = /mnt/c/Users/malte/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_COMMAND := make
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/tatte01/Bruger_Projekt/Burger
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+LANG = C
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/tatte01/Bruger_Projekt/Burger
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+WSL2_GUI_APPS_ENABLED = 1
+# environment
+WAYLAND_DISPLAY = wayland-0
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# automatic
+@F = $(notdir $@)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+*F = $(notdir $*)
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/tatte01/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/out/nls.messages.json","locale":"en","availableLanguages":{}}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/tatte01/.vscode-server/bin/d78a74bcdfad14d5d3b1b782f87255d802b57511/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu_2404.1.66.0_x64__79rhkp1fndgsc:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/malte/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/malte/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.2.1/bin:/snap/bin
+# default
+MAKEFILES := 
+# environment
+MOTD_SHOWN = update-motd
+# automatic
+^F = $(notdir $^)
+# automatic
+?F = $(notdir $?)
+# environment
+NAME = Code
+# environment
+HOSTTYPE = x86_64
+# automatic
++F = $(notdir $+)
+# environment
+WSL_INTEROP = /run/WSL/2476_interop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = tatte01
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/malte/.vscode/extensions/ms-vscode-remote.remote-wsl-0.88.4
+# makefile
+.DEFAULT_GOAL := all
+# environment
+DISPLAY = :0
+# environment
+USER = tatte01
+# default
+MAKE_VERSION := 4.3
+# environment
+_ = /mnt/c/Users/malte/AppData/Local/Programs/Microsoft VS Code/bin/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000/
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-4e4bd6ac-390d-4bb4-997c-9449e93b6c3f.sock
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/tatte01
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TERM = xterm-256color
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# variable set hash-table stats:
+# Load=68/1024=7%, Rehash=0, Collisions=2/101=2%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2080, inode 29721): 13 files, no impossibilities.
+
+# 13 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+up:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := up
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'makefile', line 10):
+	docker-compose -f Containers/compose.yml up
+
+reset:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	docker rm -vf menustore burgerorder kitchenview
+	docker rmi -f mongo containers-website containers-kitchenview
+	docker builder prune -f
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: up down test reset
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 16):
+	echo ello
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2024-10-07 16:59:04.950896791
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+down:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 13):
+	docker-compose -f Containers/compose.yml down
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/28=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 22 / storage = 182 B / avg = 8 B
+# current buf: size = 8162 B / used = 182 B / count = 22 / avg = 8 B
+
+# strcache performance: lookups = 37 / hit rate = 40%
+# hash-table stats:
+# Load=22/8192=0%, Rehash=0, Collisions=0/37=0%
+# Finished Make data base on Tue Oct  8 15:21:51 2024
+
+ 
