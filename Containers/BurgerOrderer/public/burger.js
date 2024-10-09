@@ -39,6 +39,7 @@ function getBurgers(){
 
 /**
  * Adds HTML to the div "container" on static site, containing forms with vales from the keys "burger" and "ingredients".
+ * Adds checkboxes to all elemnt and burger and check if burger box is pressed all other checkboxes in that form also presses.
  */
 function renderBurgers(){
     var container = document.getElementById("container")
