@@ -43,7 +43,7 @@ function orderPage(data){
     page = '<h2>Order sent!</h2>'
     page += `<a href = "/">Back</a>`
     page += `<hr>`
-    page += `<p>One ${data.name}`
+    page += `<p>One ${data["burger"]}`
     if (data["ingredients"]) {
         page += ` with `
         let ingredients = [data["ingredients"]]
@@ -60,6 +60,7 @@ app.post('/order', (req, res) => {
      * Fetch post the data to the kitchenview /order endpoint.
      * @param {*} data The data to send.
      */
+    
     async function sendToKitchen(data){
         const sendData = await fetch("http://kitchenview:3001/order", {
             method: "POST",
@@ -71,7 +72,10 @@ app.post('/order', (req, res) => {
     };
     data = req.body
     sendToKitchen(data)
-    res.send(orderPage(data))
+    sentOrder = orderPage(data)
+    res.send(sentOrder)
+    
+    
 });
 
 app.get('/database', async (req, res) => {
@@ -79,6 +83,18 @@ app.get('/database', async (req, res) => {
     res.json(db)
 })
 
+
+
+
+
+
+
 app.listen(3000, () => {
     console.log('app running on http://localhost:3000');
 });
+
+
+app.get('/test', function (req, res) {
+    res.send('Hello World!')
+})
+module.exports = app

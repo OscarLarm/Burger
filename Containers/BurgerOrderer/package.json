@@ -5,7 +5,7 @@
   "description": "Useful git commands: ```bash git pull # Pulls changes from remote branch into local branch ``` ```bash git add 'changed-files' # Stage files before committing changes. Specify which files you want to stage. Use . while in the root dir to stage every changed file. ``` ```bash git commit -m \"A good commit message\" # Commit the changes. Add a message describing the changes made ``` ```bash git push # Push up the local changes to the remote branch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/test.js",
     "serve": "node Containers/MenuStore/server.cjs",
     "order": "nodemon Containers/BurgerOrderer/index.js",
     "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
@@ -21,6 +21,8 @@
     "express": "^5.0.0",
     "mongoose": "^8.6.3",
     "nodemon": "^3.1.7",
-    "mocha": "^6.0.1"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4"
   }
 }
