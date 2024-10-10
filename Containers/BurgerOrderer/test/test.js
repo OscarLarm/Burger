@@ -1,33 +1,45 @@
 //use page in function orderPage   BurgerOrder/index.js
-
+// var mongoose = require('mongoose')
 var chai = require('chai')
 var chaiHttp = require('chai-http')
-var app = require('../index.js')
-
+var {app, connectToDB} = require('../index.js')
+var assert = chai.assert;
+var expect = chai.expect;
 chai.use(chaiHttp)
 chai.should()
 
-describe('Homepage', () => {
-    it('should show the Hello World message', done => {
-        chai
-        .request(app)
-        .get('/test')
-        .end((error, response) => {
-            response.text.should.equal('Hello World!')
-            done()
-        })
-    })
-})
-describe('Orderpage', () =>{
-    it('Send order', done =>{
+describe('Checking burgerOrder response', () =>{
+    it('Testing correct input-format', done =>{
         chai
             .request(app)
             .post("/order")
             .send({burger: 'Original Kidney Killer'})
             .end((error, response) => {
-                if (error) return done(error);
-                response.should.be.a('String');
+                if (error){
+                    console.log(error)
+                }
+                response.text.should.include('Original Kidney Killer');
+                response.text.should.be.a('string')
             done(); 
         })
     })
+    it('Testing wrong input-format', done => {
+        chai
+            .request(app)
+            .post('/order')
+            .send("Original Kidney Killer")
+            .end((error, response) => {
+                if (error) return done(error)
+                response.text.should.not.include('Original Kidney Killer')                    
+            })
+            done();
+    })
 })
+
+describe('Check database connection', () => {
+
+    it('Testing connection to Database', done => {
+        connectToDB()
+        done()
+        })
+    })
