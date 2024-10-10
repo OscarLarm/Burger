@@ -28,6 +28,17 @@ async function renderBurgers(){
         container.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
-};
+
+    document.querySelectorAll(".burgerCheckbox").forEach(burgerCheckbox => {
+        burgerCheckbox.addEventListener("change", function () {
+            const form = this.closest("form");
+            const ingredientsCheckboxes = form.querySelectorAll(".ingredientCheckbox");
+
+            ingredientsCheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked
+            });
+        });
+    });
+}
 
 renderBurgers();
