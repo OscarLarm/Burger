@@ -1,0 +1,28 @@
+{
+  "name": "burger",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "Useful git commands: ```bash git pull # Pulls changes from remote branch into local branch ``` ```bash git add 'changed-files' # Stage files before committing changes. Specify which files you want to stage. Use . while in the root dir to stage every changed file. ``` ```bash git commit -m \"A good commit message\" # Commit the changes. Add a message describing the changes made ``` ```bash git push # Push up the local changes to the remote branch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node Containers/MenuStore/server.cjs",
+    "order": "nodemon Containers/BurgerOrderer/index.js",
+    "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
+    "start-debug": "node --inspect=0.0.0.0 KitchenView.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^5.1.1",
+    "chai-http": "^5.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.0.0",
+    "jsdoc": "^4.0.3",
+    "mocha": "^6.0.1",
+    "mongoose": "^8.6.3",
+    "nodemon": "^3.1.7"
+  }
+}

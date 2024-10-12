@@ -13,6 +13,7 @@ This is our project for the BTH course 'Basic Software Engineering - PA1489' fro
 - [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
+- [JsDoc](#jsdoc)
 - [Authors](#authors)
 
 ## Description
@@ -71,6 +72,10 @@ To test, repeat step 1 from [Installation](#installation), then run
 ```bash
 make test
 ```
+
+## JsDoc
+
+You can find documentation for functions in [./function_documentation/index.html](./function_documentation/index.html)
 
 ## Authors
 

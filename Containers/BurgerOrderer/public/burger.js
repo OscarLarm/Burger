@@ -1,9 +1,32 @@
+/**
+ * Fetches all data from the /database route with GET.
+ * @function
+ * @async
+ * @returns Data parsed from json to js object.
+ */
 async function getData() {
     var res = await fetch('/database');
     var menu = await res.json()
     return menu
 }
-
+/**
+ * Used to generate the forms that send order data from the burgerOrderer site.
+ * Reads all data from the getData() function, then creates a new array containing only the objects with the key-value of "type": "argument".
+ * It then create a HTML form with input fields for the key "name" and "ingredients" if the values exist.
+ * @function
+ * @param {string} food - The value from the key "type".
+ * @async
+ * @example
+ * renderFood('burger')
+ * <form action="/order" method="post" id="Original Chicken Burger">
+ * <h2>Original Chicken Burger</h2>
+ * <input type="hidden" name="foodItem" value="Original Chicken Burger"></input>
+ * <h4>Ingredients:</h4>
+ * <input type="checkbox" name="ingredients" value="Fried Chicken Patty">Fried Chicken Patty
+ * <input type="checkbox" name="ingredients" value="Bread">Bread
+ * <input type="submit" value="Buy">
+ * </form>
+ */
 async function renderFood(food){
     const menuData = await getData()
     const foodItem = menuData.filter(item => item.type === food);
