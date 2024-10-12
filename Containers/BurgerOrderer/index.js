@@ -75,8 +75,8 @@ app.post('/order', (req, res) => {
     res.send(sentOrder)
 });
 
-app.get('/database', (req, res) => {
-    const db = Foods.find()
+app.get('/database', async(req, res) => {
+    const db = await Foods.find()
     
     res.json(db)
 })
@@ -85,4 +85,4 @@ app.listen(3000, () => {
     console.log('app running on http://localhost:3000');
 });
 
-module.exports = {app, connectToDB}
+module.exports = {app}

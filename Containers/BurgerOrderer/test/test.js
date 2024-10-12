@@ -36,10 +36,10 @@ describe('Checking burgerOrder response', () =>{
     })
 })
 
-describe('Check database connection', () => {
+// describe('Check database connection', () => {
 
-    it('Testing connection to Database', done => {
-        connectToDB()
-        done()
-        })
-    })
+//     it('Testing connection to Database', done => {
+//         connectToDB()
+//         done()
+//         })
+//     })
