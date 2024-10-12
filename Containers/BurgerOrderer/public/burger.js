@@ -21,9 +21,6 @@ async function getData() {
  * <form action="/order" method="post" id="Original Chicken Burger">
  * <h2>Original Chicken Burger</h2>
  * <input type="hidden" name="foodItem" value="Original Chicken Burger"></input>
- * <h4>Ingredients:</h4>
- * <input type="checkbox" name="ingredients" value="Fried Chicken Patty">Fried Chicken Patty
- * <input type="checkbox" name="ingredients" value="Bread">Bread
  * <input type="submit" value="Buy">
  * </form>
  */
