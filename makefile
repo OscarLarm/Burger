@@ -24,3 +24,5 @@ reset:
 debug: 
 	docker compose -f Containers/compose.yml -f Containers/compose.debug.yml up --no-attach mongodb
 
+docs:
+	google-chrome function_documentation/index.html
