@@ -76,7 +76,6 @@ app.post('/order', (req, res) => {
         });
     };
     data = req.body
-    console.log(data)
     sendToKitchen(data)
     sentOrder = orderPage(data)
     res.send(sentOrder)
