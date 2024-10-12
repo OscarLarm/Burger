@@ -16,16 +16,14 @@ app.use(cors());
  */
 function getOrder(data){
     message = `\n-------------------NEW ORDER-------------------\n`
+    message += `A ${data["foodItem"]}`
     if (data["ingredients"]) {
-        message += `A ${data["burger"]} customized with`
+        message += ` customized with`
         let ingredients = []
         ingredients.push(data["ingredients"])
 
         ingredients = ingredients.join(', ')
         message += ` ${ingredients}.`
-    }
-    else{
-        message += `A default ${data["burger"]}`
     }
     return message
 }

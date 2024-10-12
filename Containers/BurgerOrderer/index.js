@@ -42,7 +42,7 @@ function orderPage(data){
     page = '<h2>Order sent!</h2>'
     page += `<a href = "/">Back</a>`
     page += `<hr>`
-    page += `<p>One ${data["burger"]}`
+    page += `<p>One ${data["foodItem"]}`
     if (data["ingredients"]) {
         page += ` with `
         let ingredients = [data["ingredients"]]
@@ -70,6 +70,7 @@ app.post('/order', (req, res) => {
         });
     };
     data = req.body
+    console.log(data)
     sendToKitchen(data)
     sentOrder = orderPage(data)
     res.send(sentOrder)
