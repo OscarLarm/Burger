@@ -14,7 +14,7 @@ down:
 	docker compose -f Containers/compose.yml down
 
 test:
-	docker compose -f Containers/compose.yml -f Containers/compose.test.yml up --no-attach mongodb
+	docker compose -f Containers/compose.yml -f Containers/compose.test.yml up --no-attach mongodb 
 
 reset:
 	docker rm -vf menustore burgerorder kitchenview

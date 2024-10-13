@@ -2,11 +2,11 @@
 // var mongoose = require('mongoose')
 var chai = require('chai')
 var chaiHttp = require('chai-http')
+const sinon = require('sinon')
 var {app, connectToDB, orderPage} = require('../index.js')
 var {getOrder} = require('../../KitchenView/KitchenView.js')
 var {renderFood} = require('../../BurgerOrderer/public/burger.js')
-var assert = chai.assert;
-var expect = chai.expect;
+const expect = chai.expect;
 chai.use(chaiHttp)
 chai.should()
 
@@ -39,15 +39,15 @@ describe('Testing the BurgerOrderer /order endpoint...', () =>{
 describe('Trying the orderPage() function...', () => {
     it ('Trying correct input.', done => {
         input = {foodItem: 'Classic Cheese Burger', ingredients: [ 'Mustard', 'Ketchup', 'Pickles' ]}
-        chai.expect(orderPage(input)).to.be.a('string')
-        chai.expect(orderPage(input)).to.eq('<h2>Order sent!</h2><a href = "/">Back</a><hr><p>One Classic Cheese Burger with Mustard,Ketchup,Pickles.</p>')
+        expect(orderPage(input)).to.be.a('string')
+        expect(orderPage(input)).to.eq('<h2>Order sent!</h2><a href = "/">Back</a><hr><p>One Classic Cheese Burger with Mustard,Ketchup,Pickles.</p>')
         done()
     })
 
     it('Trying incorrect input.', done => {
         input ="foodItem: 'Classic Cheese Burger', ingredients: [ 'Mustard', 'Ketchup', 'Pickles' "
-        chai.expect(orderPage(input)).to.not.be.a('object')
-        chai.expect(orderPage(input)).to.not.eq('<h2>Order sent!</h2><a href = "/">Back</a><hr><p>One Classic Cheese Burger with Mustard,Ketchup,Pickles.</p>')
+        expect(orderPage(input)).to.not.be.a('object')
+        expect(orderPage(input)).to.not.eq('<h2>Order sent!</h2><a href = "/">Back</a><hr><p>One Classic Cheese Burger with Mustard,Ketchup,Pickles.</p>')
         done()
 
     })
@@ -56,19 +56,26 @@ describe('Trying the orderPage() function...', () => {
 describe('Trying the getOrder() function', () => {
     it ('Trying correct input.', done => {
         input = {foodItem: 'Classic Cheese Burger',ingredients: [ 'Beef patty', 'Cheddar Cheese', 'Mustard' ]}
-        chai.expect(getOrder(input)).to.be.a('string')
-        chai.expect(getOrder(input)).to.eq('\n-------------------NEW ORDER-------------------\nA Classic Cheese Burger customized with Beef patty,Cheddar Cheese,Mustard.')
+        expect(getOrder(input)).to.be.a('string')
+        expect(getOrder(input)).to.eq('\n-------------------NEW ORDER-------------------\nA Classic Cheese Burger customized with Beef patty,Cheddar Cheese,Mustard.')
         done()
     })
 
     it('Trying incorrect input.', done => {
         input ="{foodItem: 'Classic Cheese Burger',ingredients: [ 'Beef patty', 'Cheddar Cheese', 'Mustard' ]}"
-        chai.expect(getOrder(input)).to.not.be.a('object')
-        chai.expect(getOrder(input)).to.not.eq('\n-------------------NEW ORDER-------------------\nA Classic Cheese Burger customized with Beef patty,Cheddar Cheese,Mustard.')
+        expect(getOrder(input)).to.not.be.a('object')
+        expect(getOrder(input)).to.not.eq('\n-------------------NEW ORDER-------------------\nA Classic Cheese Burger customized with Beef patty,Cheddar Cheese,Mustard.')
         done()
 
     })
 })
+
+// describe('Trying the renderfood() function', () => {
+//     it("Seeing if it runs the expected amount of times", done => {
+//     var spy = sinon.spy(renderFood('window', "renderFood"))
+//     expect(spy.callCount).to.eq(1)
+//     });
+// });
 
 // describe('Check database connection', () => {
 

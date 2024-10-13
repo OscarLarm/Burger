@@ -13,7 +13,9 @@ services:
   kitchenview:
     container_name: kitchenview
     build: ./KitchenView
-   
+    volumes:
+       - ./KitchenView:/app
+        - /app/node_modules #Creates a node_modles volume because program could not find package.json otherwise
     depends_on:
       website:
         condition: service_started
@@ -25,7 +27,9 @@ services:
   website:
     container_name: burgerorder
     build: ./BurgerOrderer
-
+    volumes:
+        - ./BurgerOrderer:/app
+        - /app/node_modules
     depends_on:
       - mongodb
    
