@@ -73,7 +73,7 @@ A local branch called Kitchenview that i plan to marge with development.
 
 I took some notes on todays lecture 
 
-then later continued with my personal little project on how to make my website and i had to download the extension <Open in browser> in vscode to be able to open it as a server.
+then later continued with my personal project on how to make my website and i had to download the extension <Open in browser> in vscode to be able to open it as a server.
 
 
 ### 2024-09-19 ###
@@ -117,16 +117,12 @@ And the goal is to be able to see if the flow of informasion is correct.
 
 I started looking up on youtube to be able to get  the basics of setting one up using <Mocha JS & Chai> this is a video i found that i looked at to help me set up the basics around it [Link to video](https://www.youtube.com/watch?v=MLTRHc5dk6s).
 
-mkdir mochatest to make a folder to make the test in to obviusly you can name it whatever you want but to make it eaasier to find it this is what i will use aswell. 
-
-Mocha innit to make a pakage 
-
-npm install mocha chai (--save--dev)
+We made 3 tests thats cheaks if everything works as it should.
 
 
+### 2024-10-14 ###
 
-### 2024-09-12 ###
-Idag satt vi och gjorde upp en deadline på datum när olika delar av projektet:
+Today we meet as a groupp to do the absolute last things for the 3.3,4.3,5.4 Reflecting and Summarizing we spent a few hours making sure that everyone got to have input in what was writen in to it.
 
 
 - **26 september**
