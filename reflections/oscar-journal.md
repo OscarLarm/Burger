@@ -1,7 +1,12 @@
 # Oscar Larm Engineer's Journal
 
-> [!NOTE]
+> [!IMPORTANT]
 > The entries for 2024-09-05 until 2024-09-12 was originally written in Swedish by me, then translated with the ChatGPT AI. Everything after 2024-09-12 was written in English originally by me.
+
+> [!TIP]
+> This text was written using markdown with some Github-specific syntax such as this [Alert.](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
+> 
+> I recommend reading this journal in the [Github repo here](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
 
 ## Entries
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
@@ -36,7 +41,10 @@
 - [2024-10-10](#2024-10-10)
 - [2024-10-13](#2024-10-13)
 - [2024-10-14](#2024-10-14)
+- [Debug Session](#debug-session)
 ---
+
+
 
 ### 2024-09-05 (Swedish)
 
@@ -240,7 +248,7 @@ Today we set a deadline with dates for different parts of the project:
 
 --- 
 
-> [!NOTE]
+> [!IMPORTANT]
 > The following entries were written in English by me from the start, **not** using AI to translate.
 
 ---
@@ -506,9 +514,9 @@ During the weekend I worked a bit on some tests. I copied a package.json and mov
 
 I made some tests for a few functions, and added both a correct input and a incorrect input, and what the expected response should be.
 
-I also generated html page for our documented functions using jsdocs. At first, only a few of the functions from the files I chose got rendered. I tried a lot of different things and searched around. There was an issue posted regarding jsdoc and not rendering some functions, and the solutions that people were suggesting wasn't working. E.g adding the @global, the @public and the @function tags. 
+I also generated html page for our documented functions using jsdocs. At first, only a few of the functions from the files I chose got rendered. I tried a lot of different things and searched around. There was an issue posted regarding jsdoc and not rendering some functions. Some of the solutions that people were suggesting was to add different tags to the jsdoc documentation, e.g adding the @global, the @public and the @function tags. 
 
-After awhile, I got all functions to get added to the jsdoc index.html page in ./function_documentation. I also made a makefile command called make docs which opens the jsdoc index.html in google-chrome.
+After awhile I got all functions to get added to the jsdoc index.html page in ./function_documentation. I also made a makefile command called make docs which opens the jsdoc index.html in google-chrome.
 
 Tomorrow we'll start working on the reflections for each assignment, we're close to being done with the project.
 
@@ -526,3 +534,6 @@ We're pretty much done. Some things I think might be left:
 2. Finish the project documentation. I'm gonna send an email to Mikael and ask if the projects overall documentation should be a README.md, or if it should be some seperate file.
 
 ---
+
+## Debug Session
+
