@@ -33,7 +33,9 @@
 - [2024-10-07](#2024-10-07)
 - [2024-10-08](#2024-10-08)
 - [2024-10-09](#2024-10-09)
-
+- [2024-10-10](#2024-10-10)
+- [2024-10-13](#2024-10-13)
+- [2024-10-14](#2024-10-14)
 ---
 
 ### 2024-09-05 (Swedish)
@@ -474,3 +476,53 @@ However these things I feel can wait until the necessities are in place.
 ---
 ### 2024-10-09
 
+Today we all worked on unit testing. It went well. We're using mocha, and we also added [Chai](https://www.chaijs.com/), which provide more assertions.
+
+We all worked on the same laptop today. Malte connected his laptop to the tv in the grouproom.
+
+Problem solving all together was effective, especially since we're all new to unit-testing. Looking up how to use the testing framework was easy, since we all used our own laptops to look for the information, communicate it and share it in our project channel. We then tried it and if we got an error then we evaluated where to go from there based on the error message received.
+
+We managed to add a unit test for a express route in our burgerorderer to check if it's running, which is working.
+
+We tried to make a unit test for the route that takes data from the forms, cakes on the function which sends it to kitchenview then calls on the function which makes a html-formatted string. We've set up a vakue we post to it, then a substring that the response should have. We couldn't get it to work. We've logged the data at several points and it should be correct. We've also used the debugger to follow the data and see it'd type.
+
+We also tried to make it so that it should only check that the respons is a string, but we get error that you can't compare a object to string, or something like that.
+
+---
+### 2024-10-10
+
+We worked in a similar way to yesterday, we used my laptop and connected it to the tv. 
+
+We fixed the issue from yesterday and correctly implemented the unit test. The response was an object with a lot of stuff like headers and such, but we only wanted the response body. We found that the solution to this was to add .text to the response in our Mocha/Chai script.
+
+We then tried to make a unit test for the route that gets data from the database. This was very difficult, the test came back as positive, even when we didn't start the database container. We then tried to import just the function which connects to the database, and instead of specifying a route and get/post/etc, and .end, we only had the function call inside, then a done().
+
+We didn't quite get it working. We're considering if it might be better to unit test some other part, the connect to database function has a catch inside which does warn when there's a problem with the database.
+
+---
+### 2024-10-13
+
+During the weekend I worked a bit on some tests. I copied a package.json and moved it into root. I also removed some unused packages from the containers package.json files. This will hopefully reduce the amount of time it takes to do docker compose by a little bit.
+
+I made some tests for a few functions, and added both a correct input and a incorrect input, and what the expected response should be.
+
+I also generated html page for our documented functions using jsdocs. At first, only a few of the functions from the files I chose got rendered. I tried a lot of different things and searched around. There was an issue posted regarding jsdoc and not rendering some functions, and the solutions that people were suggesting wasn't working. E.g adding the @global, the @public and the @function tags. 
+
+After awhile, I got all functions to get added to the jsdoc index.html page in ./function_documentation. I also made a makefile command called make docs which opens the jsdoc index.html in google-chrome.
+
+Tomorrow we'll start working on the reflections for each assignment, we're close to being done with the project.
+
+---
+### 2024-10-14
+
+Today we sat all together and worked on the reflections for the 3 parts of the assignment. We connected Max laptop to a tv and discussed the questions in each of the reflection assignments, and how it had gone, then wrote each of the reflections as a group. The only part left in the reflections is to link everyones individual debug sessions in the reflection for assignment 3: Testing and Debugging.
+
+The make docs was changed from using 'google-chrome' to 'open' which apparently opens the users default browser instead.
+
+It went well. I'm gonna do a debug session tomorrow.
+
+We're pretty much done. Some things I think might be left:
+1. Clean up structure of project, move unused files to ./other_versions
+2. Finish the project documentation. I'm gonna send an email to Mikael and ask if the projects overall documentation should be a README.md, or if it should be some seperate file.
+
+---
