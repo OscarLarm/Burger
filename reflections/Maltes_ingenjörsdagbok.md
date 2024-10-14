@@ -13,6 +13,10 @@
 - [2024-09-25](#2024-09-25)
 - [2024-10-05](#2024-10-05)
 - [2024-10-06](#2024-10-06)
+- [2024-10-07](#2024-10-07)
+- [2024-10-08](#2024-10-08)
+- [2024-10-14](#2024-10-14)
+- [Debug](#Debug)
 
 ### Bra saker att komma ihåg medans man skriver ###
 Det här är er Ingenjörsdagbok 
@@ -123,6 +127,26 @@ We made 3 tests thats cheaks if everything works as it should.
 ### 2024-10-14 ###
 
 Today we meet as a groupp to do the absolute last things for the 3.3,4.3,5.4 Reflecting and Summarizing we spent a few hours making sure that everyone got to have input in what was writen in to it.
+
+### Debug ###
+
+This is the finnal Debug to make sure that wee can follow the flow of the program and make sure that is works and get a pretty good ide on how tha informasion runs throw it.
+
+1. Select some functionality, e.g. Order a “Dripping With Lard Heartstopper” menu
+
+2. What breakpoints do you set in order to start the debug session? Where do you find the files to set the breakpoints in?
+
+3. How do you continue? How do you use the buttons for “Continue”, “Step Over, ”Step Into“, and ”Step out“?
+
+4. Watch some variable
+- How do you do this?
+- What is its current value?
+- Can you find out when the value changes? How?
+
+5. Try some different “paths” through the functionality, e.g. order something else, cancel half-way through, etc.
+- How does this effect which code is being executed?
+- How does this effect your watched variables
+
 
 
 - **26 september**
