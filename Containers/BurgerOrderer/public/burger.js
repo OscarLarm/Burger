@@ -34,15 +34,14 @@ async function renderFood(food){
     foodItem.forEach(item => {
         foodList.innerHTML += `<form action="/order" method="post" id="${item.name}">`
         container = document.getElementById(`${item.name}`)
-        container.innerHTML += `<h2>${item.name}</h2>`
-        container.innerHTML += `<input type="hidden" name="foodItem" value="${item.name}"</input>`
+        container.innerHTML += `<h2>${item.name}<input type="checkbox" class="burgerCheckbox" name="foodItem" value="${item.name}"</input></h2>`
         if (item.ingredients.length !== 0){
             container.innerHTML += `<h4>Ingredients:</h4>`;
             item["ingredients"].forEach(ingredient => {
-                container.innerHTML += `<input type="checkbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
+                container.innerHTML += `<input type="checkbox" class="ingredientCheckbox" name ="ingredients" value = "${ingredient}">${ingredient}</input>`;
             });
         }
-        container.innerHTML += `<input type="submit" value= "Buy"></input>`
+        container.innerHTML += `\n<input type="submit" value= "Buy"></input>`
         container.innerHTML += `</form>`
     });
     container.innerHTML += "</ul>";
