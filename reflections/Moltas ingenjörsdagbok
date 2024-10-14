@@ -14,7 +14,8 @@ to the meny. The other html files is to the order. I also linked the html files 
 have to linked it to the order site in the future im so i have to search how you link a button to a another site. The ordersite is 
 not finnish i most talk to my colleagues about if we have more products that are going on the website. I have not finnsih with the 
 css to the order site and i most do the checkboxes to the menu. I used the https://www.w3schools.com/ to remember how to do some 
-stuff like margin and borders on the button. I got som problem with git but i succeded to solv it im not 100% sure how i did it 
+stuff like margin and borders on the button. I got som problem with git but i succeded to solved it im not 100% sure how i did it 
+The ssh key password dissaperd so i hade to make a new one.
 
 9/10 Fixed the link between the homepage and the menu selection page so that you can go from the homepage to the menu. 
 I put all the options in a form on the selection page to make it easier to retrieve the information. I have created all 
@@ -73,4 +74,7 @@ that show what you order.
  9/10 Today we read about mochajs and try to make ut work with our project we had lite problem with it working. 
  We later got it to work and made one test. I moved a button and made it better.
 
- 10/10 Today we made more test for the project.
+ 10/10 Today we made more test for the project. We decide to skip the database test.
+
+ 14/10 Today we made our a summry of the project. I also remade part of the checkboxes 
+ and classes so its working i also moved some checkboxes.
