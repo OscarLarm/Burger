@@ -69,18 +69,3 @@ describe('Trying the getOrder() function', () => {
 
     })
 })
-
-// describe('Trying the renderfood() function', () => {
-//     it("Seeing if it runs the expected amount of times", done => {
-//     var spy = sinon.spy(renderFood('window', "renderFood"))
-//     expect(spy.callCount).to.eq(1)
-//     });
-// });
-
-// describe('Check database connection', () => {
-
-//     it('Testing connection to Database', done => {
-//         connectToDB()
-//         done()
-//         })
-//     })
