@@ -59,7 +59,7 @@ async function renderFood(food){
     });
 }
 
-module.exports = {renderFood}
+// module.exports = {renderFood}
 
 renderFood('burger');
 renderFood('salad');
