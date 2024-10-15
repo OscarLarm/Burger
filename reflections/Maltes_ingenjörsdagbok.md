@@ -133,10 +133,53 @@ Today we meet as a groupp to do the absolute last things for the 3.3,4.3,5.4 Ref
 This is the finnal Debug to make sure that wee can follow the flow of the program and make sure that is works and get a pretty good ide on how tha informasion runs throw it.
 
 1. Select some functionality, e.g. Order a “Dripping With Lard Heartstopper” menu
+I decided to look if the verible "message" in kitchen view takes the correct informasion and that is sent from the burger order.
+
 
 2. What breakpoints do you set in order to start the debug session? Where do you find the files to set the breakpoints in?
+for the kitchen view i sat the breaking points at primarly on
+function getOrder (data)
+so i can from there look throw the code and follow what happends with the varible before it is hopefully retuned.
 
 3. How do you continue? How do you use the buttons for “Continue”, “Step Over, ”Step Into“, and ”Step out“?
+I started with using Step into (F11) to be able to go thrugh the function step by step that you can see is that the varible starts by being ineselisied as 
+
+message = ----------NEW ORDER------------ 
+This is to smake it esier and more visable in the terminal 
+
+The next line that we see is 
+
+message += `A ${data["foodItem"]}`
+
++= is a simple and more clean way to add to an exsisting varible.
+`A ${data["foodItem"]}` is how we did it to add the data from the Burger order that is named "foodItem" in this case its "Original Kidney Killer"
+that gets added to the message string so now the whole varible is 
+
+----------NEW ORDER------------ 
+A Original Kidney Killer 
+
+Then we use step into (F11)
+
+Then we get to the line with a IF statments that is, that says IF data key ["ingredients"] has a vlaue in it then we go in to the if statment and follow it 
+
+Becuse we did not have one now it jumps right down to the return message.
+
+After that funcsion is done we have a full string in our messeage varible 
+that looks like this 
+
+------------------NEW ORDER-------------------
+A Original Kidney Killer
+
+IF we add something to customize the burger with we go in to the if statment and adds to it i tried to do it with Dressing. 
+
+and that results in the message varible looking like this 
+
+-------------------NEW ORDER-------------------
+A Original Kidney Killer customized with Dressing.
+
+and then it goes down still using the step into (F11) to continue throw the code to the next step we go down to my next stop that is app.post that simply takes this string an dprint it out in the terminal. 
+
+and that concludes this part of the debbuging i was able to follow the messege varible with and without cosomaziasion and can conclude that the funcsion does do what it inteends to do.
 
 4. Watch some variable
 - How do you do this?
