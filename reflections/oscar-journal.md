@@ -545,14 +545,16 @@ I also quickly changed the package.json "description" since it used our previous
 
 ---
 
-##### [Back to Top](#oscar-larm-engineers-journal)
+<br>
 
 ## Debug Session
+
+##### [Back to Top](#oscar-larm-engineers-journal)
 
 - Author: Oscar Larm
 - Date: 2024-10-15
 
-<br>
+---
 
 I started up the debugger inside the containers "burgerorder" and "kitchenview" using our make command "make debug".
 I get output in the burgerorder terminal: 
@@ -693,3 +695,5 @@ With the help of this debug session, I was able to find a line of code that can 
 
 ---
 ##### [Back to Top](#oscar-larm-engineers-journal)
+
+<br> </br>
