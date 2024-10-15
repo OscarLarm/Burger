@@ -4,9 +4,10 @@
 > The entries for 2024-09-05 until 2024-09-12 was originally written in Swedish by me, then translated with the ChatGPT AI. Everything after 2024-09-12 was written in English originally by me.
 
 > [!TIP]
-> This text was written using markdown with some Github-specific syntax such as this [Alert.](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
+> This text was written using markdown with some Github-specific syntax such as this [Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts).
+> I recommend reading this journal in the [Github repo](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
 > 
-> I recommend reading this journal in the [Github repo here](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
+> The debug session is at the bottom of the Journal. Link to the debug section is [here](#debug-session) and below in the [Entries](#entries) section.
 
 ## Entries
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
@@ -543,11 +544,15 @@ We got debugging sessions left, a couple of people have already finished their d
 I also quickly changed the package.json "description" since it used our previous readme where I had just listed a few useful git commands from the first week. I just changed the description to the component name. Hovering over the 'description' says "This helps people discover your package, as it's listed in 'npm search'." and since I don't want other people to find our private repo, this seems irrelevant for this project. The actual description is in the README and documentation.
 
 ---
+
 ##### [Back to Top](#oscar-larm-engineers-journal)
 
-### Debug Session
+## Debug Session
 
-Date: 2024-10-15
+- Author: Oscar Larm
+- Date: 2024-10-15
+
+<br>
 
 I started up the debugger inside the containers "burgerorder" and "kitchenview" using our make command "make debug".
 I get output in the burgerorder terminal: 
@@ -599,7 +604,7 @@ Checking the Variables, I look at "Local:orderPage" and see "this= global" and "
 
 "fooditem = 'Original Chicken Burger'" and "ingredients = (4) ['Fried Chicken Patty', 'Bread', 'Dressing', 'Brioche bread',]. Copying the value from 'data' gives the following:
 
-```json
+```js
 {
   foodItem: "Original Chicken Burger",
   ingredients: [
@@ -622,7 +627,7 @@ Which checks the data variables value for "foodItem" which is 'Original Chicken 
 I retry the debugging but this time I try to not add any additional ingredients.
 I keep the same breakpoint and uncheck all ingredients. Looking at the 'data' variable now, it has the value:
 
-```bash
+```js
 {
   foodItem: "Original Chicken Burger",
 }
@@ -636,7 +641,7 @@ I decide to debug the entire '/order' route as well. I set a breakpoint in the e
 The current local variables are req, res and this. 'this' is undefined, 'req' is 'IncomingMessage' and res is 'ServerResponse'. I step into once and the 'sendToKitchen' variable is added to the local variables. req.body is declared to 'data'. 
 If I go into the variable 'req' and copy the value from 'body' I get:
 
-```bash
+```js
 {
   foodItem: "Classic Cheese Burger",
   ingredients: [
@@ -652,7 +657,7 @@ Another step into, sendToKitchen is being called with 'data' as the argument. St
 
 The variables for 'Local:sendToKitchen' are now 'this = global' and 'data' with the value: 
 
-```bash
+```js
 {
   foodItem: "Classic Cheese Burger",
   ingredients: [
