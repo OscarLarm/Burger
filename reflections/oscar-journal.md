@@ -689,9 +689,9 @@ Overall, I feel like this debug session went well, and the results were mostly a
 
 Something that would make debugging easier and smoother would be to refactor a lot of the functions, to make them simpler and have them do less things. Have the functions more specific, but also generalise them a bit more by adding more parameters to them.
 
-I also noticed that inside the orderPage function there is a 'JSON.stringify and from what I can tell, it isn't doing anything. The data variable doesn't seem to change from it, so I don't think the statement has any purpose and can be safely removed.
+I also noticed that inside the orderPage function there is a 'JSON.stringify and from what I can tell, it isn't doing anything. The data variable doesn't seem to change from it, so I don't think the statement has any purpose and can be safely removed. Will need to run additional tests to verify that it isn't necessary before removing it.
 
-With the help of this debug session, I was able to find a line of code that can be safely removed, effectively refactoring the code.
+With the help of this debug session, I was able to find a line of code that could potentially be deleted, which would effectively refactoring the code.
 
 ---
 ##### [Back to Top](#oscar-larm-engineers-journal)
