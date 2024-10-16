@@ -37,7 +37,7 @@
 .grid {  
     display: grid;
     background-color: aqua;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: 15%;
     margin-right: 15%;
     text-align: center;
@@ -47,7 +47,7 @@
 
 .Submit {
   width: 10%;
-  height: 3vh;
+  height: 3vh;  
   text-align: center;
   align-self: center;  
   justify-self: center;

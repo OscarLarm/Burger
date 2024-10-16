@@ -14,7 +14,8 @@ to the meny. The other html files is to the order. I also linked the html files 
 have to linked it to the order site in the future im so i have to search how you link a button to a another site. The ordersite is 
 not finnish i most talk to my colleagues about if we have more products that are going on the website. I have not finnsih with the 
 css to the order site and i most do the checkboxes to the menu. I used the https://www.w3schools.com/ to remember how to do some 
-stuff like margin and borders on the button. I got som problem with git but i succeded to solv it im not 100% sure how i did it 
+stuff like margin and borders on the button. I got som problem with git but i succeded to solved it im not 100% sure how i did it 
+The ssh key password dissaperd so i hade to make a new one.
 
 9/10 Fixed the link between the homepage and the menu selection page so that you can go from the homepage to the menu. 
 I put all the options in a form on the selection page to make it easier to retrieve the information. I have created all 
@@ -66,3 +67,34 @@ that show what you order.
  was on a line higher up. I created a document.querySelector to check elements with the class .burgerCheckboxes. Then, I added 
  an event listener that changes the checkbox. After that, I found all the forms in the burger. It then finds all the checkboxes 
  in the content. Finally, it sets all the checkboxes to match the state of the checkboxes for .burgerCheckboxes.
+
+ 8/10 Today we meet up and merge our work. We also decided to not do an alert becouse the format was wrong to do a alert.
+ we looked into mochajs to test our project. i got docker compose up to work.
+
+ 9/10 Today we read about mochajs and try to make ut work with our project we had lite problem with it working. 
+ We later got it to work and made one test. I moved a button and made it better.
+
+ 10/10 Today we made more test for the project. We decide to skip the database test.
+
+ 14/10 Today we made our a summry of the project. I also remade part of the checkboxes 
+ and classes so its working i also moved some checkboxes.
+
+ 15/10 Today we mett up in group and all of us did our own debug. We also made a README file.
+ 
+ ### DEBUGING!
+ Today is my debugg session. I starter to make breakpoints on two functions which is getOrder in KitchenView.js and orderPage in 
+ index.js to see what happend do the code. I watched messages in KitchenView and page variable in index.js.
+ In page varaible should contain what you have order that is send you user. messages variable contains the order that is send to
+ kitchenView terminal. To start the debug session i write make debug that start the project in debug mode. Make Debug run
+ the dockerfile. When started its creat menustore, burgerorder and kitchenview. burgerorder debugger listning on 
+ ws://0.0.0.0:9229/3411fc78-2c82-4133-96e1-a0319f7a2d02 and kitchenView listning on 
+ ws://0.0.0.0:9229/a392c693-7603-410d-938a-974bd83f3b0a. Then i went to the website on localhost:3000 and order a 
+ Original Chicken Burger and press buy so i can step in and then i go to index.js. My page got <h2>Order sent!</h2>.
+ It later got what hamburger i orderd which was Original Chicken Burger. Then it got the burgers content which 
+ is the patty, bread salad and dressing. 
+ Then SendToKitchen function is sending data varaible that send it to kitchenview with a fetch. 
+ After this and i step over i got to node modules. Then when i stop in i got to more nodules and libaries when i 
+ step out i got to KitchenView.js and the messages variable is update with ----------New order -------- and what i order and what i choose in 
+ the burger thats is send to the terminal. Then on index.js the this is saved in another variable called sentOrder 
+ that i send back to user on the website. This was my debugg seson i followed två different variables which was page and messages
+

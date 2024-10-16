@@ -98,7 +98,7 @@ make test
 ```
 Or run follwoing command in terminal.
 ```bash
-npm test
+npm run test
 ```
 ## Contribute
 

@@ -2,10 +2,10 @@
   "name": "burger",
   "type": "commonjs",
   "version": "1.0.0",
-  "description": "KitchenView",
+  "description": "Burger Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./Containers/BurgerOrderer/test/test.js",
     "serve": "node Containers/MenuStore/server.cjs",
     "order": "nodemon Containers/BurgerOrderer/index.js",
     "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
@@ -19,6 +19,10 @@
     "chai-http": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^5.0.0",
-    "mocha": "^10.7.3"
+    "jsdoc": "^4.0.3",
+    "mocha": "^10.7.3",
+    "mongoose": "^8.6.3",
+    "nodemon": "^3.1.7",
+    "sinon": "^19.0.2"
   }
 }

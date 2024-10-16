@@ -5,18 +5,24 @@
 # Then "make" in the terminal to start it
 
 
-all: up down test reset
+all: up down test reset debug
 
 up:
-	docker compose -f Containers/compose.yml up
+	docker compose -f Containers/compose.yml up --no-attach mongodb
 
 down:
 	docker compose -f Containers/compose.yml down
 
 test:
-	echo ello
+	docker compose -f Containers/compose.yml -f Containers/compose.test.yml up --no-attach mongodb 
 
 reset:
 	docker rm -vf menustore burgerorder kitchenview
 	docker rmi -f mongo containers-website containers-kitchenview
 	docker builder prune -f
+
+debug: 
+	docker compose -f Containers/compose.yml -f Containers/compose.debug.yml up --no-attach mongodb
+
+docs:
+	open function_documentation/index.html
