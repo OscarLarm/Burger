@@ -546,11 +546,9 @@ I also quickly changed the package.json "description" since it used our previous
 
 ---
 ### 2024-10-16
-Yesterday I did the debug session and it went well. We met today to turn in the assignment, however there was an issue with the unit tests. The node test command from the host worked for me, but it wasn't working for the other team members. It might have something to do with node versions. We tried updating it but it just gave another error with the way we import in express. We've changed the package.json to be commonjs instead of module early on in the project. We tried changing it back to modules, and clicked the suggested "fix" that showed up in vsCode, where it automatically changes it from using "require" to "import". However none of this fixed it, but we do still have unit tests that run through docker and these work well on everyones systems. We had to remove one of the tests that tests the kitchenview component, since theyre in different containers, they'd most likely need seperate test files.
+Yesterday I did the debug session and it went well. We met today to turn in the assignment, however there were some small issues with the unit tests. We made some adjustments and got back on track. We were going to turn in the assignment today, but we weren't sure how we should turn it in. The Canvas assignment page seems to want a file, so I don't know if we're supposed to create a zip of the project and send that. We're gonna go to the "lab" tomorrow and ask, then we'll turn it in. This gives
 
-But overall, the project and what we wanted to do with it works. We were going to turn in the assignment today, but we weren't sure how we should turn in the assignment. In canvas it seems to want a file, so I don't know if we're supposed to create a zip of the project and send that. We're gonna go to the "lab" tomorrow and ask, then we'll turn it in.
-
-The project has been difficult but also very rewarding with the amount of new things we've learned about. I feel like I've gotten a better idea of what it might look like to work on a project in a team enviroment. I definetly made misstakes at the beginning that I've now learned from.
+The project has been difficult but also very rewarding with the amount of new things we've learned about. I feel like I've gotten a better idea of what it might look like to work on a project in a team enviroment. I definetly made misstakes at the beginning that I've now learned from and will take into the next project.
 
 ---
 
