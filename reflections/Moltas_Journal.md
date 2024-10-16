@@ -81,7 +81,7 @@ that show what you order.
 
  15/10 Today we mett up in group and all of us did our own debug. We also made a README file.
  
- DEBUGING!
+ ### DEBUGING!
  Today is my debugg session. I starter to make breakpoints on two functions which is getOrder in KitchenView.js and orderPage in 
  index.js to see what happend do the code. I watched messages in KitchenView and page variable in index.js.
  In page varaible should contain what you have order that is send you user. messages variable contains the order that is send to
