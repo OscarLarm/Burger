@@ -89,7 +89,7 @@ that show what you order.
  the dockerfile. When started its creat menustore, burgerorder and kitchenview. burgerorder debugger listning on 
  ws://0.0.0.0:9229/3411fc78-2c82-4133-96e1-a0319f7a2d02 and kitchenView listning on 
  ws://0.0.0.0:9229/a392c693-7603-410d-938a-974bd83f3b0a. Then i went to the website on localhost:3000 and order a 
- Original Chicken Burger and press buy so i can step in and then i go to index.js. My page got <h2>Order sent!</h2>.
+ Original Chicken Burger and press buy so i can step in and then i go to index.js. My page got Order sent! in its variable.
  It later got what hamburger i orderd which was Original Chicken Burger. Then it got the burgers content which 
  is the patty, bread salad and dressing. 
  Then SendToKitchen function is sending data varaible that send it to kitchenview with a fetch. 
