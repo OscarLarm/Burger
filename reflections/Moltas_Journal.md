@@ -98,14 +98,8 @@ that show what you order.
  is the patty, bread salad and dressing. 
  Then SendToKitchen function is sending data varaible that send it to kitchenview with a fetch. 
  After this and i step over i got to node modules. Then when i stop in i got to more nodules and libaries when i 
-<<<<<<< HEAD:reflections/Moltas ingenjörsdagbok
  step out i got to KitchenView.js and the messages variable is update with ----------New order -------- and what i order and what i choose in the burger thats is send to the terminal. 
  Then on index.js the this is saved in another variable called sentOrder that i send back to user on the website.
  This was my debugg seson i followed två different variables which was page and messages
- 
-=======
- step out i got to KitchenView.js and the messages variable is update with ----------New order -------- and what i order and what i choose in 
- the burger thats is send to the terminal. Then on index.js the this is saved in another variable called sentOrder 
- that i send back to user on the website. This was my debugg seson i followed två different variables which was page and messages
 
->>>>>>> a421a197d63a89ca719b7c912504554ae637c5e5:reflections/Moltas_Journal.md
+
