@@ -81,11 +81,7 @@ that show what you order.
 
  15/10 Today we mett up in group and all of us did our own debug. We also made a README file.
  
-<<<<<<< HEAD:reflections/Moltas ingenjörsdagbok
- DEBUGING!
-=======
  ### DEBUGING!
->>>>>>> a421a197d63a89ca719b7c912504554ae637c5e5:reflections/Moltas_Journal.md
  Today is my debugg session. I starter to make breakpoints on two functions which is getOrder in KitchenView.js and orderPage in 
  index.js to see what happend do the code. I watched messages in KitchenView and page variable in index.js.
  In page varaible should contain what you have order that is send you user. messages variable contains the order that is send to
@@ -98,8 +94,6 @@ that show what you order.
  is the patty, bread salad and dressing. 
  Then SendToKitchen function is sending data varaible that send it to kitchenview with a fetch. 
  After this and i step over i got to node modules. Then when i stop in i got to more nodules and libaries when i 
- step out i got to KitchenView.js and the messages variable is update with ----------New order -------- and what i order and what i choose in the burger thats is send to the terminal. 
- Then on index.js the this is saved in another variable called sentOrder that i send back to user on the website.
- This was my debugg seson i followed två different variables which was page and messages
+ step out i got to KitchenView.js and the messages variable is update with ----------New order -------- and what i order and what i choose in the burger thats is send to the terminal. Then on index.js the this is saved in another variable called sentOrder that i send back to user on the website. This was my debugg seson i followed två different variables which was page and messages.
 
 
