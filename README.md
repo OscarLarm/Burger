@@ -96,7 +96,7 @@ To test either run the following command in the terminal, which will start the c
 ```bash
 make test
 ```
-Or run follwoing command in terminal.
+Or run follwoing command in terminal (if your node is the latest version) to test on host.
 ```bash
 npm run test
 ```
