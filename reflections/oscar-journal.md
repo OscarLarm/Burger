@@ -4,9 +4,10 @@
 > The entries for 2024-09-05 until 2024-09-12 was originally written in Swedish by me, then translated with the ChatGPT AI. Everything after 2024-09-12 was written in English originally by me.
 
 > [!TIP]
-> This text was written using markdown with some Github-specific syntax such as this [Alert.](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
+> This text was written using markdown with some Github-specific syntax such as this [Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts).
+> I recommend reading this journal in the [Github repo](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
 > 
-> I recommend reading this journal in the [Github repo here](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
+> The debug session is at the bottom of the Journal. Link to the debug section is [here](#debug-session) and below in the [Entries](#entries) section.
 
 ## Entries
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
@@ -41,6 +42,7 @@
 - [2024-10-10](#2024-10-10)
 - [2024-10-13](#2024-10-13)
 - [2024-10-14](#2024-10-14)
+- [2024-10-15](#2024-10-15)
 - [Debug Session](#debug-session)
 ---
 
@@ -534,6 +536,163 @@ We're pretty much done. Some things I think might be left:
 2. Finish the project documentation. I'm gonna send an email to Mikael and ask if the projects overall documentation should be a README.md, or if it should be some seperate file.
 
 ---
+### 2024-10-15
+Today we finished the projects README.md, where the general project documentation is. I ended up not writing an email yesterday since I saw in the documentation lecture that it talked about having the project documentation in the README.md. We also ended up adding a couple things to one of the reflection parts.
+
+We got debugging sessions left, a couple of people have already finished their debug sessions. I'm gonna do a debug session now, and tomorrow we'll hopefully be ready to turn in the project.
+
+I also quickly changed the package.json "description" since it used our previous readme where I had just listed a few useful git commands from the first week. I just changed the description to the component name. Hovering over the 'description' says "This helps people discover your package, as it's listed in 'npm search'." and since I don't want other people to find our private repo, this seems irrelevant for this project. The actual description is in the README and documentation.
+
+---
+
+<br>
 
 ## Debug Session
 
+##### [Back to Top](#oscar-larm-engineers-journal)
+
+- Author: Oscar Larm
+- Date: 2024-10-15
+
+---
+
+I started up the debugger inside the containers "burgerorder" and "kitchenview" using our make command "make debug".
+I get output in the burgerorder terminal: 
+
+```bash
+burgerorder  | 
+burgerorder  | > burger@1.0.0 start-debug
+burgerorder  | > node --inspect=0.0.0.0 index.js
+burgerorder  | 
+burgerorder  | Debugger listening on ws://0.0.0.0:9229/ee3ef073-c170-4475-8c31-4cf459974eed
+burgerorder  | For help, see: https://nodejs.org/en/docs/inspector
+burgerorder  | Connected to MenuStore
+burgerorder  | app running on http://localhost:3000
+```
+
+and in the kitchenview terminal I get:
+
+```bash
+kitchenview  | 
+kitchenview  | > burger@1.0.0 start-debug
+kitchenview  | > node --inspect=0.0.0.0 KitchenView.js
+kitchenview  | 
+kitchenview  | Debugger listening on ws://0.0.0.0:9229/9d4a9708-95ff-484c-b6a6-2a6e792d9775
+kitchenview  | For help, see: https://nodejs.org/en/docs/inspector
+```
+
+Which means that the debuggers are running.
+
+I decide to debug burgerorder.
+
+First I set a breakpoint for the function "orderpage()" on (at the time of writing this) line 46.
+
+The orderPage function is the function which makes the page after a order has been made, informing the user which items has been ordered. 
+
+I then click the "Run and Debug" tab to the left in VSCode. I then choose "Docker:Attach to BurgerOrderer" from the dropdown menu, then click "start debugging".
+
+I can tell that it's running. VsCode switches to the debug console, and it adds a "debug interface" to the top. Currently there are the options "Pause", "Restart" and "Disconnect". 
+
+I open the website, but nothing gets loaded. Looking at the console, I see that I get an error in burger.js, because of a line we added earlier to test something but forgot to remove, so I comment out the line and restart. Now the page loads as it should and I can continue debugging.
+
+I click the checkbox for "original Chicken Burger" which ticks all "ingredient" checkboxes aswell, then I click buy.
+The breakpoint for orderPage stops at the first line:
+
+```js
+JSON.stringify(data)
+```
+
+Checking the Variables, I look at "Local:orderPage" and see "this= global" and "data". It is "data" that I'm interested in right now. I click on the "data" variable and seee that it has 
+
+"fooditem = 'Original Chicken Burger'" and "ingredients = (4) ['Fried Chicken Patty', 'Bread', 'Dressing', 'Brioche bread',]. Copying the value from 'data' gives the following:
+
+```js
+{
+  foodItem: "Original Chicken Burger",
+  ingredients: [
+    "Fried Chicken Patty",
+    "Bread",
+    "Dressing",
+    "Brioche bread",
+  ],
+}
+```
+
+I right click on the data variable and "Add to Watch". I also right click on the 'page' variable which is a string which will be changed depending on what gets sent in the 'data' variable.
+
+I click 'Step Into' in the debugger. I continue 'stepping into' the function, and see that the 'page' variable changes. Currently the string only contains a header element and the text "order sent". It then adds a 'hr' element. It then gets to the line:
+```js
+page += `<p>One ${data["foodItem"]}`
+```
+Which checks the data variables value for "foodItem" which is 'Original Chicken Burger', then adds it to the string. It then gets to the if statement, checking if the data variable has a 'ingredients' key. It does, so it enters the if statement and takes the array of ingredients, makes it into a string with join then adds it to 'page'. The page variable gets updated for the last time, before reaching the return statement. I then return to the '/order' route which is what calls on orderPage() and gets called on when a order is placed.
+
+I retry the debugging but this time I try to not add any additional ingredients.
+I keep the same breakpoint and uncheck all ingredients. Looking at the 'data' variable now, it has the value:
+
+```js
+{
+  foodItem: "Original Chicken Burger",
+}
+```
+Which means that the ingredients were not sent and the data variable does not have a key called 'ingredients'. I step into the function, seeing that the 'page' string is being changed as expected. When I reach the if statement, it checks if there is a 'ingredients' key in 'data', and since there isn't, it skips the block and continues successfully.
+
+Overall, the orderPage() function seems to be working as intended.
+
+I decide to debug the entire '/order' route as well. I set a breakpoint in the express post endpoint '/order', on (as of writing this) line 62, where the sendToKitchen function is being declared. I also set a breakpoint on line 80 and 81, where the OrderPage function is being called and then sent as a response. After that, I go back to the website and press Classic Cheese Burger with the ingredients Beef patty, Mustard and Sesame Bread checked in. I then press buy.
+
+The current local variables are req, res and this. 'this' is undefined, 'req' is 'IncomingMessage' and res is 'ServerResponse'. I step into once and the 'sendToKitchen' variable is added to the local variables. req.body is declared to 'data'. 
+If I go into the variable 'req' and copy the value from 'body' I get:
+
+```js
+{
+  foodItem: "Classic Cheese Burger",
+  ingredients: [
+    "Beef patty",
+    "Mustard",
+    "Sesame Bread",
+  ],
+}
+```
+Which is accurate and the expected value.
+
+Another step into, sendToKitchen is being called with 'data' as the argument. Stepping into again opens a new file called async_hooks. This is most likely because sendToKitchen is a asynchronous function. Continuing to step into, jumps between different functions inside 'async_hooks'. I press 'Step Over' a few times until I am back to my function.
+
+The variables for 'Local:sendToKitchen' are now 'this = global' and 'data' with the value: 
+
+```js
+{
+  foodItem: "Classic Cheese Burger",
+  ingredients: [
+    "Beef patty",
+    "Mustard",
+    "Sesame Bread",
+  ],
+}
+```
+This looks correct. I then continue to 'step into' but realise that I will have to restart to avoid going through all of the code/functions that 'await' and 'fetch' use from different files. So I restart and get back to where I was before, with the same data, and use step over instead when I get to the await fetch post.
+
+I then get to where sentOrder is being assigned to the orderPage function with 'data' as the argument. I check the data variable from my 'watch' tab, and see that the data is still the same and accurate. 
+<br>
+
+The orderPage function works the same way as the previous debug test, without issues. I then step into the line where I send the return z from orderPage as a response, and the seperate file 'response.js' opens up. I use 'step out' to get back to my route. 
+
+A new local variable is created, 'Return value = undefined'. I add this to 'watch' and it's value is:
+```js
+Uncaught SyntaxError: Unexpected identifier 'value'
+```
+I then step into again, and move to 'layer.js'. It seems to handle 'res.send'.
+
+I then continue stepping through but then I reach the end and the debugger finishes. I didn't get to see the 'Return value' value, since all watched variables now have the value 'not available'. The Return value seems to stay as 'undefined' and 'Uncaught SyntaxError etc...'.
+
+I also noticed that I got a typerror, 'fetch failed' at the sendToKitchen function when the data gets sent to kitchenView. The error seems to be 'Headers Timeout Error'. I've gotten this error before, and I think it has to do with the fact that the kitchenView endpoint isn't sending a response. 
+
+Overall, I feel like this debug session went well, and the results were mostly as expected. The debuggers work very well in the containers. What wasn't as expected was the 'Return value' variable and its value. I am not sure what it is, but it seemed to have been created when I used res.send, so it must have something to do with that.
+
+Something that would make debugging easier and smoother would be to refactor a lot of the functions, to make them simpler and have them do less things. Have the functions more specific, but also generalise them a bit more by adding more parameters to them.
+
+I also noticed that inside the orderPage function there is a 'JSON.stringify and from what I can tell, it isn't doing anything. json.stringify should turn it into json formatting, but the data variable doesn't seem to change so I don't think the statement has any effect and can be safely removed. Will need to run additional tests to verify that it isn't necessary before removing it.
+
+With the help of this debug session, I was able to find a line of code that could potentially be deleted, which would effectively refactor the code.
+
+---
+##### [Back to Top](#oscar-larm-engineers-journal)

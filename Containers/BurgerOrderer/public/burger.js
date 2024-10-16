@@ -59,6 +59,8 @@ async function renderFood(food){
     });
 }
 
+// module.exports = {renderFood}
+
 renderFood('burger');
 renderFood('salad');
 renderFood('sides');
