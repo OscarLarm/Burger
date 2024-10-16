@@ -19,7 +19,7 @@ test:
 reset:
 	docker rm -vf menustore burgerorder kitchenview
 	docker rmi -f mongo containers-website containers-kitchenview
-	docker builder prune -f
+	docker buildx prune -f
 
 debug: 
 	docker compose -f Containers/compose.yml -f Containers/compose.debug.yml up --no-attach mongodb
