@@ -9,7 +9,7 @@
     "serve": "node Containers/MenuStore/server.cjs",
     "order": "nodemon Containers/BurgerOrderer/index.js",
     "kitchen": "nodemon Containers/KitchenView/KitchenView.js",
-    "start-debug": "node --inspect=0.0.0.0 KitchenView.js"
+    "start-debug": "node --inspect=0.npnpm0.0.0 KitchenView.js"
   },
   "keywords": [],
   "author": "",
