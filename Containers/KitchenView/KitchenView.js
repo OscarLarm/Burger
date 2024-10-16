@@ -32,6 +32,8 @@ function getOrder(data){
 app.post(`/order`, (req, res) => {
     var data = req.body
     console.log(getOrder(data))
+    res.send("recived")
+
 });
 
 app.listen(3001, () => {
