@@ -672,6 +672,7 @@ The variables for 'Local:sendToKitchen' are now 'this = global' and 'data' with 
 This looks correct. I then continue to 'step into' but realise that I will have to restart to avoid going through all of the code/functions that 'await' and 'fetch' use from different files. So I restart and get back to where I was before, with the same data, and use step over instead when I get to the await fetch post.
 
 I then get to where sentOrder is being assigned to the orderPage function with 'data' as the argument. I check the data variable from my 'watch' tab, and see that the data is still the same and accurate. 
+<br>
 
 The orderPage function works the same way as the previous debug test, without issues. I then step into the line where I send the return z from orderPage as a response, and the seperate file 'response.js' opens up. I use 'step out' to get back to my route. 
 
@@ -695,5 +696,3 @@ With the help of this debug session, I was able to find a line of code that coul
 
 ---
 ##### [Back to Top](#oscar-larm-engineers-journal)
-
-<br> </br>
