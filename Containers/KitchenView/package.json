@@ -2,7 +2,7 @@
   "name": "burger",
   "type": "commonjs",
   "version": "1.0.0",
-  "description": "Useful git commands: ```bash git pull # Pulls changes from remote branch into local branch ``` ```bash git add 'changed-files' # Stage files before committing changes. Specify which files you want to stage. Use . while in the root dir to stage every changed file. ``` ```bash git commit -m \"A good commit message\" # Commit the changes. Add a message describing the changes made ``` ```bash git push # Push up the local changes to the remote branch",
+  "description": "KitchenView",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

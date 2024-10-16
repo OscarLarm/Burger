@@ -2,7 +2,7 @@
 // var mongoose = require('mongoose')
 var chai = require('chai')
 var chaiHttp = require('chai-http')
-// const sinon = require('sinon')
+const sinon = require('sinon')
 var {app, connectToDB, orderPage} = require('../index.js')
 var {getOrder} = require('../../KitchenView/KitchenView.js')
 var {renderFood} = require('../../BurgerOrderer/public/burger.js')
@@ -69,7 +69,6 @@ describe('Trying the getOrder() function', () => {
 
     })
 })
-
 // describe('Trying the renderfood() function', () => {
 //     it("Seeing if it runs the expected amount of times", done => {
 //     var spy = sinon.spy(renderFood('window', "renderFood"))

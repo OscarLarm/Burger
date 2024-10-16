@@ -1,7 +1,13 @@
 # Oscar Larm Engineer's Journal
 
-> [!NOTE]
+> [!IMPORTANT]
 > The entries for 2024-09-05 until 2024-09-12 was originally written in Swedish by me, then translated with the ChatGPT AI. Everything after 2024-09-12 was written in English originally by me.
+
+> [!TIP]
+> This text was written using markdown with some Github-specific syntax such as this [Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts).
+> I recommend reading this journal in the [Github repo](https://github.com/oscar-larm/Burger/blob/main/reflections/oscar-journal.md), for better and more readable formatting.
+> 
+> The debug session is at the bottom of the Journal. Link to the debug section is [here](#debug-session) and below in the [Entries](#entries) section.
 
 ## Entries
 - [2024-09-05 (Swedish)](#2024-09-05-swedish)
@@ -21,7 +27,26 @@
 - [2024-09-18](#2024-09-18)
 - [2024-09-19](#2024-09-19)
 - [2024-09-20](#2024-09-20)
+- [2024-09-25](#2024-09-25)
+- [2024-09-26](#2024-09-26)
+- [2024-09-27](#2024-09-27)
+- [2024-09-29](#2024-09-29)
+- [2024-10-01](#2024-10-01)
+- [2024-10-03](#2024-10-03)
+- [2024-10-04](#2024-10-04)
+- [2024-10-05](#2024-10-05)
+- [2024-10-06](#2024-10-06)
+- [2024-10-07](#2024-10-07)
+- [2024-10-08](#2024-10-08)
+- [2024-10-09](#2024-10-09)
+- [2024-10-10](#2024-10-10)
+- [2024-10-13](#2024-10-13)
+- [2024-10-14](#2024-10-14)
+- [2024-10-15](#2024-10-15)
+- [Debug Session](#debug-session)
 ---
+
+
 
 ### 2024-09-05 (Swedish)
 
@@ -225,7 +250,7 @@ Today we set a deadline with dates for different parts of the project:
 
 --- 
 
-> [!NOTE]
+> [!IMPORTANT]
 > The following entries were written in English by me from the start, **not** using AI to translate.
 
 ---
@@ -270,3 +295,404 @@ I set up a "schema" and a model. Then I use the find method to filter what I wan
 I'm gonna see with my group if we want all of the data sent from Mongoose, then filter it with the REST-API or if we wanna filter it directly with Mongoose. 
 
 ---
+### 2024-09-25
+
+We met up to see if we could startcombining the different components, since we set the timeline for combining everything to the 26th. However there is still a lot of work left on BurgerOrderer, so we split BurgerOrderer into smaller parts. I'm gonna work with Gabriel on the "sending to kitchenview" part. 
+
+I've looked through the examples provided on the container labs we're gonna work on tomorrow, as well as the early example of what it might look like in flask.
+
+---
+### 2024-09-26
+
+We want to try and combine the components this week.
+I've used a lot of code that was provided as a example in the 5th lecture. I set up some temporary links in the express site and I made a static array of objects representing burgers. 
+My focus is not adding the ability to add or remove ingredients and customizing, I just want to get sending anything from BurgerOrderer to Kitchenview to work. I've made it so that clicking on a link will open a link of 127.0.0.1:3000/'nameoflink' where nameoflink is the burgername. It also has a route setup for /nameoflink, so now I think I just need to send that link to kitchenview, have kitchenview change it to a string and remove everything before 'nameoflink'. 
+
+Since we're 2 working on it, we've decided to work in seperate branches. I'm currently working in a local branch. I've made temporary copies of index.js and kitchenviewer. I will then take the things that work and move them into the original files, when I get it working. 
+We're gonna compare our solutions when they're ready. If we have done it in different ways, then we'll discuss which approach is the best. Right now I don't have any preferences to how we're gonna do it, I just want to get it working so we have a combined project that we can easier make tests for and add things to.
+
+---
+### 2024-09-27
+
+Currently I have 2 possible ways I can send it to kitchenview. The first is is using fetch, I'm gonna research how to use fetch. 
+
+The second is to set up another express file for the kitchenview, then somehow have them communicate with eachother. I don't think this is necessary. 
+
+I'm gonna try to use fetch. I heard from the group mention of "Axios" aswell, so I'm gonna look into it. I'd prefer to not add unnecessary libraries, but it seems like it makes it a lot smoother so I will give it a try. I'm gonna read [A Deep Dive into Axios, Fetch, and Express](https://medium.com/@workwithracian/a-deep-dive-into-axios-fetch-and-express-bf098b85e1f0).
+
+---
+### 2024-09-29
+
+I sat all day yesterday trying to get it to work. I succeeded in sending a burgername to kitchenviewer. 
+I am currently using 2 express servers, one for kitchenviewer and one for burgerorderer. Kitchenviewer has a enpoint listening to /order/:, and burgerorderer has a "sendtokitchen" function that fetches to /order/burgerName. I also have a route that is "bought" which redirects the user after clicking the "buy" button to a site that prints "bought" "burger" where burger is replaced by the actual ordered burger. I also have a "back" button that returns to the mainpage.
+
+I tried a bunch of different solutions. At first I had a route for /order/burgerName in burgerorderer, like the flask example had, but it felt unecessary to have 2 routes that basically do the same thing. 
+
+But I am still fixing with it, and when we add everything then I might adjust some things to have it fit in with how everyone else has done things. This is why I have made temporary copies of kitchenviewer and burgerorderer, to avoid merge conflicts since were working in the same files. 
+When we merge, I'll take from the temporary files and paste into the originals, and see if it works. 
+
+Another reason I have it in a temporary file is that I have also added a few things that other people are working on, just for testing purposes and seeing if it works. For example, I generate all html from the expressapp now in a function. Later we wanna use the html file we have and "inject" into the express to render the site. Gabriel on the team mentioned that he'd gotten that to work.
+
+So the burgerorderer site currently lists all the burgers names with buttons underneath each for "buy", and they also have a list of all the ingredients that they contain.
+
+**The biggest issue:**
+
+- Something I spent most of yesterday on was trying to get the ability to add options to work smoothly. I tried to have a "cart" at the bottom, and have the ingredients as checkboxes, and whenever a checkbox gets ticked, it adds it to the cart. And I had the burgers as "radio" inputs, so you can only choose one burger, then the ingredients.
+- The problem with this approach is that I don't know how to get the checkboxes to only work when the corresponding radio option is checked. It's also a bit annoying to have the checkbox remove the ingredient from the cart if it's already checked and gets unchecked, since I use a "onclick" listener for the checkboxes. 
+
+**Possible solutions:**
+
+1. One solution might be to have a for loop for the "add option" which goes through a array which contains all of the options, then do a if its already there, remove it, if its not, add it. This feels clumsy and overly complex.
+
+2. Another solution I read about was to make use of the "forms" element more, and instead of sending the string, I'd send it as actual data to the cart, then format it. This also feels a bit too much. I assume you would be able to create a form for each burger, and have the options linked to that specific burger, and then have a submit button specifically for that burger. However I don't know if I'd want to have the ability to add more than one burger at a time. I think it would add a lot more complexity when displaying the order in kitchenviewer, and sorting everything when I press buy. I think I would then make it so that the "add to cart" submit button would work as a link to a seperate route that has the cart, and a button for "cancel" and one for "buy". This would make it so that you can only order one item at a time.
+
+3. Another possible way to fix it could be to add routes for each burger. So the frontpage only has the burgers listed. You either click on a button for the burger, or you click the radio input for the burger, then click a "next" button. The buttons are links to /burgerName and once there, the burgers ingredients are rendered. You check what you want to remove/add and then click order, then you go to a page, and its there the "calltokitchen" function gets called. I think this solution might be the simplest to do right now, but it also has the consequence of only being able to send one order at a time. One issue might be that several html pages might need to be loaded.
+
+I think I will try the 3rd solution first. The "issue" of only being able to send one order at a time isn't really a problem right now, I want to add things in small steps. I have added the ability to add a burger. Now I want to add the option of adding customization to the burger. Also adding the option to have a bunch of different burgers with different customizations is another "feature" that we can tackle once we get this to work. 
+
+I'm being mindful of not adding "technical debt" by going "we can fix this later" too much, but I think it's necessary currently since we don't have a working version, and just need to get something together that does the bare minimum. We can then polish it and add features, before the first "release" version.
+
+It's Sunday today and we wanted to try to get it combined before the end of the week. 
+
+---
+### 2024-10-01
+
+After the lecture a few of use sat down to see how far we've gotten. There's still a bit to go before we're ready to combine everything, so we'll continues working on it. There isn't a lot more that needs to be done. 
+
+I'm gonna try to make it so that everything gets sent as a post of the .json instead of just sending a get for the url. I think this will make it easier to send more data.
+
+---
+### 2024-10-03
+
+I've worked all day on getting it to work and I think I got the send function to work. It wasn't working for the longest time. The fix was to add middleware for urlencoding, which apparently is necessary when formatting html from data into .json format. I'm also using .json middleware.
+I ended up going with the possible solution #2 that I wrote about on [2024-09-29](#2024-09-29).
+
+I have it set up so that the "submit" button posts the data to the websites /order/ endpoint. That endpoint then takes the data, sends it to a "sendToKitchen()" function, then calls on another function which renders a "ordered" page that prints out on the page what the user has ordered. The sendToKitchen function makes a post [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to the kitchenviewer express server, on the endpoint /order. Kitchenviewer takes the data and calls on a function which goes through the data and makes a string that says e.g. "one fettburger" and it checks if any "ingredients" has been added and if it has then it adds "with " and then all ingredients.
+
+I would like to add a "cart", and the ability to add and remove stuff to it, then send everything inside the cart. But I think this is enough for now, when we've combined everything we'll be able to add more things.
+
+Tomorrow is a "lab" so I'm gonna show what I added and see if we want to combine everything.
+
+---
+### 2024-10-04
+
+I sent a message in the group chat to see how it's progressing. We should try to meet up as a group this weekend to get things put together.
+I've previously used static data and sites just to test the functionality, so it will almost certainly need to be adjusted.
+
+---
+### 2024-10-05
+
+We met up and managed to combine everything except the database. 
+All 3 components are containerized and in a docker compose file. 
+The person working on getting data from the database wasn't available this weekend so we're planning on adding that part during the week. There was a few merge-conflicts but we solved them in vscides merge conflict tools, where it's visualized which the incoming changed are and which the current ones are.
+
+The project has a lot of files that aren't being used. We decided to make a folder where files that aren't being used can go incase we might use them in the future. Since me and Gabriel worked on the same part and used different methods we could potentially add some things from both versions. 
+
+We ended up using my version for now since it seems to be working with the other parts, but it would be smart to add the best parts from both versions into one file later.
+
+There were some issues with getting the dockerfiles to access the package.json and package-lock.json that were in the parent folder. We ended up making one for each dockerfile. We might look into changing those package.json files to only include the packages that each component use. Right now they're the same.
+
+We've come a long way with the project today. What's left to do is:
+1. Add the function for getting the data from the database. 
+2. Documentation, both in code and for the entire project in the readme.
+3. Create and add automatic tests.
+4. Create and add easier startup from the project root, example a makefile or a shellscript.
+5. Everyone do a individual debug session and document it.
+6. Write the summaries as a group for each of the 3 assignments.
+
+Besides that, there's some adjustments and improvements we could do, but we'll see how long the above takes. It looks like there's a lot, but I think we can get most of them done this week.
+
+We merge the dev branch into main.
+
+---
+### 2024-10-06
+
+Today we worked on documentation. 
+
+However we encountered a big problem.
+We noticed that a while back, Gabriel's commits were not properly linked to his github account. This means that if you check the "contributors" tab then his account doesn't have a lot of commits, even though he's added a lot. His account is called Gabe-Hog but the commits were authored by "Gabriel-". 
+
+I've changed my git email before so I had an idea about what to do. We searched online and found the commands to change the global gitconfig email and username. He tried making a commit and it seems to work now.
+
+However, the old commits were still authored wrong. We searched around and found a few possible fixes, but a few of them seemed to only work whrn changing the entire git history, not just for one user. 
+
+We tried to git log all messages with the faulty author, then use rebase, but this didn't list the authors, just all commit messages and hashes. Also, changing each commit individually would take a lot of time, and I felt like there must be some tool that would make it possible to change a lot of messages at once. 
+
+We saw a few threads and articles talk about [filter-branch](https://git-scm.com/docs/git-filter-branch), but a lot of them had updates mentioning that filter-branch wasn't recommended anymore because of high risks of messing up the commit history. Even the documentation linked above recommends against using it. Many mention [git-filter-repo](https://github.com/newren/git-filter-repo) as a better and safer alternative, and it seemed promising.
+
+We installed git-filter-repo with pip. We then made a new temporary branch and then followed some relevant documentation we found from their repo. We then tried to merge it, but got a error Regarding unrelated histories. We Googled the error and how to fix it, and got a flag to add to allow unrelated histories. When we did this, it doubled all commits. The branch suddenly had 2x the commits and looking in the commit history, it had duplicated each commit once. 
+
+We decided to hold off on trying to change it, and instead mention in the journals that the commit author for "Gabriel-" belong to "Gabe-Hog". 
+When we removed the branch and he tried to use git pull, we got a error that the remote branch was untracked. We tried to set upstream but it wasn't fixing it. 
+Everything seemed to stop working, and he couldn't pull, push or merge anything. We double checked that he didn't have any local branches that weren't pushed to remote, then we decided to just remove the entire repo folder from the pc, then clone it again. That fixed it.
+
+While we were doing this, Malte cleaned up the folders and moved unused files to a seperate folder, like we had discussed yesterday.
+
+I now started working on documentation for functions. Similar to javadoc, which has been mentioned in the course, I found jsdoc. It was mentioned in the article [Whats the best way to document Javascript](https://gomakethings.com/whats-the-best-way-to-document-javascript/). The article is a bit too opiniated regarding self documented code, but jsdoc seemed interesting so I looked through the examples and looked up the [official jsdoc documentation](https://jsdoc.app/). 
+
+I've now added documentation dor the functions I've written. I've tried to avoid commenting too much, and avoided explaining what each line does, and instead tries to explain the entire function as a whole.
+
+Something I noticed was that a lot of the functions I've made are very specific, and they could be made a lot more general and easier to use, if I add another 1 or 2 arguments. I'm gonna try to look into this if we have a bit if time left before the assignment deadline.
+
+It says in the assignment that each method and each container should be documented, but I'm not certain where the container documentation should be. Documenting/commenting in the dockerfiles seem unnecessary. I think you could add a description at the top of each of the 3 components main files.
+
+Tomorrow we're gonna try to finish the documentation for functions, containers and the big project documentation with "how to start" Instructions for the project. I think we'll put the project documentation in the README.md. Right now in the README.md, there are some git commands and short descriptions that I wrote and added about right when we started the project. They're no longer necessary, it feels like we've gotten more comfortable with using git.
+
+We'll also look into a testing framework to make tests more efficient and easier to do. I found some recommendations for [Jest](https://jestjs.io/) when testing JavaScript. I'll look into it more tomorrow.
+
+---
+### 2024-10-07
+
+Today we did a lot with the project. I started up with documenting a few functions I've written, and I also made the outline for the README page, which I figured could work as a part of the project documentation. I filled in some information into the README as well.
+
+Max has worked on the part that's going to get the data from the database. We're trying to get it working with the components we have. There's a function for connecting to the mongodb database using mongoose. I had some trouble connecting. I called on the function from the "listening to" part of the express app, but it wasn't working. I also tried adding it to a route but didn't seem to work. I tried adding it outside any routes, and it seems to be working, based on the fact that the function logs when connection has been established.
+
+Reading on [mongoose docs about connection](https://mongoosejs.com/docs/connections.html), they say that mongoose.connect buffers. I don't fully understand it but from reading, it seems to be able to keep trying to connect, while the code is being run.
+
+I tried getting the data from the database, to the Javascript but it wasn't working. It might have something to do with the Javascript being loaded through the express app. I also wasn't sure how I would access mongodb without mongoose, and since mongoose is for node.js, I think we should get the data from the website express app.
+
+I felt very confused on how to go about it. I also had a hard time at first searching on google for examples or articles talking about it, since I wasn't sure how to describe what I wanted to do fully.
+
+I ended up finding a few different sources and started making a endpoint in the burgerorderer express file. The website Javascript should first make a fetch request to that route, then the route should send everything from the database to the site script. It should then save it as a object. Then we can just replace some words when calling on key-value pairs, when generating the html.
+
+I wasn't able to get it to work properly. I added console.log to a lot of places to see where I was going wrong. I'm sending it as a response in the form of .json() but I'm uncertain of the syntax.
+
+Gabriel managed to get debuggers into the containers which is very good. Malte also made a makefile that does docker compose from root. It also is able to take down the docker compose like docker compose down, as well as having a reset command which removes containers, volumes and images.
+This saves time when testing changes in the containers. It also automates the starting part of the project.
+
+We decided to try to work on unit testing tomorrow.
+
+---
+### 2024-10-08
+
+I wasn't able to get started working on unit testing today since I wasn't able to get the database fetch function to work until later.
+
+I finally managed to get it working. I managed to get data to be sent to the website Javascript, verified with logging, but I wasn't sure how to get all objects that had a specific key-value combination. I found some stackoverflow threads mentioning the "filter()" function which filters based on given parameters. 
+I found some examples on how to use it [here](https://forum.freecodecamp.org/t/filtering-json-object/244160/2) and also [here](https://medium.com/@melaniecp/filtering-an-arrays-objects-based-on-a-value-in-a-key-value-array-using-filter-and-includes-27268968308f). The first one is very similar to how I ended up doing it, but the second one was better at explaining what it was doing. So I checked all objects in the array which had the key-value pair "type: 'burger' ". This saves it into a new array, which I then use a foreach loop to add html elements, such as forms and input, to each burger. 
+I also have a foreach loop for each ingredient for the burgers. The way it makes html based on data is pretty much the same as before, changed from using static data to data from the database.
+Something which also helped was removing the .find() method from the model and put it directly into the endpoint which gets the data from the database.
+
+The rest of the team worked on other things. Gabriel and Malte were also looking into frameworks for unit testing. They mentioned that they had heard recommendations for [Mocha](https://mochajs.org/). I think Gabriel managed to get Mocha into the containers through NPM.
+
+Since the site now takes the data from the database then sends it to kitchenview, I think we can consider the "combine parts" goal done. Before heading home, we sat and worked on some more documentation, and decided to continue work on unit testing tomorrow. The plan is to all work on it together, preferably using a group room and connecting one persons laptop to the tv, then work together to get the automatic unit testing fully implemented.
+
+Some additional improvements I should consider making when we got the necessities in place:
+- Make the database container stop "spamming" the log with output. It makes it hard to see KitchenViews terminal from vscodes integrated terminal, when using docker compose and all 3 containers output is shown in the same terminal. Using docker-desktop makes it easy to see individual containers terminals, but it would be nice to clean up the shared terminal view.
+- Right now some functions I made are very "specific", but they could be made more "general" by adding some arguments, and making them more "reusable". One example is the function for generating burgers. I should instead make it so that it generates whatever is put into the argument.
+- I am only generating burgers on the site right now. We have other "types" in the database (sides, drinks, salad) and it should be easy to add since I've already saved all the types in their corresponding arrays, but I'll have to do the above step first to keep the code as DRY as possible. If I just copied, pasted it but changed the names then it would just be a big chunk of text that is mostly just repeats.
+
+However these things I feel can wait until the necessities are in place.
+
+---
+### 2024-10-09
+
+Today we all worked on unit testing. It went well. We're using mocha, and we also added [Chai](https://www.chaijs.com/), which provide more assertions.
+
+We all worked on the same laptop today. Malte connected his laptop to the tv in the grouproom.
+
+Problem solving all together was effective, especially since we're all new to unit-testing. Looking up how to use the testing framework was easy, since we all used our own laptops to look for the information, communicate it and share it in our project channel. We then tried it and if we got an error then we evaluated where to go from there based on the error message received.
+
+We managed to add a unit test for a express route in our burgerorderer to check if it's running, which is working.
+
+We tried to make a unit test for the route that takes data from the forms, cakes on the function which sends it to kitchenview then calls on the function which makes a html-formatted string. We've set up a vakue we post to it, then a substring that the response should have. We couldn't get it to work. We've logged the data at several points and it should be correct. We've also used the debugger to follow the data and see it'd type.
+
+We also tried to make it so that it should only check that the respons is a string, but we get error that you can't compare a object to string, or something like that.
+
+---
+### 2024-10-10
+
+We worked in a similar way to yesterday, we used my laptop and connected it to the tv. 
+
+We fixed the issue from yesterday and correctly implemented the unit test. The response was an object with a lot of stuff like headers and such, but we only wanted the response body. We found that the solution to this was to add .text to the response in our Mocha/Chai script.
+
+We then tried to make a unit test for the route that gets data from the database. This was very difficult, the test came back as positive, even when we didn't start the database container. We then tried to import just the function which connects to the database, and instead of specifying a route and get/post/etc, and .end, we only had the function call inside, then a done().
+
+We didn't quite get it working. We're considering if it might be better to unit test some other part, the connect to database function has a catch inside which does warn when there's a problem with the database.
+
+---
+### 2024-10-13
+
+During the weekend I worked a bit on some tests. I copied a package.json and moved it into root. I also removed some unused packages from the containers package.json files. This will hopefully reduce the amount of time it takes to do docker compose by a little bit.
+
+I made some tests for a few functions, and added both a correct input and a incorrect input, and what the expected response should be.
+
+I also generated html page for our documented functions using jsdocs. At first, only a few of the functions from the files I chose got rendered. I tried a lot of different things and searched around. There was an issue posted regarding jsdoc and not rendering some functions. Some of the solutions that people were suggesting was to add different tags to the jsdoc documentation, e.g adding the @global, the @public and the @function tags. 
+
+After awhile I got all functions to get added to the jsdoc index.html page in ./function_documentation. I also made a makefile command called make docs which opens the jsdoc index.html in google-chrome.
+
+Tomorrow we'll start working on the reflections for each assignment, we're close to being done with the project.
+
+---
+### 2024-10-14
+
+Today we sat all together and worked on the reflections for the 3 parts of the assignment. We connected Max laptop to a tv and discussed the questions in each of the reflection assignments, and how it had gone, then wrote each of the reflections as a group. The only part left in the reflections is to link everyones individual debug sessions in the reflection for assignment 3: Testing and Debugging.
+
+The make docs was changed from using 'google-chrome' to 'open' which apparently opens the users default browser instead.
+
+It went well. I'm gonna do a debug session tomorrow.
+
+We're pretty much done. Some things I think might be left:
+1. Clean up structure of project, move unused files to ./other_versions
+2. Finish the project documentation. I'm gonna send an email to Mikael and ask if the projects overall documentation should be a README.md, or if it should be some seperate file.
+
+---
+### 2024-10-15
+Today we finished the projects README.md, where the general project documentation is. I ended up not writing an email yesterday since I saw in the documentation lecture that it talked about having the project documentation in the README.md. We also ended up adding a couple things to one of the reflection parts.
+
+We got debugging sessions left, a couple of people have already finished their debug sessions. I'm gonna do a debug session now, and tomorrow we'll hopefully be ready to turn in the project.
+
+I also quickly changed the package.json "description" since it used our previous readme where I had just listed a few useful git commands from the first week. I just changed the description to the component name. Hovering over the 'description' says "This helps people discover your package, as it's listed in 'npm search'." and since I don't want other people to find our private repo, this seems irrelevant for this project. The actual description is in the README and documentation.
+
+---
+
+<br>
+
+## Debug Session
+
+##### [Back to Top](#oscar-larm-engineers-journal)
+
+- Author: Oscar Larm
+- Date: 2024-10-15
+
+---
+
+I started up the debugger inside the containers "burgerorder" and "kitchenview" using our make command "make debug".
+I get output in the burgerorder terminal: 
+
+```bash
+burgerorder  | 
+burgerorder  | > burger@1.0.0 start-debug
+burgerorder  | > node --inspect=0.0.0.0 index.js
+burgerorder  | 
+burgerorder  | Debugger listening on ws://0.0.0.0:9229/ee3ef073-c170-4475-8c31-4cf459974eed
+burgerorder  | For help, see: https://nodejs.org/en/docs/inspector
+burgerorder  | Connected to MenuStore
+burgerorder  | app running on http://localhost:3000
+```
+
+and in the kitchenview terminal I get:
+
+```bash
+kitchenview  | 
+kitchenview  | > burger@1.0.0 start-debug
+kitchenview  | > node --inspect=0.0.0.0 KitchenView.js
+kitchenview  | 
+kitchenview  | Debugger listening on ws://0.0.0.0:9229/9d4a9708-95ff-484c-b6a6-2a6e792d9775
+kitchenview  | For help, see: https://nodejs.org/en/docs/inspector
+```
+
+Which means that the debuggers are running.
+
+I decide to debug burgerorder.
+
+First I set a breakpoint for the function "orderpage()" on (at the time of writing this) line 46.
+
+The orderPage function is the function which makes the page after a order has been made, informing the user which items has been ordered. 
+
+I then click the "Run and Debug" tab to the left in VSCode. I then choose "Docker:Attach to BurgerOrderer" from the dropdown menu, then click "start debugging".
+
+I can tell that it's running. VsCode switches to the debug console, and it adds a "debug interface" to the top. Currently there are the options "Pause", "Restart" and "Disconnect". 
+
+I open the website, but nothing gets loaded. Looking at the console, I see that I get an error in burger.js, because of a line we added earlier to test something but forgot to remove, so I comment out the line and restart. Now the page loads as it should and I can continue debugging.
+
+I click the checkbox for "original Chicken Burger" which ticks all "ingredient" checkboxes aswell, then I click buy.
+The breakpoint for orderPage stops at the first line:
+
+```js
+JSON.stringify(data)
+```
+
+Checking the Variables, I look at "Local:orderPage" and see "this= global" and "data". It is "data" that I'm interested in right now. I click on the "data" variable and seee that it has 
+
+"fooditem = 'Original Chicken Burger'" and "ingredients = (4) ['Fried Chicken Patty', 'Bread', 'Dressing', 'Brioche bread',]. Copying the value from 'data' gives the following:
+
+```js
+{
+  foodItem: "Original Chicken Burger",
+  ingredients: [
+    "Fried Chicken Patty",
+    "Bread",
+    "Dressing",
+    "Brioche bread",
+  ],
+}
+```
+
+I right click on the data variable and "Add to Watch". I also right click on the 'page' variable which is a string which will be changed depending on what gets sent in the 'data' variable.
+
+I click 'Step Into' in the debugger. I continue 'stepping into' the function, and see that the 'page' variable changes. Currently the string only contains a header element and the text "order sent". It then adds a 'hr' element. It then gets to the line:
+```js
+page += `<p>One ${data["foodItem"]}`
+```
+Which checks the data variables value for "foodItem" which is 'Original Chicken Burger', then adds it to the string. It then gets to the if statement, checking if the data variable has a 'ingredients' key. It does, so it enters the if statement and takes the array of ingredients, makes it into a string with join then adds it to 'page'. The page variable gets updated for the last time, before reaching the return statement. I then return to the '/order' route which is what calls on orderPage() and gets called on when a order is placed.
+
+I retry the debugging but this time I try to not add any additional ingredients.
+I keep the same breakpoint and uncheck all ingredients. Looking at the 'data' variable now, it has the value:
+
+```js
+{
+  foodItem: "Original Chicken Burger",
+}
+```
+Which means that the ingredients were not sent and the data variable does not have a key called 'ingredients'. I step into the function, seeing that the 'page' string is being changed as expected. When I reach the if statement, it checks if there is a 'ingredients' key in 'data', and since there isn't, it skips the block and continues successfully.
+
+Overall, the orderPage() function seems to be working as intended.
+
+I decide to debug the entire '/order' route as well. I set a breakpoint in the express post endpoint '/order', on (as of writing this) line 62, where the sendToKitchen function is being declared. I also set a breakpoint on line 80 and 81, where the OrderPage function is being called and then sent as a response. After that, I go back to the website and press Classic Cheese Burger with the ingredients Beef patty, Mustard and Sesame Bread checked in. I then press buy.
+
+The current local variables are req, res and this. 'this' is undefined, 'req' is 'IncomingMessage' and res is 'ServerResponse'. I step into once and the 'sendToKitchen' variable is added to the local variables. req.body is declared to 'data'. 
+If I go into the variable 'req' and copy the value from 'body' I get:
+
+```js
+{
+  foodItem: "Classic Cheese Burger",
+  ingredients: [
+    "Beef patty",
+    "Mustard",
+    "Sesame Bread",
+  ],
+}
+```
+Which is accurate and the expected value.
+
+Another step into, sendToKitchen is being called with 'data' as the argument. Stepping into again opens a new file called async_hooks. This is most likely because sendToKitchen is a asynchronous function. Continuing to step into, jumps between different functions inside 'async_hooks'. I press 'Step Over' a few times until I am back to my function.
+
+The variables for 'Local:sendToKitchen' are now 'this = global' and 'data' with the value: 
+
+```js
+{
+  foodItem: "Classic Cheese Burger",
+  ingredients: [
+    "Beef patty",
+    "Mustard",
+    "Sesame Bread",
+  ],
+}
+```
+This looks correct. I then continue to 'step into' but realise that I will have to restart to avoid going through all of the code/functions that 'await' and 'fetch' use from different files. So I restart and get back to where I was before, with the same data, and use step over instead when I get to the await fetch post.
+
+I then get to where sentOrder is being assigned to the orderPage function with 'data' as the argument. I check the data variable from my 'watch' tab, and see that the data is still the same and accurate. 
+<br>
+
+The orderPage function works the same way as the previous debug test, without issues. I then step into the line where I send the return z from orderPage as a response, and the seperate file 'response.js' opens up. I use 'step out' to get back to my route. 
+
+A new local variable is created, 'Return value = undefined'. I add this to 'watch' and it's value is:
+```js
+Uncaught SyntaxError: Unexpected identifier 'value'
+```
+I then step into again, and move to 'layer.js'. It seems to handle 'res.send'.
+
+I then continue stepping through but then I reach the end and the debugger finishes. I didn't get to see the 'Return value' value, since all watched variables now have the value 'not available'. The Return value seems to stay as 'undefined' and 'Uncaught SyntaxError etc...'.
+
+I also noticed that I got a typerror, 'fetch failed' at the sendToKitchen function when the data gets sent to kitchenView. The error seems to be 'Headers Timeout Error'. I've gotten this error before, and I think it has to do with the fact that the kitchenView endpoint isn't sending a response. 
+
+Overall, I feel like this debug session went well, and the results were mostly as expected. The debuggers work very well in the containers. What wasn't as expected was the 'Return value' variable and its value. I am not sure what it is, but it seemed to have been created when I used res.send, so it must have something to do with that.
+
+Something that would make debugging easier and smoother would be to refactor a lot of the functions, to make them simpler and have them do less things. Have the functions more specific, but also generalise them a bit more by adding more parameters to them.
+
+I also noticed that inside the orderPage function there is a 'JSON.stringify and from what I can tell, it isn't doing anything. json.stringify should turn it into json formatting, but the data variable doesn't seem to change so I don't think the statement has any effect and can be safely removed. Will need to run additional tests to verify that it isn't necessary before removing it.
+
+With the help of this debug session, I was able to find a line of code that could potentially be deleted, which would effectively refactor the code.
+
+---
+##### [Back to Top](#oscar-larm-engineers-journal)
