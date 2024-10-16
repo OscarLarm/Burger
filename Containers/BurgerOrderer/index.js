@@ -1,10 +1,9 @@
 
 const express = require("express");
 const path = require('path');
-
 const app = express();
-app.use(express.static(path.join(__dirname,  '/public')));
 
+app.use(express.static(path.join(__dirname,  '/public')));
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -21,9 +20,13 @@ const foodSchema = new mongoose.Schema({
 
 const Foods = mongoose.model("Food", foodSchema, 'FoodItems');
 
-async function connectToDB() {
+/**
+ * Connects to the MenuStore database with mongoose.
+ * @public
+ */
+function connectToDB() {
     try {
-        await mongoose.connect('mongodb://mongodb/MenuStore');
+        mongoose.connect('mongodb://mongodb/MenuStore');
         console.log('Connected to MenuStore');
     } catch (err) {
         console.error('Error connecting to the database', err);
@@ -35,6 +38,7 @@ connectToDB()
 /**
  * Returns a html-formatted string stating that an order has been placed for the values from 
  * the keys "burger" and "ingredients" in argument data.
+ * @public
  * @param {*} data The data being read.
  * @returns {string} String formatted as html, stating the orders placed from data.
  */
@@ -43,7 +47,7 @@ function orderPage(data){
     page = '<h2>Order sent!</h2>'
     page += `<a href = "/">Back</a>`
     page += `<hr>`
-    page += `<p>One ${data.name}`
+    page += `<p>One ${data["foodItem"]}`
     if (data["ingredients"]) {
         page += ` with `
         let ingredients = [data["ingredients"]]
@@ -58,9 +62,11 @@ function orderPage(data){
 app.post('/order', (req, res) => {
     /**
      * Fetch post the data to the kitchenview /order endpoint.
+     * @async
+     * @function
      * @param {*} data The data to send.
      */
-    async function sendToKitchen(data){
+    const sendToKitchen = async(data) => {
         const sendData = await fetch("http://kitchenview:3001/order", {
             method: "POST",
             body: JSON.stringify(data),
@@ -71,14 +77,19 @@ app.post('/order', (req, res) => {
     };
     data = req.body
     sendToKitchen(data)
-    res.send(orderPage(data))
+    sentOrder = orderPage(data)
+    res.send(sentOrder)
 });
 
-app.get('/database', async (req, res) => {
+// Route being called from getData() in burger.js
+app.get('/database', async(req, res) => {
     const db = await Foods.find()
+    
     res.json(db)
 })
 
 app.listen(3000, () => {
     console.log('app running on http://localhost:3000');
 });
+
+module.exports = {app, orderPage}

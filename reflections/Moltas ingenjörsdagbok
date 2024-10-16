@@ -56,3 +56,21 @@ ordering of the order went througt or if the order failed. I also translated mor
 
 3/10 Translating the last text to from my journal to english. Iam reading the code the my colleagues have writin in dockers and in 
 JavaScript file.
+
+5/10 We meet on school and merge all our work and disccused what we have left. I was going to fix so that the 
+text ends up further up the before. And also make so that you could press burger checkbox and all content becomes pressed
+and you could later take away content if you dont want it. I also wanted to make a alert instead of you going to a new site 
+that show what you order.
+
+7/10 I removed the grid in the CSS, which made the content move higher up on the page. I changed it so that the burger input
+ was on a line higher up. I created a document.querySelector to check elements with the class .burgerCheckboxes. Then, I added 
+ an event listener that changes the checkbox. After that, I found all the forms in the burger. It then finds all the checkboxes 
+ in the content. Finally, it sets all the checkboxes to match the state of the checkboxes for .burgerCheckboxes.
+
+ 8/10 Today we meet up and merge our work. We also decided to not do an alert becouse the format was wrong to do a alert.
+ we looked into mochajs to test our project. i got docker compose up to work.
+
+ 9/10 Today we read about mochajs and try to make ut work with our project we had lite problem with it working. 
+ We later got it to work and made one test. I moved a button and made it better.
+
+ 10/10 Today we made more test for the project.

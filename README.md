@@ -2,12 +2,18 @@
 
 This is our project for the BTH course 'Basic Software Engineering - PA1489' from 2024.
 
+## Table of Contents
+
 - [Description](#description)
 - [Components](#components)
-- [Usage](#usage)
+    - [MenuStore](#menustore)
+    - [BurgerOrderer](#burgerorderer)
+    - [KitchenView](#kitchenview)
+- [Requirements](#requirements)
 - [Installation](#installation)
-    - [Requirements](#requirements)
-    - [Setup](#setup)
+- [Usage](#usage)
+- [Testing](#testing)
+- [JsDoc](#jsdoc)
 - [Authors](#authors)
 
 ## Description
@@ -32,43 +38,49 @@ When a user places an order, the data is converted and sent in JSON format to a 
 ### KitchenView
 KitchenView is where the data is sent from BurgerOrderer. Kitchenview goes through the data and prints it in KitchenViews Terminal.
 
-## Usage
-
-### Requirements:
+## Requirements
 
 - Makefile
 - Docker
 
-### Installation:
+## Installation
 
-1. Clone the repository to your local machine. Either with SSH or with HTTPS.
+1. **Clone the repository to your local machine. Either with SSH or with HTTPS.**
     
-    SSH:
+    Clone with ***SSH:***
     ```bash
     git clone git@github.com:oscar-larm/Burger.git
     ```
 
-    HTTPS:
+    Clone with ***HTTPS:***
     ```bash
     git clone https://github.com/oscar-larm/Burger.git
     ```
-2. Go into the project root folder and start the containers with the makefile script:
+    <br>
+
+2. **Go into the project root folder and setup the containers with the makefile script**
     ```bash
     # From Project Root
-    make start
+    make up
     ```
 
-### Testing:
+## Usage
+
+## Testing
 
 To test, repeat step 1 from [Installation](#installation), then run
 ```bash
 make test
 ```
 
+## JsDoc
+
+You can find documentation for functions in [./function_documentation/index.html](./function_documentation/index.html)
+
 ## Authors
 
-### [Gabriel Höglund / Gabe-Hog/Gabriel-](https://github.com/Gabe-Hog)
-### [Malte Eriksson / Tatte01](https://github.com/Tatte01)
-### [Moltas Åkerström / Molake00](https://github.com/Molake00)
-### [Maximilian Åberg / MaxiL04](https://github.com/MaxiL04)
-### [Oscar Larm / oscar-larm](https://github.com/oscar-larm)
+#### Gabriel Höglund | [Gabe-Hog](https://github.com/Gabe-Hog) / Gabriel-
+#### Malte Eriksson | [Tatte01](https://github.com/Tatte01)
+#### Moltas Åkerström | [Molake00](https://github.com/Molake00)
+#### Maximilian Åberg | [MaxiL04](https://github.com/MaxiL04)
+#### Oscar Larm | [oscar-larm](https://github.com/oscar-larm)
