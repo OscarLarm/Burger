@@ -100,6 +100,8 @@ Or run follwoing command in terminal (if your node is the latest version) to tes
 ```bash
 npm run test
 ```
+If a test fails do not push to git, read error message and try solve it, if you cant fix it roll back or create an issue.
+
 ## Contribute
 
 Make an issue after review fork the project and make a pull request.
