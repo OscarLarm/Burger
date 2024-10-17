@@ -22,7 +22,7 @@
 
 15 oct 2024 - Today we wrote the last thing on the project, the read.me file. 
 
-DEBUG
+### DEBUG 
 
 1. Select some functionality, e.g. Order a “Dripping With Lard Heartstopper” menu
 
