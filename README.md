@@ -1,6 +1,6 @@
 # Burger
 
-This is our project for the BTH course 'Basic Software Engineering - PA1489' from 2024.
+This is for a school assignment, 2024.
 
 ## Table of Contents
 
@@ -18,9 +18,9 @@ This is our project for the BTH course 'Basic Software Engineering - PA1489' fro
 - [Authors/Credits](#authorscredits)
 
 ## Description
-This is our project for the BTH course 'Basic Software Engineering - PA1489' from 2024.
+This is for a school assignment, 2024.
 General summary of this project: Its a food ordering application that is built using modern development techniques such as containers, databases and API's. 
-The program componenets are a user interface that retrives the menu from at database and displays it as options and then taking order choices from the user and sending it through api requests to the kitchen in the back for processing, all of which are run in respektive containers. We hope this program can be useful for a small startup burger resturante or any resturante, we also hope that this project can be a base for any future development.
+The program componenets are a user interface that retrives the menu from at database and displays it as options and then taking order choices from the user and sending it through api requests to the kitchen in the back for processing, all of which are run in respective containers. We hope this program can be useful for a small startup burger resturante or any resturante, we also hope that this project can be a base for any future development.
 
 
 
